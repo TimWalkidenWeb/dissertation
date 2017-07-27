@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Projects extends Authenticatable
 {
     use Notifiable;
 
@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'title', 'content', 'staff_id', 'num particpants',
     ];
 
     /**
@@ -23,7 +23,18 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+
+
+    /**
+     * @return array
+     */
+    public function Project_owner()
+    {
+        return $this->hasOne('App\Staff');
+    }
+
+    public function Projects()
+    {
+        return $this->belongsToMany('App\Pathway');
+    }
 }
