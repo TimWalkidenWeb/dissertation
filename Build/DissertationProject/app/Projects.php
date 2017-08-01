@@ -15,7 +15,7 @@ class Projects extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'title', 'content', 'staff_id', 'num particpants',
+        'title', 'content', 'staff_id', 'num participants',
     ];
 
     /**

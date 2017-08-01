@@ -20,7 +20,7 @@ class Staff_member extends Controller
         $new_staff->save();
 
 
-        return redirect('/new_project');
+        return redirect('/welcome');
     }
 
 

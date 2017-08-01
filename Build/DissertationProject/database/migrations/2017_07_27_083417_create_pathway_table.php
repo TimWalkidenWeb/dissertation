@@ -13,7 +13,7 @@ class CreatePathwayTable extends Migration
      */
     public function up()
     {
-        Schema::create('pathway', function (Blueprint $table) {
+        Schema::create('pathways', function (Blueprint $table) {
             $table->increments('id');
             $table->string('pathway');
 

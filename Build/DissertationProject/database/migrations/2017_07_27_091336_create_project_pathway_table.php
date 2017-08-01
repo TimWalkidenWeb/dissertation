@@ -18,7 +18,7 @@ class CreateProjectPathwayTable extends Migration
             $table->integer('pathway_id')->unsigned();
 
             $table->foreign('project_id')->references('id')->on('projects');
-            $table->foreign('pathway_id')->references('id')->on('pathway');
+            $table->foreign('pathway_id')->references('id')->on('pathways');
 
             $table->primary(['project_id', 'pathway_id']);
         });

@@ -19,13 +19,11 @@ Route::get('/project', function () {
     return view('new_project');
 });
 
+Route::resource('/new_project', 'Project');
+
 Route::get('/previous_project', function () {
     return view('new_previous_project');
 });
-
-//Route::get('/staff', function () {
-//    return view('new_staff');
-//});
 
 Route::get('/learning_material', function () {
     return view('new_learningMaterial');

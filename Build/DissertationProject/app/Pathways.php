@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Pathway extends Authenticatable
+class Pathways extends Authenticatable
 {
     use Notifiable;
 

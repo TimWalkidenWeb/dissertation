@@ -17,25 +17,25 @@ class PathwayTableSeeder extends Seeder
 //        ]
 //        );
 
-        DB::table('pathway')->insert([
+        DB::table('pathways')->insert([
                 'Id' =>  2,
                 'pathway' => 'Bsc Computing',
             ]
         );
 
-        DB::table('pathway')->insert([
+        DB::table('pathways')->insert([
                 'Id' =>  3,
                 'pathway' => 'Bsc Computing (Games Programming)',
             ]
         );
 
-        DB::table('pathway')->insert([
+        DB::table('pathways')->insert([
                 'Id' =>  4,
                 'pathway' => 'Bsc Computing (Networking, Security and Forensics)',
             ]
         );
 
-        DB::table('pathway')->insert([
+        DB::table('pathways')->insert([
                 'Id' =>  5,
                 'pathway' => 'Bsc Web Design and Development',
             ]

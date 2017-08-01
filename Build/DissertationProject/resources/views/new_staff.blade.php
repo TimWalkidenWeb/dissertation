@@ -27,12 +27,8 @@
     </div>
 
 <div class="form-group">
-    @foreach($permission as $permissions)
-
-            {!! Form::label('permission', $permissions->permission) !!}
-            {!! Form::checkbox( $permissions->permission, null) !!}
-
-    @endforeach
+        {!! Form::label('Permission', 'Permission') !!}
+        {!! Form::select('permission', ['1'=> 'Lecturer', '2'=> 'Programme Leader'], null, ['placeholder' => 'Select their authority'] ) !!}
     </div>
     <div class='form-group'>
         {!! Form::submit('submit new staff member', ['class' =>'button']) !!}
