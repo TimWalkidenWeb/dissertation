@@ -23,10 +23,14 @@ Route::get('/previous_project', function () {
     return view('new_previous_project');
 });
 
-Route::get('/staff', function () {
-    return view('new_staff');
-});
+//Route::get('/staff', function () {
+//    return view('new_staff');
+//});
 
 Route::get('/learning_material', function () {
     return view('new_learningMaterial');
 });
+
+Route::resource('/new_staff', 'Staff_member');
+
+Route::post('/new_staff', 'Staff_member@create');

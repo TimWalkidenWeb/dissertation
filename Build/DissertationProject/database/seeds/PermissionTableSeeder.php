@@ -11,11 +11,11 @@ class PermissionTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('permission')->insert([
+        DB::table('permissions')->insert([
             'Id' =>  1,
             'permission' => 'Access to all staff data',
     ]);
-        DB::table('permission')->insert([
+        DB::table('permissions')->insert([
             'Id' =>  2,
             'permission' => 'Access to only your data',
         ]);
