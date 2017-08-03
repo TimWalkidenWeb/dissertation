@@ -10,26 +10,45 @@
 <body>
     <h1>New Project</h1>
 
-{!! Form::open(['action'=>['Project@create']]) !!}
+{!! Form::open(['action'=>['project@create']]) !!}
     <div class="form-group">
         {!! Form::Label('title', 'Title of project') !!}
         {!! Form::text('title', null) !!}
     </div>
-
+    {{--<div class="form-group">--}}
+        {{--{!! Form::hidden('staff_id',Auth()->user()->id, ['class'=> 'large-8 column']) !!}--}}
+    {{--</div>--}}
+    {{--<div class="form-group">--}}
+        {{--{!! Form::Label('title', 'staff') !!}--}}
+        {{--{!! Form::text('staff_id', null) !!}--}}
+    {{--</div>--}}
     <div class="form-group">
         {!! Form::Label('content', 'Description of the project') !!}
         {!! Form::text('content', null) !!}
     </div>
 
     <div class="form-group">
-        {!! Form::Label('num participants', 'Number of participants') !!}
-        {!! Form::text('num participants', null) !!}
+        {!! Form::Label('num_participant', 'Number of participants') !!}
+        {!! Form::text('num_participant', null) !!}
     </div>
+    <div class="form-group">
+    @foreach($pathway as $pathways)
 
+            {!! Form::label('pathway_id', $pathways->pathway) !!}
+            {{Form::radio('pathway_id', $pathways->id)}}
+
+    @endforeach
+    </div>
     <div class='form-group'>
         {!! Form::submit('submit new project', ['class' =>'button']) !!}
     </div>
+
+    {{--<div class="form-group">--}}
+        {{--{!! Form::checkbox($pathway->Pathway, $pathway->id) !!}--}}
+    {{--</div>--}}
 {!! Form::close() !!}
+
+
 </body>
 </html>
 

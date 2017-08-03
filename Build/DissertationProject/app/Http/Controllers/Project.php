@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Projects;
 use App\Staff;
 Use App\Pathways;
+Use App\Projects_pathways;
 
 class Project extends Controller
 {
@@ -20,6 +21,15 @@ class Project extends Controller
 
         $new_project->save();
 
-        return redirect('/project');
+        $list_of_pathway = Projects_pathways::create([
+                'pathway_id' => $request->input('pathway_id'),
+                'project_id' => $new_project->id,
+            ]
+        );
+
+
+        $list_of_pathway->save();
+
+        return redirect('/welcome');
     }
 }

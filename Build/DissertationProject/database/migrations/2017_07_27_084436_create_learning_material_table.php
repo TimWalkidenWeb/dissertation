@@ -22,7 +22,7 @@ class CreateLearningMaterialTable extends Migration
             $table->timestamps();
 
            // $table->primary('id');
-            $table->foreign('staff_id')->references('id')->on('staff');
+            $table->foreign('staff_id')->references('id')->on('users');
             $table->foreign('learning_section')->references('id')->on('learning_section');
         });
     }

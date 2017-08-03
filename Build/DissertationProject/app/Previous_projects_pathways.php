@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Staff extends Authenticatable
+class Previous_projects_pathways extends Authenticatable
 {
     use Notifiable;
 
@@ -15,7 +15,7 @@ class Staff extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'permission', 'update_at', 'created_at'
+        'previous_id', 'pathway_id'
     ];
 
     /**
@@ -23,20 +23,18 @@ class Staff extends Authenticatable
      *
      * @var array
      */
-    protected $hidden = [
-        'password',
-    ];
 
-    /**
+
+    /**Projects.php
      * @return array
      */
-    public function Permission()
+    public function Project_owner()
     {
-        return $this->hasOne('App\Permission');
+        return $this->hasOne('App\Project');
     }
 
     public function Projects()
     {
-        return $this->belongsToMany('App\Projects');
+        return $this->hasOne('App\Pathway');
     }
 }

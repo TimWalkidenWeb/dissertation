@@ -16,13 +16,13 @@ class CreatePreviousProjectsTable extends Migration
         Schema::create('previous_projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Title');
-            $table->string('content');
+            $table->binary('content');
             $table->date('Date');
             $table->integer('staff_id')->unsigned();
             $table->timestamps();
 
            // $table->primary('id');
-            $table->foreign('staff_id')->references('id')->on('staff');
+            $table->foreign('staff_id')->references('id')->on('users');
         });
     }
 

@@ -15,20 +15,23 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/project', function () {
-    return view('new_project');
-});
+
 
 Route::resource('/new_project', 'Project');
+Route::post('/new_project', 'Project@create');
 
-Route::get('/previous_project', function () {
-    return view('new_previous_project');
-});
+
+Route::resource('/new_previous_project', 'Previous_project');
+Route::post('/new_previous_project', 'Previous_project@create');
 
 Route::get('/learning_material', function () {
     return view('new_learningMaterial');
 });
 
-Route::resource('/new_staff', 'Staff_member');
+Route::get('/new_staff', function (){
+   return view('/auth/register');
+});
 
-Route::post('/new_staff', 'Staff_member@create');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
