@@ -19,7 +19,7 @@
             <td>Title</td>
             <td>Lecture</td>
             <td>Participants</td>
-            <td>Edit</td>
+            <td>Edit-content</td>
             <td>Shows</td>
             <td>Delete</td>
         </tr>
@@ -31,8 +31,8 @@
            <td>{{$projects->Title}}</td>
            <td>{{$projects->staff_id}}</td>
            <td>{{$projects->num_participant}}</td>
-           <td><a href="/projects/{{$projects->id}}/edit" class="button">Update</a></td>
-           <td><a href="/projects/{{$projects->id}}" class="button">show</a></td>
+           <td><a href="projects/{{$projects->id}}/edit" class="button">Update-content</a></td>
+           <td><a href="projects/{{$projects->id}}" class="button">show</a></td>
            <td>
                {!! Form::open(['method' => 'DELETE' ,'route' => ['project.destroy', $projects->id]]) !!}
                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}

@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Pathways_Projects;
 use Illuminate\Http\Request;
 
 use App\Projects;
 use App\Staff;
 Use App\Pathways;
-Use App\Projects_pathways;
+
 
 class Project extends Controller
 {
     public function index(){
         $project = Projects::all();
-        return view('project', ['project' =>$project]);
+        return view('projects.project', ['project' =>$project]);
     }
+
 
         public function show($id)
     {
@@ -23,17 +25,35 @@ class Project extends Controller
         return view('projects.show', ['project' => Projects::findOrFail($id)]);
     }
 
+
+
     public function edit($id)
     {
+       $pathway = Pathways::all();
         $project = Projects::findOrFail($id);
-            return view('projects.edit.blade.blade.php', compact('project'));
+        $project->Projects;
+
+
+            return view('projects.Edit', compact('project'), ['pathway' => $pathway]);
     }
+    public function update(Request $request, $id)
+    {
+
+        $project = Projects::findOrFail($id);
+
+        $project->update($request->all());
+
+        $return = Projects::all();
+
+        return view('projects/project', ['project' => $return]);
+    }
+
     public function destroy($id)
     {
         $project = Projects::find($id);
 
         $project->delete();
 
-        return redirect('project');
+        return redirect('welcome');
     }
 }

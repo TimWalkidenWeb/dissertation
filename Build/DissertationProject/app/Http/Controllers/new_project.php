@@ -77,7 +77,7 @@ class new_project extends Controller
 //    public function edit($id)
 //    {
 //        $project = Projects::findOrFail($id);
-//            return view('projects.edit.blade.blade.php', compact('project'));
+//            return view('projects.edit1.blade.php.blade.php', compact('project'));
 //    }
 ////
 ////    /**

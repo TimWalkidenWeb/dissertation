@@ -20,7 +20,10 @@ Route::resource('/new_projects', 'new_project');
 Route::post('/new_projects', 'new_project@create');
 
 Route::resource('project','Project');
-
+Route::get('projects/{id}', 'Project@show');
+Route::get('projects/{id}/edit', 'Project@edit');
+Route::patch('projects/{id}', 'Project@update');
+Route::delete('projects/{id}', 'Project@destroy');
 
 
 

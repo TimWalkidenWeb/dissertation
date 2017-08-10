@@ -30,11 +30,11 @@ class Projects extends Authenticatable
      */
     public function Project_owner()
     {
-        return $this->hasOne('App\Staff');
+        return $this->hasOne('App\User');
     }
 
     public function Projects()
     {
-        return $this->belongsToMany('App\Pathway');
+        return $this->belongsToMany('App\Pathways');
     }
 }
