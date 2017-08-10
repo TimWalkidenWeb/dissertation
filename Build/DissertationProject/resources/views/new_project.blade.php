@@ -10,18 +10,15 @@
 <body>
     <h1>New Project</h1>
 
-{!! Form::open(['action'=>['project@create']]) !!}
+{!! Form::open(['action'=>['new_project@create']]) !!}
     <div class="form-group">
         {!! Form::Label('title', 'Title of project') !!}
         {!! Form::text('title', null) !!}
     </div>
-    {{--<div class="form-group">--}}
-        {{--{!! Form::hidden('staff_id',Auth()->user()->id, ['class'=> 'large-8 column']) !!}--}}
-    {{--</div>--}}
-    {{--<div class="form-group">--}}
-        {{--{!! Form::Label('title', 'staff') !!}--}}
-        {{--{!! Form::text('staff_id', null) !!}--}}
-    {{--</div>--}}
+    <div class="form-group">
+        {!! Form::hidden('staff_id',Auth()->User()->id, ['class'=> 'large-8 column']) !!}
+    </div>
+
     <div class="form-group">
         {!! Form::Label('content', 'Description of the project') !!}
         {!! Form::text('content', null) !!}

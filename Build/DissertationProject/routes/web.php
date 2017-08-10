@@ -16,9 +16,13 @@ Route::get('/welcome', function () {
 });
 
 
+Route::resource('/new_projects', 'new_project');
+Route::post('/new_projects', 'new_project@create');
 
-Route::resource('/new_project', 'Project');
-Route::post('/new_project', 'Project@create');
+Route::resource('project','Project');
+
+
+
 
 
 Route::resource('/new_previous_project', 'Previous_project');
@@ -35,3 +39,8 @@ Route::get('/new_staff', function (){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+//Route::get('projects/{id}', 'view_projectController@show');

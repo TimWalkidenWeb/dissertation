@@ -12,24 +12,28 @@ Use App\Projects_pathways;
 class Project extends Controller
 {
     public function index(){
-        $project = Pathways::all();
-        return view('new_project', ['pathway' =>$project]);
+        $project = Projects::all();
+        return view('project', ['project' =>$project]);
     }
 
-    public function create(Request $request){
-        $new_project= Projects::create($request->all());
+        public function show($id)
+    {
+        $project = Projects::findOrFail($id);
 
-        $new_project->save();
+        return view('projects.show', ['project' => Projects::findOrFail($id)]);
+    }
 
-        $list_of_pathway = Projects_pathways::create([
-                'pathway_id' => $request->input('pathway_id'),
-                'project_id' => $new_project->id,
-            ]
-        );
+    public function edit($id)
+    {
+        $project = Projects::findOrFail($id);
+            return view('projects.edit.blade.blade.php', compact('project'));
+    }
+    public function destroy($id)
+    {
+        $project = Projects::find($id);
 
+        $project->delete();
 
-        $list_of_pathway->save();
-
-        return redirect('/welcome');
+        return redirect('project');
     }
 }
