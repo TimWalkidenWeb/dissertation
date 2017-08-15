@@ -10,7 +10,7 @@ class Previous_projects extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-    'title', 'content', 'staff_id', 'date',
+    'title', 'content', 'user_id', 'date',
     ];
 
     /**
@@ -23,9 +23,9 @@ class Previous_projects extends Authenticatable
     /**
      * @return array
      */
-    public function Project_owner()
+    public function Previousowner()
     {
-        return $this->hasOne('App\Staff');
+        return $this->hasOne('App\User');
     }
 
     public function Projects()

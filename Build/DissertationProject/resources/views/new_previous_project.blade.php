@@ -10,13 +10,13 @@
 <body>
 <h1>New previous Project</h1>
 
-{!! Form::open(['action'=>['Previous_project@create']]) !!}
+{!! Form::open(['action'=>['Previouscreate@create']]) !!}
 <div class="form-group">
     {!! Form::Label('title', 'Title of project') !!}
     {!! Form::text('title', null) !!}
 </div>
 <div class="form-group">
-    {!! Form::hidden('staff_id',Auth()->user()->id, ['class'=> 'large-8 column']) !!}
+    {!! Form::hidden('user_id',Auth()->user()->id, ['class'=> 'large-8 column']) !!}
 </div>
 <div class="form-group">
     {!! Form::Label('content', 'Description of the project') !!}

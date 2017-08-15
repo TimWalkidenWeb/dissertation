@@ -39,4 +39,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Projects');
     }
+
+    public function Previousowner()
+    {
+        return $this->hasMany('App\Previous_projects');
+    }
 }

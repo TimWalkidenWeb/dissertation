@@ -19,6 +19,8 @@ Route::get('/welcome', function () {
 Route::resource('/new_projects', 'new_project');
 Route::post('/new_projects', 'new_project@create');
 
+
+
 Route::resource('project','Project');
 Route::get('projects/{id}', 'Project@show');
 Route::get('projects/{id}/edit', 'Project@edit');
@@ -28,8 +30,16 @@ Route::delete('projects/{id}', 'Project@destroy');
 
 
 
-Route::resource('/new_previous_project', 'Previous_project');
-Route::post('/new_previous_project', 'Previous_project@create');
+Route::resource('/new_previous_project', 'Previouscreate');
+Route::post('/new_previous_project', 'Previouscreate@create');
+
+
+Route::resource('previous_projects', 'Previous_project');
+
+
+
+
+
 
 Route::get('/learning_material', function () {
     return view('new_learningMaterial');
