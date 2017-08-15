@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Pathways_Previous_Projects;
 use App\User;
 use Illuminate\Http\Request;
 use App\Pathways;
 use App\Previous_projects;
-Use App\Previous_projects_pathways;
 class Previouscreate extends Controller
 {
     public function index(){
@@ -20,9 +20,9 @@ class Previouscreate extends Controller
 
         $new_project->save();
 
-        $list_of_pathway = Previous_projects_pathways::create([
-                'pathway_id' => $request->input('pathway_id'),
-                'previous_id' => $new_project->id,
+        $list_of_pathway = Pathways_Previous_Projects::create([
+                'pathways_id' => $request->input('pathway_id'),
+                'previous_project_id' => $new_project->id,
             ]
         );
 

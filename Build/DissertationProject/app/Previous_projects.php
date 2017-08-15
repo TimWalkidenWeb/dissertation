@@ -30,6 +30,6 @@ class Previous_projects extends Authenticatable
 
     public function Projects()
     {
-        return $this->belongsToMany('App\Pathway');
+        return $this->belongsToMany('App\Pathways');
     }
 }

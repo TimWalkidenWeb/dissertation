@@ -16,7 +16,7 @@ class Project extends Controller
         $project = Projects::all();
         $user = User::all();
 
-        return view('projects.project', ['project' =>$project], ['user' =>$user]);
+        return view('projects.view', ['project' =>$project], ['user' =>$user]);
     }
 
 
@@ -45,9 +45,7 @@ class Project extends Controller
 
         $project->update($request->all());
 
-        $return = Projects::all();
-
-        return view('projects/project', ['project' => $return]);
+        return redirect()->back();
     }
 
     public function destroy($id)

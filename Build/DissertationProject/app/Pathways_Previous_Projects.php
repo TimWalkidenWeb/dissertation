@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Previous_projects_pathways extends Authenticatable
+class Pathways_Previous_Projects extends Authenticatable
 {
     use Notifiable;
 
@@ -15,7 +15,7 @@ class Previous_projects_pathways extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'previous_id', 'pathway_id'
+        'previous_projects_id', 'pathways_id'
     ];
 
     /**
