@@ -35,8 +35,8 @@ class User extends Authenticatable
         return $this->hasOne('App\Permission');
     }
 
-    public function Projects()
+    public function Projectowner()
     {
-        return $this->belongsToMany('App\Projects');
+        return $this->hasMany('App\Projects');
     }
 }

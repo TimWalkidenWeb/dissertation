@@ -15,7 +15,7 @@ class Projects extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'title', 'content', 'staff_id', 'num_participant',
+        'title', 'content', 'user_id', 'num_participant',
     ];
 
     /**
@@ -28,7 +28,7 @@ class Projects extends Authenticatable
     /**Projects.php
      * @return array
      */
-    public function Project_owner()
+    public function Projectowner()
     {
         return $this->hasOne('App\User');
     }

@@ -8,43 +8,42 @@
     <title>Project</title>
 </head>
 <body>
-<h1> View Project</h1>
+    <h1> View Project</h1>
+    @if (isset($project))
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Lecture</td>
+                    <td>Participants</td>
+                    <td>Edit-content</td>
+                    <td>Shows</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+           <tbody>
 
-
-<h1>{{$project}}</h1>
-@if (isset($project))
-<table class="table">
-    <thead>
-        <tr>
-            <td>Title</td>
-            <td>Lecture</td>
-            <td>Participants</td>
-            <td>Edit-content</td>
-            <td>Shows</td>
-            <td>Delete</td>
-        </tr>
-    </thead>
-   <tbody>
-
-   @foreach($project as $projects)
-       <tr>
-           <td>{{$projects->Title}}</td>
-           <td>{{$projects->staff_id}}</td>
-           <td>{{$projects->num_participant}}</td>
-           <td><a href="projects/{{$projects->id}}/edit" class="button">Update-content</a></td>
-           <td><a href="projects/{{$projects->id}}" class="button">show</a></td>
-           <td>
-               {!! Form::open(['method' => 'DELETE' ,'route' => ['project.destroy', $projects->id]]) !!}
-               {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-               {!! Form::close()!!}
-           </td>
-       </tr>
-   @endforeach
-   </tbody>
-</table>
-@else
+                @foreach($user as $users)
+                   @foreach($users->Projectowner as $projects)
+                    <tr>
+                       <td>{{$projects->Title}}</td>
+                       <td>{{$users->name}}</td>
+                       <td>{{$projects->num_participant}}</td>
+                       <td><a href="projects/{{$projects->id}}/edit" class="button">Update-content</a></td>
+                       <td><a href="projects/{{$projects->id}}" class="button">show</a></td>
+                       <td>
+                           {!! Form::open(['method' => 'DELETE' ,'route' => ['project.destroy', $projects->id]]) !!}
+                           {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                           {!! Form::close()!!}
+                       </td>
+                    </tr>
+                   @endforeach
+                @endforeach
+            </tbody>
+        </table>
+    @else
     <p>No Projects</p>
-@endif
+    @endif
 
 </body>
 </html>

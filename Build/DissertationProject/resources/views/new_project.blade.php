@@ -16,7 +16,7 @@
         {!! Form::text('title', null) !!}
     </div>
     <div class="form-group">
-        {!! Form::hidden('staff_id',Auth()->User()->id, ['class'=> 'large-8 column']) !!}
+        {!! Form::hidden('user_id',Auth()->User()->id, ['class'=> 'large-8 column']) !!}
     </div>
 
     <div class="form-group">

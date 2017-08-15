@@ -18,11 +18,11 @@ class CreateProjectsTable extends Migration
             $table->string('Title');
             $table->string('content');
             $table->integer('num_participant');
-            $table->integer('staff_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
 
            // $table->primary('id');
-            $table->foreign('staff_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

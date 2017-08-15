@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Pathways_Projects;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Projects;
-use App\Staff;
 Use App\Pathways;
 
 
@@ -14,7 +14,9 @@ class Project extends Controller
 {
     public function index(){
         $project = Projects::all();
-        return view('projects.project', ['project' =>$project]);
+        $user = User::all();
+
+        return view('projects.project', ['project' =>$project], ['user' =>$user]);
     }
 
 
