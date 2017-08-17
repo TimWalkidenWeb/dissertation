@@ -8,7 +8,7 @@
     <title>New_project</title>
 </head>
 <body>
-<h1>Edit - {{$project->Title}}</h1>
+<h1>Edit - {{$project->title}}</h1>
 
 <h2>{{$project}}</h2>
 
@@ -28,13 +28,27 @@
     {!! Form::Label('num_participant', 'Number of participants') !!}
     {!! Form::text('num_participant', null) !!}
 </div>
+<div class="form-group">
+    @foreach($project->projects as $projects)
 
+        {!! Form::label('pathway_id', $projects->pathway) !!}
+        {!! Form::checkbox('pathway_id', $projects->id, true) !!}
+    @endforeach
+
+    <h1>break</h1>
+    @foreach($test as $pathways)
+        {!! Form::label('pathway_id', $pathways->pathway) !!}
+        {!! Form::checkbox('pathway_id', $pathways->id) !!}
+    @endforeach
+    <div class='form-group'>
+        {!! Form::submit('submit updated content', ['class' =>'button']) !!}
+    </div>
 <div class='form-group'>
-    {!! Form::submit('submit new project', ['class' =>'button']) !!}
+    {!! Form::submit('submit updated content', ['class' =>'button']) !!}
 </div>
 
+{!! Form::close() !!}
 
-
-
+</div>
 </body>
 </html>

@@ -14,7 +14,7 @@ class Pathways_Projects extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'project_id', 'pathway_id'
+        'projects_id', 'pathways_id'
     ];
 
     /**

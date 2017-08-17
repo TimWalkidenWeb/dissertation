@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Pathways_Projects;
 use Illuminate\Http\Request;
 use App\Projects;
-use App\Staff;
 Use App\Pathways;
-use App\Projects_pathways;
+use Illuminate\Support\Facades\Input;
+
 class new_project extends Controller
 {
 //    /**
@@ -30,76 +31,14 @@ class new_project extends Controller
     public function create(Request $request){
         $new_project= Projects::create($request->all());
 
+        $pathway = Input::get('pathway_id', []);
+
+
+        return $pathway;
         $new_project->save();
+        $new_project->Projects()->attach($pathway);
 
-        $list_of_pathway = Projects_pathways::create([
-                'pathway_id' => $request->input('pathway_id'),
-                'project_id' => $new_project->id,
-            ]
-        );
-
-
-        $list_of_pathway->save();
-
-        return redirect('/projects');
+        return redirect('/project');
     }
-//
-//    /**
-//     * Store a newly created resource in storage.
-//     *
-//     * @param  \Illuminate\Http\Request  $request
-//     * @return \Illuminate\Http\Response
-//     */
-    public function store(Request $request)
-    {
-        //
-    }
-//
-//    /**
-//     * Display the specified resource.
-//     *
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function show($id)
-//    {
-//        $project = Projects::findOrFail($id);
-//
-//        return view('projects.show', ['project' => Projects::findOrFail($id)]);
-//    }
-////
-////    /**
-////     * Show the form for editing the specified resource.
-////     *
-////     * @param  int  $id
-////     * @return \Illuminate\Http\Response
-////     */
-//    public function edit($id)
-//    {
-//        $project = Projects::findOrFail($id);
-//            return view('projects.edit1.blade.php.blade.php', compact('project'));
-//    }
-////
-////    /**
-////     * Update the specified resource in storage.
-////     *
-////     * @param  \Illuminate\Http\Request  $request
-////     * @param  int  $id
-////     * @return \Illuminate\Http\Response
-////     */
-////    public function update(Request $request, $id)
-////    {
-////        $project = Projects::findOrFail($id);
-////        $project->update($request->all());
-////
-////        return redirect('project');
-////    }
-////
-////    /**
-////     * Remove the specified resource from storage.
-////     *
-////     * @param  int  $id
-////     * @return \Illuminate\Http\Response
-////     */
-//
+
 }

@@ -18,6 +18,9 @@
     <div class="form-group">
         {!! Form::hidden('user_id',Auth()->User()->id, ['class'=> 'large-8 column']) !!}
     </div>
+    <div class="form-group">
+        {!!  Form::token()!!}
+    </div>
 
     <div class="form-group">
         {!! Form::Label('content', 'Description of the project') !!}
@@ -32,7 +35,7 @@
     @foreach($pathway as $pathways)
 
             {!! Form::label('pathway_id', $pathways->pathway) !!}
-            {{Form::radio('pathway_id', $pathways->id)}}
+            {{Form::checkbox('pathway_id', $pathways->id)}}
 
     @endforeach
     </div>
