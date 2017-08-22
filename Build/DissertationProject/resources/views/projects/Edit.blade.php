@@ -8,14 +8,14 @@
     <title>New_project</title>
 </head>
 <body>
-<h1>Edit - {{$project->title}}</h1>
+<h1>Edit - {{$project->Title}}</h1>
 
-<h2>{{$project}}</h2>
+<h2>{{$project->projects}}</h2>
 
 {!! Form::model($project, ['method' => 'PATCH', 'url' => ['projects',$project->id], $project->id]) !!}
 <div class="form-group">
     {!! Form::Label('Title', 'Title of project') !!}
-    {!! Form::text('Title', $project->id) !!}
+    {!! Form::text('Title', $project->Title) !!}
 </div>
 
 
@@ -29,23 +29,19 @@
     {!! Form::text('num_participant', null) !!}
 </div>
 <div class="form-group">
-    @foreach($project->projects as $projects)
+
+<h1>Add a new pathway</h1>
+    @foreach($pathway as $projects)
 
         {!! Form::label('pathway_id', $projects->pathway) !!}
-        {!! Form::checkbox('pathway_id', $projects->id, true) !!}
+        {!! Form::checkbox('pathway_id[]', $projects->id )!!}
     @endforeach
 
-    <h1>break</h1>
-    @foreach($test as $pathways)
-        {!! Form::label('pathway_id', $pathways->pathway) !!}
-        {!! Form::checkbox('pathway_id', $pathways->id) !!}
-    @endforeach
+
     <div class='form-group'>
         {!! Form::submit('submit updated content', ['class' =>'button']) !!}
     </div>
-<div class='form-group'>
-    {!! Form::submit('submit updated content', ['class' =>'button']) !!}
-</div>
+
 
 {!! Form::close() !!}
 

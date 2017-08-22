@@ -32,25 +32,24 @@ class Project extends Controller
     public function edit($id)
     {
        $pathway = Pathways::all();
-        $test2 = Projects::findOrFail($id)->Projects->pluck('id');
 
-        $test =$pathway->diffKeys([$test2]);
-        $test->all();
 
         $project = Projects::findOrFail($id);
         $project->Projects;
-
-
-
-            return view('projects.Edit')->with(compact('project'))->with(['pathway' => $pathway])->with(['test' => $test]);
+         return view('projects.Edit')->with(compact('project'))->with(['pathway' => $pathway]);
     }
     public function update(Request $request, $id)
     {
 
+
         $project = Projects::findOrFail($id);
+//        $project->Projects()->detach();
         $project->Projects;
 
         $project->update($request->all());
+
+
+        $project->Projects()->attach($request->get('pathway_id'));
 
         return redirect()->back();
 

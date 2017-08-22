@@ -33,8 +33,6 @@ class new_project extends Controller
 
         $pathway = Input::get('pathway_id', []);
 
-
-        return $pathway;
         $new_project->save();
         $new_project->Projects()->attach($pathway);
 

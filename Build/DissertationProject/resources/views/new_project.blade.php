@@ -35,7 +35,7 @@
     @foreach($pathway as $pathways)
 
             {!! Form::label('pathway_id', $pathways->pathway) !!}
-            {{Form::checkbox('pathway_id', $pathways->id)}}
+            {{Form::checkbox('pathway_id[]', $pathways->id)}}
 
     @endforeach
     </div>
