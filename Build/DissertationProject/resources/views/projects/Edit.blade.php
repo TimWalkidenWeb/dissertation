@@ -1,13 +1,6 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
+@section('content')
 
-    <title>New_project</title>
-</head>
-<body>
 <h1>Edit - {{$project->Title}}</h1>
 
 <h2>{{$project->projects}}</h2>
@@ -46,5 +39,4 @@
 {!! Form::close() !!}
 
 </div>
-</body>
-</html>
+@endsection

@@ -43,9 +43,6 @@ Route::patch('previous_projects/{id}', 'Previous_project@update');
 Route::delete('previous_projects/{id}, Previous_project@destroy');
 
 
-
-
-
 Route::get('/learning_material', function () {
     return view('new_learningMaterial');
 });

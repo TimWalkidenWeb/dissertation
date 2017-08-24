@@ -1,15 +1,7 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Project</title>
-</head>
-<body>
+@extends('layouts.master')
+@section('content')
     <h1> View Project</h1>
-    @if (isset($project))
+    @if (Auth()->user())
         <table class="table">
             <thead>
                 <tr>
@@ -22,7 +14,7 @@
                 </tr>
             </thead>
            <tbody>
-
+           @if (Auth()->user()->permission == 1)
                 @foreach($user as $users)
                    @foreach($users->Projectowner as $projects)
                     <tr>
@@ -39,11 +31,29 @@
                     </tr>
                    @endforeach
                 @endforeach
+               @else
+               @foreach($user as $users)
+                   @foreach($users->Projectowner as $projects)
+                     @if($projects->user_id == Auth()->user()->id)
+                       <tr>
+                           <td>{{$projects->Title}}</td>
+                           <td>{{$users->name}}</td>
+                           <td>{{$projects->num_participant}}</td>
+                           <td><a href="projects/{{$projects->id}}/edit" class="button">Update-content</a></td>
+                           <td><a href="projects/{{$projects->id}}" class="button">show</a></td>
+                           <td>
+                               {!! Form::open(['method' => 'DELETE' ,'route' => ['project.destroy', $projects->id]]) !!}
+                               {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                               {!! Form::close()!!}
+                           </td>
+                       </tr>
+                     @endif
+                   @endforeach
+               @endforeach
+            @endif
             </tbody>
         </table>
     @else
     <p>No Projects</p>
     @endif
-
-</body>
-</html>
+@endsection
