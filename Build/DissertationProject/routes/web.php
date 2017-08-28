@@ -18,7 +18,7 @@ Route::get('/welcome', function () {
 
 //set of routes to create a new project
 Route::resource('/new_project', 'new_project');
-Route::post('/new_project', 'new_project@create');
+Route::post('/new_project', 'new_project@store');
 
 
 //set of routes to deal with the current project being advertised
@@ -47,9 +47,10 @@ Route::get('/learning_material', function () {
     return view('new_learningMaterial');
 });
 
-Route::get('/new_staff', function (){
-   return view('/auth/register');
-});
+
+
+Route::resource('/new_staff','staffMember');
+Route::post('/new_staff', 'staffMember@store');
 
 Auth::routes();
 

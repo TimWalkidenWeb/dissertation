@@ -12,9 +12,8 @@
 
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Name</label>
-
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name"  required autofocus>
+                                <input id="name" type="text" class="form-control" name="name"  maxlength="70" required autofocus>
                             </div>
                         </div>
 
@@ -22,7 +21,7 @@
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email"  required>
+                                <input id="email" type="email" class="form-control" name="email"  pattern="[a-z0-9._%+-]+@edgehill.ac.uk" required>
 
                             </div>
                         </div>

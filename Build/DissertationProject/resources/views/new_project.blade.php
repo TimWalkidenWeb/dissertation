@@ -2,7 +2,7 @@
 @section('content')
     <h1>New Project</h1>
 
-{!! Form::open(['action'=>['new_project@create']]) !!}
+{!! Form::open(['action'=>['new_project@store']]) !!}
     <div class="form-group">
         {!! Form::Label('title', 'Title of project') !!}
         {!! Form::text('title', null) !!}
@@ -39,6 +39,8 @@
         {{--{!! Form::checkbox($pathway->Pathway, $pathway->id) !!}--}}
     {{--</div>--}}
 {!! Form::close() !!}
+
+    @include('layouts.validation')
 
 @endsection
 

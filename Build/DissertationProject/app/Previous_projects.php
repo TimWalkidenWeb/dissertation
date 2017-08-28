@@ -10,7 +10,7 @@ class Previous_projects extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-    'title', 'content', 'user_id', 'date',
+    'title', 'content', 'user_id', 'date','description',
     ];
 
     /**

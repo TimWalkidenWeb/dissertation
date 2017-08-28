@@ -28,7 +28,15 @@ class new_project extends Controller
 //     *
 //     * @return \Illuminate\Http\Response
 //     */
-    public function create(Request $request){
+    public function store(Request $request){
+
+        $this->validate(request(),[
+            'title' => 'required|max:70',
+            'content' => 'required|max:200 ',
+            'num_participant' => 'required|integer',
+            'pathway_id'=> 'required|integer'
+        ]);
+
         $new_project= Projects::create($request->all());
 
         $pathway = Input::get('pathway_id', []);

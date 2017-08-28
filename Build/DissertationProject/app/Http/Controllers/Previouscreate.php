@@ -16,6 +16,14 @@ class Previouscreate extends Controller
 
     public function create(Request $request)
     {
+        $this->validate(request(),[
+            'title' => 'required|max:70',
+            'description' => 'required|max:200 ',
+            'date' => 'required|before:today',
+            'content' => 'required',
+            'pathway_id'=> 'required|integer'
+        ]);
+
         $new_project = Previous_projects::create($request->all());
 
         $new_project->save();

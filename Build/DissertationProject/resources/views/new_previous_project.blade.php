@@ -7,12 +7,17 @@
     {!! Form::Label('title', 'Title of project') !!}
     {!! Form::text('title', null) !!}
 </div>
-<div class="form-group">
-    {!! Form::hidden('user_id',Auth()->user()->id, ['class'=> 'large-8 column']) !!}
-</div>
+{{--<div class="form-group">--}}
+    {{--{!! Form::hidden('user_id',Auth()->user()->id, ['class'=> 'large-8 column']) !!}--}}
+{{--</div>--}}
 <div class="form-group">
     {!! Form::Label('content', 'Description of the project') !!}
     {!! Form::file('content', null) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::Label('description', 'Description of project') !!}
+    {!! Form::text('description', null) !!}
 </div>
 
 <div class="form-group">
@@ -31,4 +36,6 @@
     {!! Form::submit('submit previous project', ['class' =>'button']) !!}
 </div>
 {!! Form::close() !!}
+
+    @include('layouts.validation')
 @endsection
