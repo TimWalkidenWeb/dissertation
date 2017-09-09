@@ -78,9 +78,9 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <h1 class="title m-b-md">
                     Laravel
-                </div>
+                </h1>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
