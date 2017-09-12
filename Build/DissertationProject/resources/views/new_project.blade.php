@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-    <h1>New Project</h1>
+    <h1>Lets create a new project</h1>
 
 {!! Form::open(['action'=>['new_project@store']]) !!}
     <div class="form-group">

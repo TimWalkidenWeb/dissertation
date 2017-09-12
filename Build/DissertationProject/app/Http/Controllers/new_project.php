@@ -34,7 +34,7 @@ class new_project extends Controller
             'title' => 'required|max:70',
             'content' => 'required|max:200 ',
             'num_participant' => 'required|integer',
-            'pathway_id'=> 'required|integer'
+            'pathway_id'=> 'required'
         ]);
 
         $new_project= Projects::create($request->all());

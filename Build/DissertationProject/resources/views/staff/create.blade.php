@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1>https://scotch.io/tutorials/laravel-form-validation</h1>
+    <h1>New staff member</h1>
 
 
     {!! Form::open(['action'=>['staffMember@store']]) !!}

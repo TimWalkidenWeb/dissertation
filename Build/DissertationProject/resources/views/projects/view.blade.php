@@ -21,7 +21,7 @@
                        <td>{{$projects->Title}}</td>
                        <td>{{$users->name}}</td>
                        <td>{{$projects->num_participant}}</td>
-                       <td><a href="projects/{{$projects->id}}/edit" class="button">Update-content</a></td>
+                       <td><a href="projects/{{$projects->id}}/edit" class="button">edit</a></td>
                        <td><a href="projects/{{$projects->id}}" class="button">show</a></td>
                        <td>
                            {!! Form::open(['method' => 'DELETE' ,'route' => ['project.destroy', $projects->id]]) !!}
@@ -39,7 +39,7 @@
                            <td>{{$projects->Title}}</td>
                            <td>{{$users->name}}</td>
                            <td>{{$projects->num_participant}}</td>
-                           <td><a href="projects/{{$projects->id}}/edit" class="button">Update-content</a></td>
+                           <td><a href="projects/{{$projects->id}}/edit" class="button">edit</a></td>
                            <td><a href="projects/{{$projects->id}}" class="button">show</a></td>
                            <td>
                                {!! Form::open(['method' => 'DELETE' ,'route' => ['project.destroy', $projects->id]]) !!}

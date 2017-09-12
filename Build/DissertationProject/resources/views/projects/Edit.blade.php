@@ -1,9 +1,9 @@
 @extends('layouts.master')
 @section('content')
 
-<h1>Edit - {{$project->Title}}</h1>
+<h1>Edit</h1>
 
-<h2>{{$project->projects}}</h2>
+<h2>{{$project->Title}}</h2>
 
 {!! Form::model($project, ['method' => 'PATCH', 'url' => ['projects',$project->id], $project->id]) !!}
 <div class="form-group">
@@ -32,7 +32,7 @@
 
 
     <div class='form-group'>
-        {!! Form::submit('submit updated content', ['class' =>'button']) !!}
+        {!! Form::submit('updated', ['class' =>'button']) !!}
     </div>
 
 

@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
-
+                <h1>Welcome to edge hill final year project</h1>
                 <div class="panel-body">
                     You are logged in!
                 </div>

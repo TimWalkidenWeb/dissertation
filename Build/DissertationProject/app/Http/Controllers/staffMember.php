@@ -20,7 +20,7 @@ class staffMember extends Controller
     public function store(Request $request){
 
             $this->validate(request(),[
-                'name' => 'required|max:70',
+                'name' => 'required',
                 'email' => 'required|email',
                 'password' => 'required|min:5',
                 'permission'=> 'required'
@@ -29,7 +29,7 @@ class staffMember extends Controller
             $new_staff= User::create($request->all());
 
             $new_staff->save();
-            return redirect('/welcome');
+            return redirect('/home');
         }
 
 
