@@ -14,7 +14,7 @@ class CreatePathwaysPreviousProjectsTable extends Migration
     public function up()
     {
         Schema::create('pathways_previous_projects', function (Blueprint $table) {
-            $table->integer('previous_projects_id')->onDelete('cascade');
+            $table->integer('previous_projects_id')->unsigned()->onDelete('cascade');
             $table->integer('pathways_id')->unsigned();
             $table->string('updated_at');
             $table->string('created_at');
@@ -33,6 +33,6 @@ class CreatePathwaysPreviousProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Pathways_previous_project');
+        Schema::dropIfExists('pathways_previous_project');
     }
 }

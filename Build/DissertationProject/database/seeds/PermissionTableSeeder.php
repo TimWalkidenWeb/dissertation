@@ -13,11 +13,11 @@ class PermissionTableSeeder extends Seeder
     {
         DB::table('permissions')->insert([
             'Id' =>  1,
-            'permission' => 'Access to all staff data',
+            'permission' => 'Head of department',
     ]);
         DB::table('permissions')->insert([
             'Id' =>  2,
-            'permission' => 'Access to only your data',
+            'permission' => 'lecturer',
         ]);
     }
 }
