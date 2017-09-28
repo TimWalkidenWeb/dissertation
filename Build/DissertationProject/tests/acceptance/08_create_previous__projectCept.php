@@ -1,13 +1,14 @@
-<?php
+<?php 
 $I = new AcceptanceTester($scenario);
-$I->wantTo('make sure a user can see link to new project');
+$I->wantTo('make sure user can see link to create previous project');
 $I->amOnPage('/login');
 $I->fillField('email', 'testpermission2@go.edgehill.ac.uk');
 $I->fillField('password', 'rebtim281');
 $I->click('Login');
-$I->canSee('New project');
-$I->click('New project');
-$I->canSee('Lets create a new project');
+$I->canSee('Add a previous project');
+$I->click('Add a previous project');
+$I->canSee('New previous project');
+
 $I->wantTo('Make sure that a field cannot be null when creating new project');
 $I->fillField('title', '');
 $I->fillField('content', '');

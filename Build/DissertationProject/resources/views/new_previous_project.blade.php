@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<h1>New previous Project</h1>
+<h1>New previous project</h1>
 
 {!! Form::open(['action'=>['Previouscreate@create']]) !!}
 <div class="form-group">
