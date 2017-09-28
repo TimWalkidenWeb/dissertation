@@ -23,8 +23,9 @@ class Project extends Controller
         public function show($id)
     {
         $project = Projects::findOrFail($id);
+        $project->Projects;
 
-        return view('projects.show', ['project' => Projects::findOrFail($id)]);
+        return view('projects.show')->with(compact('project'));
     }
 
 
@@ -60,6 +61,6 @@ class Project extends Controller
 
         $project->delete();
 
-        return redirect('welcome');
+        return redirect('home');
     }
 }

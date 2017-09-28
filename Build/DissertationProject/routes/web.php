@@ -60,3 +60,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Route::get('projects/{id}', 'view_projectController@show');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

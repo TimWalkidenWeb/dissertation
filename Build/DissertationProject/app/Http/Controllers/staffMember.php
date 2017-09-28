@@ -26,7 +26,12 @@ class staffMember extends Controller
                 'permission'=> 'required'
             ]);
 
-            $new_staff= User::create($request->all());
+            $new_staff=  User::create([
+                'name' => $request['name'],
+                'email' => $request['email'],
+                'password' => bcrypt($request['password']),
+                'permission'=>$request['permission']
+            ]);
 
             $new_staff->save();
             return redirect('/home');

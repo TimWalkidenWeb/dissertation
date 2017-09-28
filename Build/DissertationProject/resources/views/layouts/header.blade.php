@@ -5,6 +5,7 @@
         <li><a href="/learning_material">learning material</a></li>
         <li><a href="/previous_projects">previous projects</a></li>
         <li><a href="/project">View current project</a></li>
+
     @if(Auth::guest())
         <a href="{{url('/login')}}">login</a>
 

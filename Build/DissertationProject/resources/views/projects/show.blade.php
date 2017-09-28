@@ -5,6 +5,7 @@
 
 
 <h1>{{$project->Title}}</h1>
+<h1>{{$project}}</h1>
 
 <button onclick="goBack()">Return to projects</button>
 <script>
