@@ -16,7 +16,7 @@ $I->canSee('Validation');
 $I->canSee('edit');
 $I->click('edit');
 
-$I->canSeeInField("num_participant", '10' );
+
 $I->fillField('num_participant', '8');
 $I->click('updated');
 

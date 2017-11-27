@@ -1,5 +1,3 @@
-
-
 <?php
 
 /*
@@ -18,6 +16,12 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+Route::get('/design_1', function () {
+    return view('design_1');
+});
+Route::get('/design_2', function () {
+    return view('design_2');
+});
 //set of routes to create a new project
 Route::resource('/new_project', 'new_project');
 Route::post('/new_project', 'new_project@store');
@@ -39,7 +43,7 @@ Route::post('/new_previous_project', 'Previouscreate@create');
 
 //set of routes to deal with previous projects
 Route::resource('previous_projects', 'Previous_project');
-Route::get('previous_projects/{id}', 'Previous_project@show');
+Route::get('show/{id}', 'FileController@show');
 Route::get('previous_projects/{id}/edit', 'Previous_project@edit');
 Route::patch('previous_projects/{id}', 'Previous_project@update');
 Route::delete('previous_projects/{id}, Previous_project@destroy');
@@ -65,3 +69,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('file', 'FileController@showUploadForm')->name('upload.file');
+Route::post('file', 'FileController@storeFile');

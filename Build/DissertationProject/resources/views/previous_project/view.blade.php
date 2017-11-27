@@ -23,7 +23,7 @@
                     <td>{{$users->name}}</td>
                     <td>{{$projects->Date}}</td>
                     <td><a href="previous_projects/{{$projects->id}}/edit" class="button">Update-content</a></td>
-                    <td><a href="previous_projects/{{$projects->id}}" class="button">show</a></td>
+                    <td><a href="show/{{$projects->id}}" class="button">show</a></td>
                     <td>
                         {!! Form::open(['method' => 'DELETE' ,'route' => ['previous_projects.destroy', $projects->id]]) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
@@ -42,7 +42,7 @@
                         <td>{{$users->name}}</td>
                         <td>{{$projects->Date}}</td>
                         <td><a href="previous_projects/{{$projects->id}}/edit" class="button">Update-content</a></td>
-                        <td><a href="previous_projects/{{$projects->id}}" class="button">show</a></td>
+                        <td><a href="show/{{$projects->id}}" class="button">show</a></td>
                         <td>
                             {!! Form::open(['method' => 'DELETE' ,'route' => ['previous_projects.destroy', $projects->id]]) !!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
