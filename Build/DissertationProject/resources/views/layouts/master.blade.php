@@ -7,9 +7,9 @@
 </head>
 <body>
 <div class="layout">
-    <h1>
-        Edge Hill university third year projects
-    </h1>
+    {{--<h1>--}}
+        {{--Edge Hill university third year projects--}}
+    {{--</h1>--}}
     <header>
         @include('layouts.header')
     </header>
