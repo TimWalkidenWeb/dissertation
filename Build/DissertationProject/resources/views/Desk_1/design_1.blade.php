@@ -8,10 +8,10 @@
         .filter{
             padding-left: 1%;
             margin-right: 2%;
-            border-style: groove;
+            /*border-style: groove;*/
             margin-left: 1%;
-            border-color: black;
-            background-color: white;
+            /*border-color: #F0F0BD;*/
+            /*background-color: white;*/
         }
         * {
             box-sizing: border-box;
@@ -25,14 +25,13 @@
             padding-top: 5pt;
             color: white;
             margin-top: 1%;
-            position: fixed;
         }
         h3{
             font-size: 18px;
             padding-bottom: 7px;
             border-bottom-width: 2px;
             border-bottom-style: groove;
-            border-color: black;
+            border-color: #F0F0BD;
         }
         li {
             font-size: 16px;
@@ -50,16 +49,16 @@
         .projects{
             background-color: white;
             border-style: groove;
-            border-color: black;
+            border-color: #F0F0BD;
             padding-bottom: 5pt;
         }
         .project{
             border-top-style: groove;
-            border-top-color: black;
+            border-top-color: #F0F0BD;
             margin-left: 1%;
             margin-right: 1%;
         }
-        .sort {
+        .sort{
             margin-left: 1%;
             margin-right: 1%;
         }
@@ -67,11 +66,11 @@
             padding-left: -2em;
             background-color: white;
             border-bottom-style: groove;
-            border-bottom-color: black;
+            border-bottom-color: #F0F0BD;
         }
         .header {
             border: 1px solid red;
-            padding: 0px;
+            padding: 0;
         }
         .row::after {
             content: "";
@@ -123,46 +122,11 @@
             font-size: 13px;
             padding-left: 1%;
         }
-        .container {
-            position: relative;
-            width: 50%;
-            margin-left: 25%;
-            margin-bottom: 10%;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
 
-        .image {
-            display: block;
-            width: 100%;
-            height: auto;
-
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 0;
-            transition: .5s ease;
-            background-color: #008CBA;
-        }
-
-        .container:hover .overlay {
-            opacity: 1;
-        }
-
-        .text {
-            color: white;
-            font-size: 20px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
+        .option {
+            font-size: 13px;
+            padding-left: 3%;
+            padding-top: 5%;
         }
     </style>
 </head>
@@ -183,7 +147,6 @@
                 <div class="col-4">Project Example's</div>
                 <div class="col-4">Current Project's</div>
             </div>
-
         </div>
     </div>
 </nav>
@@ -192,68 +155,9 @@
         <h2 class="col-12 " style="padding-left: 1% ">Web Design &amp; Development Projects</h2>
     </div>
 
-        <div class="row">
-            <div class="col-4">
-                <div class="container">
-                    <img src="{{ asset('storage/logo.jpeg') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Hello World</div>
-                    </div>
-                </div>
-            </div>
 
-
-            <div class="col-4">
-                <div class="container">
-                    <img src="{{ asset('storage/logo.jpeg') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Hello World</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="container">
-                    <img src="{{ asset('storage/logo.jpeg') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Hello World</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="container">
-                    <img src="{{ asset('storage/logo.jpeg') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Hello World</div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-4">
-                <div class="container">
-                    <img src="{{ asset('storage/logo.jpeg') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Hello World</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="container">
-                    <img src="{{ asset('storage/logo.jpeg') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Hello World</div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
+    <footer>Created by Timothy Walkiden</footer>
 </article>
 
-<footer>Created by Timothy Walkiden</footer>
-</body>
-</html>
+
+</body></html>

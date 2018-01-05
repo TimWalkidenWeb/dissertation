@@ -19,6 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('content');
             $table->integer('num_participant');
             $table->integer('user_id')->unsigned();
+            $table->string('image_name');
             $table->timestamps();
 
            // $table->primary('id');

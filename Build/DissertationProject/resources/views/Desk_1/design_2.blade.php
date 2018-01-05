@@ -25,7 +25,6 @@
             padding-top: 5pt;
             color: white;
             margin-top: 1%;
-            position: fixed;
         }
         h3{
             font-size: 18px;
@@ -123,47 +122,6 @@
             font-size: 13px;
             padding-left: 1%;
         }
-        .container {
-            position: relative;
-            width: 50%;
-            margin-left: 25%;
-            margin-bottom: 10%;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-
-        .image {
-            display: block;
-            width: 100%;
-            height: auto;
-
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 0;
-            transition: .5s ease;
-            background-color: #008CBA;
-        }
-
-        .container:hover .overlay {
-            opacity: 1;
-        }
-
-        .text {
-            color: white;
-            font-size: 20px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-        }
     </style>
 </head>
 <body>
@@ -191,69 +149,61 @@
     <div class="row">
         <h2 class="col-12 " style="padding-left: 1% ">Web Design &amp; Development Projects</h2>
     </div>
+    <div class="row ">
+        <div class="col-4 filter">
+            <h3>Pathways</h3>
+            <ul>
+                <li> BSc (Hons) Computer Science </li>
+                <li> BSc (Hons) Computer Science and Mathematics</li>
+                <li> BSc (Hons) Computing</li>
+                <li>BSc (Hons) Computing (Games Programming)</li>
+                <li> BSc (Hons) Computing (Networking, Security and Forensics)</li>
+                <li>BSc (Hons) Data Science</li>
+                <li>BSc (Hons) Information Technology Management for Business</li>
+                <li>BSc (Hons) Software Engineering</li>
+                <li>BSc (Hons) Web Design and Development</li>
+            </ul>
 
-        <div class="row">
-            <div class="col-4">
-                <div class="container">
-                    <img src="{{ asset('storage/logo.jpeg') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Hello World</div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-4">
-                <div class="container">
-                    <img src="{{ asset('storage/logo.jpeg') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Hello World</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="container">
-                    <img src="{{ asset('storage/logo.jpeg') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Hello World</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="container">
-                    <img src="{{ asset('storage/logo.jpeg') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Hello World</div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-4">
-                <div class="container">
-                    <img src="{{ asset('storage/logo.jpeg') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Hello World</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="container">
-                    <img src="{{ asset('storage/logo.jpeg') }}" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Hello World</div>
-                    </div>
-                </div>
-            </div>
-
-
+            <h3>Tutor</h3>
+            <ul>
+                <li>Chitra Balakrishna</li>
+                <li>D.Walsh</li>
+                <li>Ardhendu Behera</li>
+                <li>Peter Matthew</li>
+                <li>Mark Liptrott</li>
+                <li>Ella Pereira</li>
+            </ul>
         </div>
+        <div class="col-7 projects">
+            <div class="row sort">
+                <h4>Sort by:
 
+                    <input style="margin-left: 1%" type="dropdown" id="fname" name="sort" placeholder="sort" >
+                </h4>
+            </div>
+            <div class="row project">
+                <h4>Ethics Management Software</h4>
+                <p class="advert_text">
+                    Experiments that involve human or animal participants require ethics checking and clearance. This is
+                    currently achieved using word documents emailed to various people in the ethics approval process. The
+                    goal of this project is to develop a web-based system that manages the whole [more...]
+                    </p>
+                <h6 class="col-6">Lecturer: D.Walsh</h6>
+                <h6 class="col-6"> Pathways:BSc (Hons) Web Design and Development</h6>
+            </div>
+            <div class="row project">
+                <h4>Accessibility Simulator</h4>
+                <p class="advert_text"> Accessibility of website is becoming more and more important, not only because
+                    it is a legal requirements. However, currently accessibility testing tools focus on reporting errors,
+                    rather than simulating the disabled user experience. As a result  it is really difficult for the
+                    developers ... [more]</p>
+                <h6 class="col-6">Lecturer: D.Walsh</h6>
+                <h6 class="col-6"> Pathways:BSc (Hons) Web Design and Development</h6>
+            </div>
+        </div>
+    </div>
+    <footer>Created by Timothy Walkiden</footer>
 </article>
 
-<footer>Created by Timothy Walkiden</footer>
-</body>
-</html>
+
+</body></html>

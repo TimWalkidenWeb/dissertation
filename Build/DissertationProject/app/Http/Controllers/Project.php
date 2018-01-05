@@ -10,13 +10,15 @@ use App\Projects;
 Use App\Pathways;
 
 
+
 class Project extends Controller
 {
     public function index(){
         $project = Projects::all();
-        $user = User::all();
+        $pathway = Pathways::all();
+        $tutor = User::all();
 
-        return view('projects.view', ['project' =>$project], ['user' =>$user]);
+        return view('projects.view', ['project' =>$project, 'tutor' =>$tutor, 'pathway' =>$pathway]);
     }
 
 

@@ -53,6 +53,10 @@ Route::get('/learning_material', function () {
     return view('new_learningMaterial');
 });
 
+Route::get('/log_out', function () {
+    Auth::logout();
+    return view('home');
+});
 
 
 Route::resource('/new_staff','staffMember');
