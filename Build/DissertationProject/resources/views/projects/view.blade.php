@@ -69,11 +69,12 @@
                     <i class="arrow down"></i>
                 </button>
                 <div class="dropdown-content">
-                    @foreach($pathway as $pathways)
-                        <ul>
-                            <li>{{$pathways->pathway}}</li>
-                        </ul>
-                    @endforeach
+                    <div id="myBtnContainer">
+                        <li onclick="filterSelection('all')"> Show all</li>
+                        @foreach($pathway as $pathways)
+                            <li  onclick="filterSelection({{$pathways->id}})"> {{$pathways->pathway}}</li>
+                        @endforeach
+                    </div>
 
                 </div>
             </div>
@@ -82,11 +83,12 @@
                     <i class="arrow down"></i>
                 </button>
                 <div class="dropdown-content">
-                    @foreach($tutor as $tutors)
-                        <ul>
-                            <li>{{$tutors->name}}</li>
-                        </ul>
-                    @endforeach
+                    <div id="myBtnContainer">
+                        <li  onclick="filterSelection('all')"> Show all</li>
+                        @foreach($tutor as $tutors)
+                            <li  onclick="filterSelection({{$tutors->id}})"> {{$tutors->name}}</li>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,25 +96,28 @@
         <div class="row">
             <div class="col-3 filter small-hidden">
                 <h3>Pathways</h3>
+                <div id="myBtnContainer">
+                    <button class="btn" onclick="filterSelection('all')"> Show all</button>
                 @foreach($pathway as $pathways)
-                    <ul>
-                        <li>{{$pathways->pathway}}</li>
-                    </ul>
+                      <button class="btn" onclick="filterSelection({{$pathways->id}})"> {{$pathways->pathway}}</button>
                 @endforeach
-
-                <h3>Tutor</h3>
-                    @foreach($tutor as $tutors)
-                        <ul>
-                            <li>{{$tutors->name}}</li>
-                        </ul>
-                    @endforeach
             </div>
+                <h3>Tutor</h3>
+                <div id="myBtnContainer">
+                    <button class="btn" onclick="filterSelection('all')"> Show all</button>
+                    @foreach($tutor as $tutors)
+                        <button class="btn" onclick="filterSelection({{$tutors->id}})"> {{$tutors->name}}</button>
+                    @endforeach
+                </div>
+            </div>
+
             <div class="col-8 small-12">
                 <div class="row">
                        @foreach($tutor as $tutors)
                             @foreach($tutors->Projectowner as $projects)
-                                <div class="col-4 small-10">
-                                    <div class="container">
+                            @foreach($projects->projects as $pathway)
+                                <div class="col-4 small-10 ">
+                                    <div class="container {{$pathway->id}}">
                                         <img src="{{ asset($projects->image_name)}}" alt="Avatar" class="image">
                                         <div class="overlay">
                                             <div class="text">{{$projects->Title}}
@@ -122,6 +127,7 @@
 
                                     </div>
                                 </div>
+                            @endforeach
                             @endforeach
                         @endforeach
                 </div>

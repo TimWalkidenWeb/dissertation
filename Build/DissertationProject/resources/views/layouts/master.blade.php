@@ -6,19 +6,16 @@
 
     <title>Edge Hill university third year projects</title>
     <link href="{{ asset('css/layout.css') }}" media="all" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="{{ asset('js/filter.js') }}"></script>
 </head>
-<body>
+<body onload="myFunction()">
 <div class="layout">
-    {{--<h1>--}}
-        {{--Edge Hill university third year projects--}}
-    {{--</h1>--}}
     <header>
         @include('layouts.header')
     </header>
     <article>
         @yield('content')
     </article>
-
 </div>
 <footer>Created by Timothy Walkiden</footer>
 </body>
