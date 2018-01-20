@@ -58,14 +58,14 @@
     {{--@endif--}}
 
     <div class="row">
-        <h3 class="col-12 small-12" style="padding-left: 3%; text-align: center;">Current Projects</h3>
+        <h3 class="col-12 small-12 show page_title">Current Projects</h3>
 
     </div>
     <div class="row">
         <h3 class=" col-hidden small-5" style="padding-left: 3%;">Filiter:</h3>
         <div class="filt col-hidden small-7">
             <div class="dropdown small-6">
-                <button class="dropbtn">Module
+                <button class="dropbtn show_content ">Module
                     <i class="arrow down"></i>
                 </button>
                 <div class="dropdown-content">
@@ -79,7 +79,7 @@
                 </div>
             </div>
             <div class="dropdown small-6">
-                <button class="dropbtn">Tutor
+                <button class="dropbtn show_content">Tutor
                     <i class="arrow down"></i>
                 </button>
                 <div class="dropdown-content">
@@ -117,11 +117,13 @@
                             @foreach($tutors->Projectowner as $projects)
                             @foreach($projects->projects as $pathway)
                                 <div class="col-4 small-10 ">
-                                    <div class="container {{$pathway->id}}">
+                                    <div class="container border-radius {{$pathway->id}}">
                                         <img src="{{ asset($projects->image_name)}}" alt="Avatar" class="image">
-                                        <div class="overlay">
-                                            <div class="text">{{$projects->Title}}
-                                                <button><a href="projects/{{$projects->id}}" class="button">show</a></button>
+                                        <div class="overlay border-radius">
+                                            <div class="text">
+                                                <div>{{$projects->Title}}</div>
+
+                                                <button class="btn"><a href="projects/{{$projects->id}}" class="link">View</a></button>
                                             </div>
                                         </div>
 

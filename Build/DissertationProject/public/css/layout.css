@@ -1,7 +1,13 @@
-html{
+html, body{
     width: 100%;
-    background-color: 	#F0F0DC;
-
+    background-color: 	#FAFAFA;
+    height: 100%;
+    margin: 0;
+    /*min-height: 100px;*/
+}
+.layout{
+    min-height: 100%;
+    margin: 0 auto -50px;
 }
 .filter{
     padding-left: 1%;
@@ -16,6 +22,7 @@ html{
 
 }
 footer{
+    height: 50px;
     padding-left: 2%;
     bottom: 0;
     background-color: black;
@@ -34,14 +41,12 @@ footer{
 li {
     font-size: 16px;
 }
-body {
-    background-color: white;
+body{
     font-family: sans-serif;
     width: 100%;
     margin: 0;
 }
 article{
-    background-color: 	#F0F0DC;
     width: auto;
 
 }
@@ -62,8 +67,9 @@ article{
     margin-right: 1%;
 }
 nav {
+    background-color: #82398C;
+    color: white;
     padding-left: -2em;
-    background-color: white;
     border-bottom-style: groove;
     border-bottom-color: #F0F0BD;
 }
@@ -96,6 +102,14 @@ nav {
     .col-hidden{
         display:none;
     }
+    a{
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .nav-pad{
+        padding-left: 25%;
+    }
 
     h1{
         margin-left: 14%;
@@ -107,6 +121,9 @@ nav {
         border-bottom-width: 2px;
         border-bottom-style: groove;
         border-color: #F0F0BD;
+    }
+    .dropbtn{
+        color: white;
     }
 
 }
@@ -152,6 +169,10 @@ nav {
         border-bottom-style: groove;
         border-color: #F0F0BD;
     }
+
+    .dropbtn{
+        color: white;
+    }
 }
 
 
@@ -160,6 +181,7 @@ nav {
     float: right;
     margin-left: 0;
     font-size: 16px;
+    color: white;
     margin-top:1.5%;
 }
 .nav{
@@ -205,6 +227,17 @@ h6{
     height: 25%;
 
 }
+.logo{
+height: 75pt;
+padding: 2%;
+opacity: 0.9;
+border-radius: 50%;
+margin: 2%;
+box-shadow: inset 0px 0px 20px 0px #82398C;
+}
+.image_shadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 button{
     margin-top: 6%;
 }
@@ -227,7 +260,7 @@ button{
 
 .text {
     color: black;
-    font-size: 18px;
+    font-size: 80%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -289,7 +322,6 @@ button{
     font-size: 16px;
     border: none;
     outline: none;
-    color: black;
     padding-top: 20%;
     background-color: inherit;
     padding-bottom: 3%;
@@ -309,6 +341,7 @@ button{
     min-width: 160px;
     margin-left: -28%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
     z-index: 1;
     padding-right: 2%;
 }
@@ -339,4 +372,30 @@ button{
     background-color: white;
     cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.link{
+    color: black;
+}
+
+.show{
+    font-size: 24px;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+.show_content{
+    font-size: 19px;
+    color: black;
+}
+
+.border-radius{
+    border-radius: 10%;
+}
+
+.image_show{
+    width: 60%;
+    margin: 15%;
+}
+.page_title{
+    text-align: center;
 }

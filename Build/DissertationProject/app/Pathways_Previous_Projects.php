@@ -33,8 +33,8 @@ class Pathways_Previous_Projects extends Authenticatable
         return $this->hasOne('App\Project');
     }
 
-    public function Projects()
+    public function Pathway()
     {
-        return $this->hasOne('App\Pathway');
+        return $this->belongsToMany('App\Pathways');
     }
 }

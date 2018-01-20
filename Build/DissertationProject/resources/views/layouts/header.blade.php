@@ -1,7 +1,7 @@
 <nav>
     <div class="row">
         <div class="col-3 small-hidden">
-            <img src="{{ asset('storage/logo.jpeg') }}" alt="image1" style=" height: 100pt;">
+            <img src="{{ asset('storage/logo2.jpeg') }}" alt="image1" class="logo">
         </div>
         <div class="col-9 small-12">
             <div class="row">
@@ -17,8 +17,7 @@
 
                 <div class="navbar col-hidden small-3">
                     <div class="dropdown">
-                        <button class="dropbtn">Menu
-                            <i class="arrow down"></i>
+                        <button class="dropbtn">Menu 	&#9660;
                         </button>
                         <div class="dropdown-content">
                             @if(Auth::guest())
@@ -64,5 +63,7 @@
 
 
         </div>
-    </div>
+        </div>
+
 </nav>
+

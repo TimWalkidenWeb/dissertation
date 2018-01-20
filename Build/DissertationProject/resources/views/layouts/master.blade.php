@@ -9,11 +9,11 @@
     <script type="text/javascript" src="{{ asset('js/filter.js') }}"></script>
 </head>
 <body onload="myFunction()">
-<div class="layout">
+<div>
     <header>
         @include('layouts.header')
     </header>
-    <article>
+    <article class="layout">
         @yield('content')
     </article>
 </div>

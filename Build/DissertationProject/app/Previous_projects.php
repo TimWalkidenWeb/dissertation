@@ -28,7 +28,7 @@ class Previous_projects extends Authenticatable
         return $this->hasOne('App\User');
     }
 
-    public function Projects()
+    public function Pathway()
     {
         return $this->belongsToMany('App\Pathways');
     }
