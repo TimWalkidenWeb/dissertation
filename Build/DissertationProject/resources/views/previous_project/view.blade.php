@@ -61,14 +61,14 @@
 
 
 <div class="row">
-    <h3 class="col-12 small-12" style="padding-left: 3%; text-align: center;">Project examples</h3>
+    <h3 class="col-12 small-12 show page_title">Project examples</h3>
 
 </div>
 <div class="row">
     <h3 class=" col-hidden small-5" style="padding-left: 3%;">Filiter:</h3>
     <div class="filt col-hidden small-7">
         <div class="dropdown small-6">
-            <button class="dropbtn">Module
+            <button class="dropbtn show_content">Module
                 <i class="arrow down"></i>
             </button>
             <div class="dropdown-content">
@@ -82,7 +82,7 @@
             </div>
         </div>
         <div class="dropdown small-6">
-            <button class="dropbtn">Tutor
+            <button class="dropbtn show_content">Tutor
                 <i class="arrow down"></i>
             </button>
             <div class="dropdown-content">
@@ -120,11 +120,12 @@
                     @foreach($tutors->Previousowner as $projects)
                         @foreach($projects->Pathway as $pathway)
                             <div class="col-4 small-10 ">
-                                <div class="container">
-                                    <img src="{{ asset('storage/logo.jpeg') }}" alt="image1" style=" height: 100pt;">
-                                    <div class="overlay">
-                                        <div class="text">{{$projects->Title}}
-                                            <button><a href="projects/{{$projects->id}}" class="button">show</a></button>
+                                <div class="container border-radius">
+                                    <img src="{{ asset($projects->image)}}" alt="image1" class="image">
+                                    <div class="overlay border-radius">
+                                        <div class="text">
+                                            <div>{{$projects->Title}}</div>
+                                            <a href="previous_projects/{{$projects->id}}" class="link btn">show</a>
                                         </div>
                                     </div>
 

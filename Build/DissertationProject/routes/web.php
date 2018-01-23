@@ -24,12 +24,14 @@ Route::get('/design_2', function () {
 });
 //set of routes to create a new project
 Route::resource('/new_project', 'new_project');
-Route::post('/new_project', 'new_project@store');
+Route::post('/new_project_store', 'new_project@store');
+
+Route::post('upload','new_project@store');
 
 
 //set of routes to deal with the current project being advertised
 Route::resource('project','Project');
-Route::get('projects/{id}', 'Project@show');
+Route::get('project/{id}', 'Project@show');
 Route::get('projects/{id}/edit', 'Project@edit');
 Route::patch('projects/{id}', 'Project@update');
 Route::patch('projectsPathway/{id}', 'Project@updatePathway');
@@ -76,3 +78,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('file', 'FileController@showUploadForm')->name('upload.file');
 Route::post('file', 'FileController@storeFile');
+
+
+Route::get('image-upload',['as'=>'image.upload','uses'=>'ImageUploadController@imageUpload']);
+
+Route::post('image-upload',['as'=>'image.upload.post','uses'=>'new_project@store']);

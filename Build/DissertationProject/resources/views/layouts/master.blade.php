@@ -17,6 +17,6 @@
         @yield('content')
     </article>
 </div>
-<footer>Created by Timothy Walkiden</footer>
+{{--<footer class="col-12">Created by Timothy Walkiden</footer>--}}
 </body>
 </html>

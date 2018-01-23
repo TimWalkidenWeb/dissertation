@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Projects;
 Use App\Pathways;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 
 class new_project extends Controller
 {
@@ -30,21 +31,46 @@ class new_project extends Controller
 //     */
     public function store(Request $request){
 
-        $this->validate(request(),[
-            'title' => 'required|max:70',
-            'content' => 'required|max:200 ',
-            'num_participant' => 'required|integer',
-            'pathway_id'=> 'required'
+//        $this->validate(request(),[
+//            'title' => 'required|max:70',
+//            'content' => 'required|max:200 ',
+//            'num_participant' => 'required|integer',
+//            'pathway_id'=> 'required',
+//            'image_name' => 'required'
+//        ]);
+//
+//        $new_project= Projects::create($request->all());
+//
+//        $pathway = Input::get('pathway_id', []);
+
+//        $storage = Storage::put('storage', Input::get('image_name'));
+//        $request->logo->store('storage');
+//        return $request->file('image_name');
+//        request()->image_name->move(public_path('storage'));
+//        $new_project->save();
+//        $new_project->Projects()->attach($pathway);
+
+//        print('hello');
+        request()->validate([
+
+            'image' => 'required',
+
         ]);
 
-        $new_project= Projects::create($request->all());
 
-        $pathway = Input::get('pathway_id', []);
 
-        $new_project->save();
-        $new_project->Projects()->attach($pathway);
+        $imageName = time().'.'.request()->image->getClientOriginalExtension();
 
-        return redirect('/project');
+        request()->image->move(public_path('storage'), $imageName);
+
+
+
+        return back()
+
+            ->with('success','You have successfully upload image.')
+
+            ->with('image',$imageName);
+
     }
 
 }

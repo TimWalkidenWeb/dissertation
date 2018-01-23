@@ -19,7 +19,7 @@
                     <div class="dropdown">
                         <button class="dropbtn">Menu 	&#9660;
                         </button>
-                        <div class="dropdown-content">
+                        <div class="dropdown-content menu">
                             @if(Auth::guest())
                                 <a href="{{url('/login')}}">login</a>
                                 <a href="{{'/learning_material'}}">Project support</a>

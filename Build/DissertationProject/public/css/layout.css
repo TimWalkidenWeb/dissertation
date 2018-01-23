@@ -27,7 +27,7 @@ footer{
     bottom: 0;
     background-color: black;
     width: 100%;
-    padding-top: 5pt;
+    padding-top: 2%;
     color: white;
     margin-top: 1%;
 }
@@ -214,7 +214,7 @@ h6{
     width: 75%;
     padding: 5%;
     margin-left: 25%;
-    margin-bottom: 10%;
+    margin-bottom: 22%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .show {
@@ -260,7 +260,7 @@ button{
 
 .text {
     color: black;
-    font-size: 80%;
+    font-size: 70%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -295,8 +295,8 @@ button{
     border-bottom-width: 2px;
     border-bottom-style: groove;
     border-color: #F0F0BD;
-
-
+    margin-top: -12%;
+    margin-bottom: 4%;
 }
 
 .filt a {
@@ -314,6 +314,7 @@ button{
 .dropdown {
     float: left;
     overflow: hidden;
+    padding-left: 14pt;
 }
 
 /* Dropdown button */
@@ -339,9 +340,9 @@ button{
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    margin-left: -28%;
+    /*margin-left: -28%;*/
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
+    padding: 3%;
     z-index: 1;
     padding-right: 2%;
 }
@@ -356,6 +357,15 @@ button{
     text-align: left;
 }
 
+.menu{
+    margin-left: -25%;
+}
+.module_filt {
+    margin: 1% 4% 3% 3%;
+}
+.tutor_filt {
+    margin: 1% 4% 3% 3%;
+}
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
     background-color: #ddd;
@@ -375,6 +385,7 @@ button{
 }
 .link{
     color: black;
+    margin-top: 100%;
 }
 
 .show{

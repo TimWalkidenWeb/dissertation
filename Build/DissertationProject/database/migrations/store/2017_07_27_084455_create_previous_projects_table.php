@@ -20,6 +20,7 @@ class CreatePreviousProjectsTable extends Migration
             $table->string('description');
             $table->date('Date');
             $table->integer('user_id')->unsigned();
+            $table->string('image');
             $table->timestamps();
 
            // $table->primary('id');

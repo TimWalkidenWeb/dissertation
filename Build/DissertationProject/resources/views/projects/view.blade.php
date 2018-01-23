@@ -62,13 +62,13 @@
 
     </div>
     <div class="row">
-        <h3 class=" col-hidden small-5" style="padding-left: 3%;">Filiter:</h3>
-        <div class="filt col-hidden small-7">
+
+        <div class="filt col-hidden small-12">
             <div class="dropdown small-6">
                 <button class="dropbtn show_content ">Module
                     <i class="arrow down"></i>
                 </button>
-                <div class="dropdown-content">
+                <div class="dropdown-content module_filt">
                     <div id="myBtnContainer">
                         <li onclick="filterSelection('all')"> Show all</li>
                         @foreach($pathway as $pathways)
@@ -82,7 +82,7 @@
                 <button class="dropbtn show_content">Tutor
                     <i class="arrow down"></i>
                 </button>
-                <div class="dropdown-content">
+                <div class="dropdown-content tutor_filt">
                     <div id="myBtnContainer">
                         <li  onclick="filterSelection('all')"> Show all</li>
                         @foreach($tutor as $tutors)
@@ -122,11 +122,9 @@
                                         <div class="overlay border-radius">
                                             <div class="text">
                                                 <div>{{$projects->Title}}</div>
-
-                                                <button class="btn"><a href="projects/{{$projects->id}}" class="link">View</a></button>
+                                                <a href="project/{{$projects->id}}" class="link">View</a>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             @endforeach
