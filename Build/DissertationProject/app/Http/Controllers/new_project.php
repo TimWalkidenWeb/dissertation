@@ -31,39 +31,36 @@ class new_project extends Controller
 //     */
     public function store(Request $request){
 
-//        $this->validate(request(),[
-//            'title' => 'required|max:70',
-//            'content' => 'required|max:200 ',
-//            'num_participant' => 'required|integer',
-//            'pathway_id'=> 'required',
-//            'image_name' => 'required'
-//        ]);
-//
-//        $new_project= Projects::create($request->all());
-//
-//        $pathway = Input::get('pathway_id', []);
-
-//        $storage = Storage::put('storage', Input::get('image_name'));
-//        $request->logo->store('storage');
-//        return $request->file('image_name');
-//        request()->image_name->move(public_path('storage'));
-//        $new_project->save();
-//        $new_project->Projects()->attach($pathway);
-
-//        print('hello');
-        request()->validate([
-
-            'image' => 'required',
-
+        $this->validate(request(),[
+            'title' => 'required|max:70',
+            'content' => 'required|max:200 ',
+            'num_participant' => 'required|integer',
+            'pathway_id'=> 'required',
+//            'image' => 'required',
         ]);
+//
 
+//
+        $pathway = Input::get('pathway_id', []);
 
 
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
-
         request()->image->move(public_path('storage'), $imageName);
+        $image = 'storage/'.$imageName;
+        $new_project= Projects::create([
+                'title' => $request->input('title'),
+                'content' => $request->input('content'),
+                'user_id' => $request->input('user_id'),
+                'num_participant' => $request->input('num_participant'),
+                'image' => $image
+            ]
+
+        );
 
 
+        $new_project->save();
+        $new_project->Projects()->attach($pathway);
+        $new_project->save();
 
         return back()
 

@@ -29,7 +29,7 @@ footer{
     width: 100%;
     padding-top: 2%;
     color: white;
-    margin-top: 1%;
+    margin-top: 10%;
 }
 /*h3{*/
     /*font-size: 18px;*/
@@ -126,6 +126,35 @@ nav {
         color: white;
     }
 
+    .form_desktop{
+        margin-right: 25%;
+        margin-left: 25%;
+        padding: 6%;
+        background-color: white;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    .content-input{
+        padding: 25%;
+        margin-top: 3%;
+    }
+
+    .small-input{
+        margin-top: 8%;
+        padding-right: 25%;
+        padding-bottom: 3%;
+        margin-left: 3%
+    }
+
+}
+.form_text{
+    font-size: 15pt;
+    padding-bottom: 6%;
+}
+
+.form_list{
+    font-size: 12pt;
+    padding-bottom: 5%;
 }
 @media only screen and (max-width: 767px) {
     .small-hidden{
@@ -172,6 +201,34 @@ nav {
 
     .dropbtn{
         color: white;
+    }
+
+    .form_mobile{
+        margin-right: 10%;
+        margin-left: 10%;
+        padding: 6%;
+        background-color: white;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+
+
+    .small-input{
+        margin-top: 8%;
+        padding-right: 25%;
+        padding-bottom: 3%;
+        margin-left: 3%
+    }
+    .form_text_2{
+        font-size: 15pt;
+        margin-top: 1% ;
+    }
+
+    .content-input{
+        margin-left: 3%;
+        margin-top: 7%;
+        padding-bottom: 54%;
+        padding-left: 25%;
     }
 }
 
@@ -409,4 +466,14 @@ button{
 }
 .page_title{
     text-align: center;
+}
+
+.submit_btn{
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: lightgray;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }

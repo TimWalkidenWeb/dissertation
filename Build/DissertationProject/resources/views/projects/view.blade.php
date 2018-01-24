@@ -118,7 +118,7 @@
                             @foreach($projects->projects as $pathway)
                                 <div class="col-4 small-10 ">
                                     <div class="container border-radius {{$pathway->id}}">
-                                        <img src="{{ asset($projects->image_name)}}" alt="Avatar" class="image">
+                                        <img src="{{ asset($projects->image)}}" alt="Avatar" class="image">
                                         <div class="overlay border-radius">
                                             <div class="text">
                                                 <div>{{$projects->Title}}</div>

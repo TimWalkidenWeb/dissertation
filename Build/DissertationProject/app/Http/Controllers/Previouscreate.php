@@ -26,16 +26,19 @@ class Previouscreate extends Controller
             'pathway_id'=> 'required'
         ]);
 
-        $new_project = Previous_projects::create($request->all());
+        $new_project = Previous_projects::create(
+
+
+            $request->all());
         $pathway = Input::get('pathway_id', []);
 
         $new_project->save();
 
-//        $list_of_pathway = Pathways_Previous_Projects::create([
-//                'pathways_id' => $request->input('pathway_id'),
-//                'previous_project_id' => $new_project->id,
-//            ]
-//        );
+        $list_of_pathway = Pathways_Previous_Projects::create([
+                'pathways_id' => $request->input('pathway_id'),
+                'previous_project_id' => $new_project->id,
+            ]
+        );
 
 
         $new_project->Projects()->attach($pathway);

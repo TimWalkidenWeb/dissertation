@@ -1,88 +1,71 @@
-{{--@extends('layouts.master')--}}
-{{--@section('content')--}}
-    {{--<h1>Lets create a new project</h1>--}}
-
-{{--{!! Form::open(['action'=>['new_project@store']] ) !!}--}}
-    {{--<div class="form-group">--}}
-        {{--{!! Form::Label('title', 'Title of project') !!}--}}
-        {{--{!! Form::text('title', null) !!}--}}
-    {{--</div>--}}
-    {{--<div class="form-group">--}}
-        {{--{!! Form::hidden('user_id',Auth()->User()->id, ['class'=> 'large-8 column']) !!}--}}
-    {{--</div>--}}
-    {{--<div class="form-group">--}}
-        {{--{!!  Form::token()!!}--}}
-    {{--</div>--}}
-
-    {{--<div class="form-group">--}}
-        {{--{!! Form::Label('content', 'Description of the project') !!}--}}
-        {{--{!! Form::text('content', null) !!}--}}
-    {{--</div>--}}
-
-    {{--<div class="form-group">--}}
-        {{--{!! Form::Label('num_participant', 'Number of participants') !!}--}}
-        {{--{!! Form::text('num_participant', null) !!}--}}
-    {{--</div>--}}
-    {{--<div class="form-group">--}}
-    {{--@foreach($pathway as $pathways)--}}
-
-            {{--{!! Form::label('pathway_id', $pathways->pathway) !!}--}}
-            {{--{{Form::checkbox('pathway_id[]', $pathways->id)}}--}}
-
-    {{--@endforeach--}}
-    {{--</div>--}}
-
-    {{--<div class="form-group">--}}
-        {{--{!! Form::Label('image_name', 'Description of the project') !!}--}}
-        {{--<input type="file" id="image" name = "image">--}}
-    {{--</div>--}}
-    {{--<div class='form-group'>--}}
-        {{--{!! Form::submit('submit new project', ['class' =>'button']) !!}--}}
-    {{--</div>--}}
-
-    {{--<div class="form-group">--}}
-        {{--{!! Form::checkbox($pathway->Pathway, $pathway->id) !!}--}}
-    {{--</div>--}}
+@extends('layouts.master')
+@section('content')
+    <div class="row">
+        <h3 class="col-12 small-12 show page_title">Add a new project</h3>
+    </div>
 
 
+    <div class="row form_mobile form_desktop" >
+{!! Form::open(array('route' => 'image.upload.post','files'=>true, 'enctype' => "multipart/form-data")) !!}
+    <div class="row form_text">
 
-    {{--<form action="{{URL::to('upload')}}" method="post" enctype="multipart/form-data">--}}
-        {{--<input type="file" name="file">--}}
-        {{--<input type="submit" value="upload" name="submit">--}}
-    {{--</form>--}}
-    {{--{!! Form::close() !!}--}}
-    {{--@include('layouts.validation')--}}
+            Title of project
 
-{{--@endsection--}}
+            <input type="text" name="title" class="small-input">
+
+    </div>
 
 
-        <!DOCTYPE html>
+        <div class="row form_text">Description of the project
 
-<html>
-
-            {!! Form::open(array('route' => 'image.upload.post','files'=>true, 'enctype' => "multipart/form-data")) !!}
-
-            <div class="row">
-
-                <div class="col-md-6">
-
-                    {!! Form::file('image', array('class' => 'form-control')) !!}
-
-                </div>
-
-                <div class="col-md-6">
-
-                    <button type="submit" class="btn btn-success">Upload</button>
-
-                </div>
-
-            </div>
-
-            {!! Form::close() !!}
-
+            <textarea style="padding: 20%" name="content"> </textarea>
         </div>
 
 
-</body>
+        <div class="row form_text">Number of participants
 
-</html>
+                <input type="text" name="num_participant" class="small-input">
+
+
+        </div>
+    <div>
+        <div class="form_text">Pathway linked to project</div>
+        <ul>
+            @foreach($pathway as $pathways)
+
+               <li class="form_list">
+                   {!! Form::label('pathway_id', $pathways->pathway) !!}
+                   {{Form::checkbox('pathway_id[]', $pathways->id)}}
+               </li>
+            @endforeach
+        </ul>
+
+    </div>
+
+        <div>
+            <div class="form_text">Add a display image</div>
+                   {!! Form::file('image', array('class' => 'form-control')) !!}
+            </div>
+
+        <div>
+
+            {!! Form::hidden('user_id',Auth()->User()->id, ['class'=> 'large-8 column']) !!}
+        </div>
+        <div>
+            {!!  Form::token()!!}
+        </div>
+        <div class="form-group">
+
+            <button type="submit" class="submit_btn">Submit project</button>
+        </div>
+        {!! Form::close() !!}
+</div>
+
+
+    @include('layouts.validation')
+
+@endsection
+
+
+
+

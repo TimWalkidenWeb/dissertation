@@ -9,7 +9,7 @@
     <script type="text/javascript" src="{{ asset('js/filter.js') }}"></script>
 </head>
 <body onload="myFunction()">
-<div>
+<div style="padding-bottom: 5%">
     <header>
         @include('layouts.header')
     </header>
@@ -17,6 +17,6 @@
         @yield('content')
     </article>
 </div>
-{{--<footer class="col-12">Created by Timothy Walkiden</footer>--}}
+<footer class="col-12">Created by Timothy Walkiden</footer>
 </body>
 </html>
