@@ -30,13 +30,23 @@
 
 
 
+{!! Form::open(array('route' => 'project.response','files'=>true, 'enctype' => "multipart/form-data")) !!}
+
+<div class="form-group">
+    {!! Form::hidden('lecture',$project->user_id, ['class'=> 'large-8 column']) !!}
+    {!! Form::hidden('project',$project->Title, ['class'=> 'large-8 column']) !!}
+    <button type="submit" class="submit_btn">Submit project</button>
+</div>
+{!! Form::close() !!}
+
+
 
 
 <button onclick="goBack()">Return to projects</button>
 <script>
-    function goBack() {
-        window.history.back();
-    }
+function goBack() {
+window.history.back();
+}
 </script>
 
 @endsection

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Projects;
 Use App\Pathways;
-
+use App\Mail;
 
 
 class Project extends Controller
@@ -65,4 +65,5 @@ class Project extends Controller
 
         return redirect('home');
     }
-}
+
+    }

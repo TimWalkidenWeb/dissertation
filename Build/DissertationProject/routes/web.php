@@ -41,7 +41,7 @@ Route::delete('projects/{id}', 'Project@destroy');
 
 //set of routes to create projects
 Route::resource('/new_previous_project', 'Previouscreate');
-Route::post('/new_previous_project', 'Previouscreate@create');
+Route::post('/new_previous_project', 'Previouscreate@store');
 
 //set of routes to deal with previous projects
 Route::resource('previous_projects', 'Previous_project');
@@ -83,3 +83,6 @@ Route::post('file', 'FileController@storeFile');
 Route::get('image-upload',['as'=>'image.upload','uses'=>'ImageUploadController@imageUpload']);
 
 Route::post('image-upload',['as'=>'image.upload.post','uses'=>'new_project@store']);
+Route::post('previous.upload.post',['as'=>'previous.upload.post','uses'=>'Previouscreate@store']);
+
+Route::post('project.response', ['as' => 'project.response', 'uses'=> 'Project@ship']);

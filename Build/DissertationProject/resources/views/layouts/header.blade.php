@@ -1,15 +1,15 @@
 <nav>
     <div class="row">
-        <div class="col-3 small-hidden">
+        <div class="col-2 small-hidden">
             <img src="{{ asset('storage/logo2.jpeg') }}" alt="image1" class="logo">
         </div>
-        <div class="col-9 small-12">
+        <div class="col-10 small-12">
             <div class="row">
                 <h1 class="col-8 small-9">Edge Hill University Final Year Projects</h1>
                 @if(Auth::guest())
                     <div class="col-1 small-hidden login"><a href="{{url('/login')}}">login</a></div>
                 @elseif(Auth::user()->permission == 2)
-                    <div class="col-1 small-hidden login"><a href="{{url('/log_out')}}">Logout</a></div>
+                    <div class="col-2 small-hidden login"><a href="{{url('/log_out')}}">Logout</a></div>
                     <div class="col-2 small-hidden login"><a href="/new_staff">Add new staff</a></div>
                 @elseif(Auth::user()->permission == 1)
                     <div class="col-1 small-hidden login"><a href="{{url('/log_out')}}">Logout</a></div>

@@ -9,25 +9,19 @@
 {!! Form::open(array('route' => 'image.upload.post','files'=>true, 'enctype' => "multipart/form-data")) !!}
     <div class="row form_text">
 
-            Title of project
-
-            <input type="text" name="title" class="small-input">
-
-    </div>
+            Title of project    </div>
+        <input type="text" name="title" class="small-input">
 
 
         <div class="row form_text">Description of the project
 
-            <textarea style="padding: 20%" name="content"> </textarea>
-        </div>
-
-
-        <div class="row form_text">Number of participants
-
-                <input type="text" name="num_participant" class="small-input">
-
 
         </div>
+        <textarea class="text_area" name="content"> </textarea>
+
+
+        <div class="row form_text">Number of participants  </div>
+        <input type="text" name="num_participant" class="small-input">
     <div>
         <div class="form_text">Pathway linked to project</div>
         <ul>

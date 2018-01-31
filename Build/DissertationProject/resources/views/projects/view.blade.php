@@ -70,9 +70,9 @@
                 </button>
                 <div class="dropdown-content module_filt">
                     <div id="myBtnContainer">
-                        <li onclick="filterSelection('all')"> Show all</li>
+                        <li onclick="filterSelection_pathway('all')"> Show all</li>
                         @foreach($pathway as $pathways)
-                            <li  onclick="filterSelection({{$pathways->id}})"> {{$pathways->pathway}}</li>
+                            <li  onclick="filterSelection_pathway({{$pathways->id}})"> {{$pathways->pathway}}</li>
                         @endforeach
                     </div>
 
@@ -84,7 +84,7 @@
                 </button>
                 <div class="dropdown-content tutor_filt">
                     <div id="myBtnContainer">
-                        <li  onclick="filterSelection('all')"> Show all</li>
+                        <li  onclick="filterSelection_pathway('all')"> Show all</li>
                         @foreach($tutor as $tutors)
                             <li  onclick="filterSelection({{$tutors->id}})"> {{$tutors->name}}</li>
                         @endforeach
@@ -106,7 +106,7 @@
                 <div id="myBtnContainer">
                     <button class="btn" onclick="filterSelection('all')"> Show all</button>
                     @foreach($tutor as $tutors)
-                        <button class="btn" onclick="filterSelection({{$tutors->id}})"> {{$tutors->name}}</button>
+                        <button class="btn" onclick="filterSelection_pathway({{$tutors->id}})"> {{$tutors->name}}</button>
                     @endforeach
                 </div>
             </div>
@@ -120,14 +120,19 @@
                                     <div class="container border-radius {{$pathway->id}}">
                                         <img src="{{ asset($projects->image)}}" alt="Avatar" class="image">
                                         <div class="overlay border-radius">
-                                            <div class="text">
+                                            <div class="text ">
                                                 <div>{{$projects->Title}}</div>
                                                 <a href="project/{{$projects->id}}" class="link">View</a>
+                                                @if ( Auth()->user()->id == '1')
+                                                    <a href="projects/{{$projects->id}}/edit" class="link">edit</a>
+                                                @elseif( Auth()->user()->id == $projects->user_id)
+                                                    <a href="projects/{{$projects->id}}/edit" class="link">edit</a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                    </div>
+                                @endforeach
                             @endforeach
                         @endforeach
                 </div>

@@ -36,7 +36,7 @@ class new_project extends Controller
             'content' => 'required|max:200 ',
             'num_participant' => 'required|integer',
             'pathway_id'=> 'required',
-//            'image' => 'required',
+            'image' => 'required',
         ]);
 //
 

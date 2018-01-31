@@ -16,32 +16,36 @@ class Previouscreate extends Controller
         return view('new_previous_project', ['pathway' =>$project]);
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $this->validate(request(),[
             'title' => 'required|max:70',
-            'description' => 'required|max:200 ',
+//            'description' => 'required|max:200 ',
             'date' => 'required|before:today',
-            'content' => 'required',
-            'pathway_id'=> 'required'
+            'image_content' => 'required',
+            'pathway_id'=> 'required',
+            'image' => 'required'
         ]);
-
-        $new_project = Previous_projects::create(
-
-
-            $request->all());
         $pathway = Input::get('pathway_id', []);
 
+        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('storage'), $imageName);
+        $image = 'storage/'.$imageName;
+
+        $contentName = time().'.'.request()->image_content->getClientOriginalExtension();
+        request()->image_content->move(public_path('storage'), $contentName);
+        $content = 'storage/'.$contentName;
+
+        $new_project = Previous_projects::create([
+            'title' => $request->input('title'),
+            'content' => $content,
+            'user_id' => $request->input('user_id'),
+            'description' => $request->input('description'),
+            'date' => $request->input('date'),
+            'image' => $image,
+            ]);
         $new_project->save();
-
-        $list_of_pathway = Pathways_Previous_Projects::create([
-                'pathways_id' => $request->input('pathway_id'),
-                'previous_project_id' => $new_project->id,
-            ]
-        );
-
-
-        $new_project->Projects()->attach($pathway);
+        $new_project->Pathway()->attach($pathway);
         return redirect('/welcome');
 
     }
