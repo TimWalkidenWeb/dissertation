@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Pathways_Projects;
 use App\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
 use App\Projects;
 Use App\Pathways;
-use App\Mail;
+use App\Mail\ProjectResponse;
 
 
 class Project extends Controller
@@ -57,6 +57,19 @@ class Project extends Controller
         return redirect()->back();
 
     }
+    public function send(Request $request){
+        $lecture = request()->input('lecture');
+        $email = User::where('id' ,$lecture)->pluck('email');
+
+        $order = Projects::findOrFail(request()->input('project'));
+
+
+
+        Mail::to($email)->send(new ProjectResponse($order));
+        return view ('home');
+    }
+
+
     public function destroy($id)
     {
         $project = Projects::find($id);
@@ -65,5 +78,7 @@ class Project extends Controller
 
         return redirect('home');
     }
+
+
 
     }

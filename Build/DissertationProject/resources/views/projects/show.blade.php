@@ -34,7 +34,7 @@
 
 <div class="form-group">
     {!! Form::hidden('lecture',$project->user_id, ['class'=> 'large-8 column']) !!}
-    {!! Form::hidden('project',$project->Title, ['class'=> 'large-8 column']) !!}
+    {!! Form::hidden('project',$project->id, ['class'=> 'large-8 column']) !!}
     <button type="submit" class="submit_btn">Submit project</button>
 </div>
 {!! Form::close() !!}

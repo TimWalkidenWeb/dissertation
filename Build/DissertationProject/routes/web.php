@@ -85,4 +85,8 @@ Route::get('image-upload',['as'=>'image.upload','uses'=>'ImageUploadController@i
 Route::post('image-upload',['as'=>'image.upload.post','uses'=>'new_project@store']);
 Route::post('previous.upload.post',['as'=>'previous.upload.post','uses'=>'Previouscreate@store']);
 
-Route::post('project.response', ['as' => 'project.response', 'uses'=> 'Project@ship']);
+Route::post('project.response', ['as' => 'project.response', 'uses'=> 'Project@send']);
+
+Route::get('/demo', function () {
+    return new App\Mail\UserWelcome();
+});
