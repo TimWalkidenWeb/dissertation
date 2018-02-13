@@ -1,40 +1,52 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
+@section('content')
 
-    <title>New_project</title>
-</head>
-<body>
-<h1>Edit - {{$project->Title}}</h1>
+    <div class="row">
+        <h3 class="col-12 small-12 show page_title">Edit- {{$project->Title}}</h3>
+    </div>
 
-<h2>{{$project}}</h2>
+    <div class="form_mobile form_desktop" >
+        <div class="row">
+            {!! Form::model($project, ['method' => 'PATCH', 'url' => ['previous_projects',$project->id], $project->id]) !!}
+            <div class="row form_text"> Title of project</div>
+            {!! Form::text('Title', $project->Title, array('class'=>'small-input')) !!}
 
-{!! Form::model($project, ['method' => 'PATCH', 'url' => ['previous_projects',$project->id], $project->id]) !!}
-<div class="form-group">
-    {!! Form::Label('Title', 'Title of project') !!}
-    {!! Form::text('title', $project->Title) !!}
-</div>
+            <div class="row form_text">Description of the project</div>
+            {!! Form::textarea('content', $project->description, array('class'=>'text_area')) !!}
 
+            <div class="row form_text">Date  </div>
+            {!! Form::date('date', $project->Date) !!}
 
-<div class="form-group">
-    {!! Form::Label('content', 'Description of the project') !!}
-    {!! Form::file('content', null) !!}
-</div>
+            <div class="form_text">Pathway linked to project</div>
+            @foreach($pathway as $projects)
 
-<div class="form-group">
-    {!! Form::Label('date', 'Date of publish') !!}
-    {!! Form::date('date', $project->Date) !!}
-</div>
+                <li class="form_list">
+                    {!! Form::label('pathway_id', $projects->pathway) !!}
+                    {!! Form::checkbox('pathway_id[]', $projects->id )!!}
+                </li>
 
-<div class='form-group'>
-    {!! Form::submit('submit changes', ['class' =>'button']) !!}
-</div>
+            @endforeach
 
+            {!! Form::hidden('image',$project->image) !!}
+            {!! Form::hidden('user_id',Auth()->User()->id) !!}
 
+            <div>
+                {!!  Form::token()!!}
+            </div>
 
+        </div>
+        <div class="row">
+            <div class='form-group large-6 col-6'>
+                {!! Form::submit('updated', ['class' =>'submit_btn']) !!}
+                {!! Form::close()!!}
+            </div>
+            <div class='form-group large-6 col-6'>
+                {!! Form::open(['method' => 'DELETE' ,'route' => ['previous_projects.destroy', $project->id]]) !!}
+                {!! Form::submit('Delete', ['class' => 'submit_btn']) !!}
+                {!! Form::close()!!}
+            </div>
+        </div>
 
-</body>
-</html>
+    </div>
+@endsection
+

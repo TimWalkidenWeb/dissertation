@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Mail;
 use App\Projects;
 Use App\Pathways;
 use App\Mail\ProjectResponse;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
 
 
 class Project extends Controller
@@ -44,9 +47,14 @@ class Project extends Controller
     public function update(Request $request, $id)
     {
 
-
+        $this->validate(request(),[
+            'title' => 'required|max:70',
+            'content' => 'required|max:200 ',
+            'num_participant' => 'required|integer',
+            'pathway_id'=> 'required',
+            'image' => 'required',
+        ]);
         $project = Projects::findOrFail($id);
-//        $project->Projects()->detach();
         $project->Projects;
 
         $project->update($request->all());
@@ -73,10 +81,21 @@ class Project extends Controller
     public function destroy($id)
     {
         $project = Projects::find($id);
+        $file_path = public_path().'/'.$project->image;
+        if(file_exists($file_path)){
+            unlink($file_path);
+        }
 
         $project->delete();
+        return view ('projects');
 
-        return redirect('home');
+//        Storage::delete(Projects::find($id)->pluck('image'));
+
+//        return $file;
+//
+
+
+
     }
 
 

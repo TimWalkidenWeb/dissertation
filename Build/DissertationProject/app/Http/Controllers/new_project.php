@@ -38,9 +38,6 @@ class new_project extends Controller
             'pathway_id'=> 'required',
             'image' => 'required',
         ]);
-//
-
-//
         $pathway = Input::get('pathway_id', []);
 
 

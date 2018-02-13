@@ -25,7 +25,7 @@
 
     </div>
     <div class="col-4 small-hidden" style="margin-left: 3%">
-        <img  src="{{ asset($project->image_name)}}" alt="Avatar" class="image_show small-hidden image_shadow border-radius"></div>
+        <img  src="{{ asset($project->image)}}" alt="Avatar" class="image_show small-hidden image_shadow border-radius"></div>
 </div>
 
 
@@ -33,8 +33,8 @@
 {!! Form::open(array('route' => 'project.response','files'=>true, 'enctype' => "multipart/form-data")) !!}
 
 <div class="form-group">
-    {!! Form::hidden('lecture',$project->user_id, ['class'=> 'large-8 column']) !!}
-    {!! Form::hidden('project',$project->id, ['class'=> 'large-8 column']) !!}
+    {!! Form::hidden('lecture',$project->user_id) !!}
+    {!! Form::hidden('project',$project->id) !!}
     <button type="submit" class="submit_btn">Submit project</button>
 </div>
 {!! Form::close() !!}

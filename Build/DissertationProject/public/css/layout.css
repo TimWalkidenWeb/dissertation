@@ -326,6 +326,7 @@ box-shadow: inset 0px 0px 20px 0px #82398C;
 }
 button{
     margin-top: 6%;
+    margin-right:3% ;
 }
 .overlay {
     position: absolute;
@@ -471,7 +472,8 @@ button{
 }
 .link{
     color: black;
-    margin-top: 100%;
+    margin-right: 3%;
+    margin-top: 5%;
 }
 
 .show{
@@ -506,4 +508,5 @@ button{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
+
 

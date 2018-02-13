@@ -57,8 +57,7 @@
             <div class="row">
                 @foreach($tutor as $tutors)
                     @foreach($tutors->Previousowner as $projects)
-                        @foreach($projects->Pathway as $pathway)
-                            <div class="col-4 small-10 ">
+                             <div class="col-4 small-10 ">
                                 <div class="container border-radius">
                                     <img src="{{ asset($projects->image)}}" alt="image1" class="image">
                                     <div class="overlay border-radius">
@@ -66,9 +65,9 @@
                                             <div>{{$projects->Title}}</div>
                                             <a href="previous_projects/{{$projects->id}}" class="link">View</a>
                                             @if ( Auth()->user()->id == '1')
-                                                <a href="projects/{{$projects->id}}/edit" class="link">edit</a>
+                                                <a href="previous_projects/{{$projects->id}}/edit" class="link">edit</a>
                                             @elseif( Auth()->user()->id == $projects->user_id)
-                                                <a href="projects/{{$projects->id}}/edit" class="link">edit</a>
+                                                <a href="previous_projects/{{$projects->id}}/edit" class="link">edit</a>
                                             @endif
                                         </div>
                                     </div>
@@ -77,8 +76,7 @@
                             </div>
                         @endforeach
                     @endforeach
-                @endforeach
-            </div>
+                </div>
         </div>
     </div>
 </div>

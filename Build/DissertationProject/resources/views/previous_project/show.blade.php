@@ -23,7 +23,7 @@
     <div class="row">
 
         <div class="col-10 small-hidden" style="margin-left: 3%">
-            <img  src="{{ asset($project->image)}}" alt="Avatar" class="image_show small-hidden image_shadow border-radius">
+            <img  src="{{asset($project->image)}}" alt="Avatar" class="image_show small-hidden image_shadow border-radius">
         </div>
 
 

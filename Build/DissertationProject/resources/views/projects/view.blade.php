@@ -115,27 +115,32 @@
                 <div class="row">
                        @foreach($tutor as $tutors)
                             @foreach($tutors->Projectowner as $projects)
-                            @foreach($projects->projects as $pathway)
                                 <div class="col-4 small-10 ">
-                                    <div class="container border-radius {{$pathway->id}}">
+                                    <div class="container border-radius {{$tutors->id}}">
                                         <img src="{{ asset($projects->image)}}" alt="Avatar" class="image">
                                         <div class="overlay border-radius">
-                                            <div class="text ">
-                                                <div>{{$projects->Title}}</div>
-                                                <a href="project/{{$projects->id}}" class="link">View</a>
-                                                @if ( Auth()->user()->id == '1')
-                                                    <a href="projects/{{$projects->id}}/edit" class="link">edit</a>
+                                            <div class="text">
+                                               <div class="row">
+                                                   <div class="col-12 small-12">{{$projects->Title}}</div>
+                                               </div>
+                                               <div class="row">
+                                                   <a href="project/{{$projects->id}}" class="col-4 small-4 link">View</a>
+                                                   @if ( Auth()->user()->permission == '1')
+                                                    <a href="projects/{{$projects->id}}/edit" class="col-12 small-12 link">edit</a>
+
                                                 @elseif( Auth()->user()->id == $projects->user_id)
-                                                    <a href="projects/{{$projects->id}}/edit" class="link">edit</a>
+                                                    <a href="projects/{{$projects->id}}/edit" class="link col-12 small-12 link">edit</a>
                                                 @endif
+                                               </div>
+
+
                                             </div>
                                         </div>
                                     </div>
                                     </div>
                                 @endforeach
                             @endforeach
-                        @endforeach
-                </div>
+                        </div>
             </div>
         </div>
     </div>
