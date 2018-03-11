@@ -33,7 +33,7 @@ class new_project extends Controller
 
         $this->validate(request(),[
             'title' => 'required|max:70',
-            'content' => 'required|max:200 ',
+            'content' => 'required|max:1000 ',
             'num_participant' => 'required|integer',
             'pathway_id'=> 'required',
             'image' => 'required',
@@ -59,11 +59,8 @@ class new_project extends Controller
         $new_project->Projects()->attach($pathway);
         $new_project->save();
 
-        return back()
+        return redirect('/project');
 
-            ->with('success','You have successfully upload image.')
-
-            ->with('image',$imageName);
 
     }
 

@@ -7,7 +7,8 @@
 
     <div class="form_mobile form_desktop" >
       <div class="row">
-        {!! Form::model($project, ['method' => 'PATCH', 'url' => ['projects',$project->id], $project->id]) !!}
+        {!! Form::model($project, ['method' => 'PATCH', 'url' => ['update/'.$project->id], $project->id]) !!}
+
         <div class="row form_text"> Title of project</div>
         {!! Form::text('Title', $project->Title, array('class'=>'small-input')) !!}
 
@@ -40,11 +41,11 @@
                {!! Form::submit('updated', ['class' =>'submit_btn']) !!}
                {!! Form::close()!!}
            </div>
-           <div class='form-group large-6 col-6'>
-               {!! Form::open(['method' => 'DELETE' ,'route' => ['project.destroy', $project->id]]) !!}
-               {!! Form::submit('Delete', ['class' => 'submit_btn']) !!}
-               {!! Form::close()!!}
-           </div>
+           {{--<div class='form-group large-6 col-6'>--}}
+               {{--{!! Form::open(['method' => 'DELETE' ,'route' => ['project.destroy', $project->id]]) !!}--}}
+               {{--{!! Form::submit('Delete', ['class' => 'submit_btn']) !!}--}}
+               {{--{!! Form::close()!!}--}}
+           {{--</div>--}}
        </div>
 
     </div>

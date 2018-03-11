@@ -5,50 +5,26 @@
 
     </div>
 
-
-    <div class="row">
-        <div class="col-10 small-10" style="margin-left: 10%">
-            <h4 class="show_content">Summary of project</h4>
-            <p class="show_content">{{$project->description}}</p>
-
+    <div class="row form_mobile form_desktop" >
+        <div class="row">
+            <div class="col-6 small-12">
+                <h4 class="show_content">Summary of project</h4>
+                <p class="show_content">{{$project->description}}</p>
+            </div>
+            <div class="col-6 small-hidden">
+                <img  src="{{ asset($project->image)}}" alt="Avatar" class="small-hidden image_shadow border-radius" style="width: 100%"></div>
+        </div>
+        <div class="row col-12 small-12">
             <h4 class="show_content">Relevant pathways:</h4>
             <ul>
                 @foreach($project->Pathway as $pathways)
-                    <li class="show_content">{{$pathways->pathway}}</li>
+                <li class="show_content">{{$pathways->pathway}}</li>
                 @endforeach
             </ul>
-    </div>
-    </div>
-
-    <div class="row">
-
-        <div class="col-10 small-hidden" style="margin-left: 3%">
-            <img  src="{{asset($project->image)}}" alt="Avatar" class="image_show small-hidden image_shadow border-radius">
+        </div>
+        <div class="row col-12 small-12">
+            <h4 class="show_content"><a href="{{asset($project->content)}}" style = "color: black">View previous project</a></h4>
         </div>
 
-
     </div>
-
-
-
-
-    <?php
-    if (!extension_loaded('imagick'))
-        echo 'image not load';
-    ?>
-
-
-    {{--<embed src= "{{ asset($project->content) }}" width= "500" height= "375">--}}
-
-    <a href="{{ asset('/storage/text_2.pdf') }}">Open the pdf!</a>
-    <a href="{{ asset('/storage/text_2.pdf') }}">Open the pdf!</a>
-    <embed src="{{ asset('/storage/text_2.pdf') }}" width="500" height="375" type='application/pdf'>
-
-    <button onclick="goBack()">Return to projects</button>
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
-
 @endsection

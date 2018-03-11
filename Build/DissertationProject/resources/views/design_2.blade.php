@@ -205,7 +205,7 @@
 
             <div class="col-4">
                 <div class="container">
-                    <img src="{{ asset('storage/logo.jpeg') }}" alt="Avatar" class="image">
+                    <img src="{{ asset('documents') }}" alt="Avatar" class="image">
                     <div class="overlay">
                         <div class="text">Hello World</div>
                     </div>

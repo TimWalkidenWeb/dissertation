@@ -1,6 +1,9 @@
 @extends('layouts.master')
 @section('content')
-<h1>New previous project</h1>
+
+<div class="row">
+    <h3 class="col-12 small-12 show page_title">New previous project</h3>
+</div>
 
 <div class="row form_mobile form_desktop" >
     {!! Form::open(array('route' => 'previous.upload.post','files'=>true, 'enctype' => "multipart/form-data")) !!}
@@ -10,10 +13,7 @@
     <input type="text" name="title" class="small-input">
 
 
-    <div class="row form_text">Description of the project
-
-
-    </div>
+    <div class="row form_text">Description of the project</div>
     <textarea class="text_area" name="description" > </textarea>
 
 

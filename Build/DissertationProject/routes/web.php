@@ -33,8 +33,8 @@ Route::post('upload','new_project@store');
 Route::resource('project','Project');
 Route::get('project/{id}', 'Project@show');
 Route::get('projects/{id}/edit', 'Project@edit');
-Route::patch('projects/{id}', 'Project@update');
-Route::patch('projectsPathway/{id}', 'Project@updatePathway');
+Route::patch('update/{id}', 'Project@update');
+//Route::patch('projectsPathway/{id}', 'Project@updatePathway');
 Route::delete('projects/{id}', 'Project@destroy');
 
 
@@ -63,6 +63,8 @@ Route::get('/log_out', function () {
 
 Route::resource('/new_staff','staffMember');
 Route::post('/new_staff', 'staffMember@store');
+Route::get('/new_student','staffMember@view');
+Route::post('/new_student', 'staffMember@store');
 
 Auth::routes();
 

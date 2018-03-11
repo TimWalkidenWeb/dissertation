@@ -17,7 +17,7 @@
 
 
         </div>
-        <textarea class="text_area" name="content"> </textarea>
+        <textarea rows="25" cols="40" class="text_area" name="content"> </textarea>
 
 
         <div class="row form_text">Number of participants  </div>

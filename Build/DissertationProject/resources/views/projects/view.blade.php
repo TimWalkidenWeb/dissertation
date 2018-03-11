@@ -124,12 +124,17 @@
                                                    <div class="col-12 small-12">{{$projects->Title}}</div>
                                                </div>
                                                <div class="row">
-                                                   <a href="project/{{$projects->id}}" class="col-4 small-4 link">View</a>
-                                                   @if ( Auth()->user()->permission == '1')
-                                                    <a href="projects/{{$projects->id}}/edit" class="col-12 small-12 link">edit</a>
+                                                   @if(Auth::guest())
+                                                       <a href="project/{{$projects->id}}" class="col-4 small-4 link">View</a>
+
+                                                   @elseif ( Auth()->user()->permission == '1')
+                                                       <a href="projects/{{$projects->id}}/edit" class="col-12 small-12 link">edit</a>
+                                                        <a href="project/{{$projects->id}}" class="col-4 small-4 link">View</a>
 
                                                 @elseif( Auth()->user()->id == $projects->user_id)
                                                     <a href="projects/{{$projects->id}}/edit" class="link col-12 small-12 link">edit</a>
+                                                       <a href="project/{{$projects->id}}" class="col-4 small-4 link">View</a>
+
                                                 @endif
                                                </div>
 

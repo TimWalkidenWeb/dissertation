@@ -16,7 +16,7 @@ class CreatePreviousProjectsTable extends Migration
         Schema::create('previous_projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Title');
-            $table->binary('content');
+            $table->string('content');
             $table->string('description');
             $table->date('Date');
             $table->integer('user_id')->unsigned();

@@ -446,7 +446,7 @@
         <div class="row">
             <div class="col-4 small-10">
                 <div class="container">
-                    <img src="{{ asset('storage/mummy.jpg') }}" alt="Avatar" class="image">
+                    <img src="{{ asset('documents') }}" alt="Avatar" class="image">
                     <div class="overlay">
                         <div class="text">Educational Museum game
                             <button>Details -></button>

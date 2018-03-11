@@ -30,12 +30,12 @@ class Previouscreate extends Controller
         $pathway = Input::get('pathway_id', []);
 
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('storage'), $imageName);
-        $image = 'storage/'.$imageName;
+        request()->image->move(public_path('storage/images'), $imageName);
+        $image = 'storage/images/'.$imageName;
 
         $contentName = time().'.'.request()->image_content->getClientOriginalExtension();
-        request()->image_content->move(public_path('storage'), $contentName);
-        $content = 'storage/'.$contentName;
+        request()->image_content->move(public_path('storage/documents'), $contentName);
+        $content = 'storage/documents/'.$contentName;
 
 
 
@@ -49,7 +49,7 @@ class Previouscreate extends Controller
             ]);
         $new_project->save();
         $new_project->Pathway()->attach($pathway);
-        return redirect('/welcome');
+        return redirect('/previous_projects');
 
     }
 

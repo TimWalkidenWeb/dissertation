@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row">
-        <h3 class="col-12 small-12 show page_title">New staff member</h3>
+        <h3 class="col-12 small-12 show page_title">New student</h3>
     </div>
 
 
@@ -30,18 +30,7 @@
         {{--@endforeach--}}
         {{--</div>--}}
         <div>
-            <div class="form_text">Add permissions</div>
-            <ul>
-                @foreach($permission as $permissions)
 
-                    <li class="form_list">
-                        {!! Form::label('permission', $permissions->permission) !!}
-                        {{Form::checkbox('permission', $permissions->id)}}
-                    </li>
-                @endforeach
-            </ul>
-
-        </div>
 
         <div>
             <div class="form_text">Add a display image</div>

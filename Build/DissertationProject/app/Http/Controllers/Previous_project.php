@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Pathways;
 use App\Previous_projects;
 Use App\Previous_projects_pathways;
+use Illuminate\Support\Facades\Auth;
 class Previous_project extends Controller
 {
     public function index(){
@@ -14,7 +15,13 @@ class Previous_project extends Controller
         $pathway = Pathways::all();
         $tutor = User::all();
 
-        return view('previous_project.view', ['project' =>$project, 'tutor' =>$tutor, 'pathway' =>$pathway]);
+        if(Auth::user()){
+            return view('previous_project.view', ['project' =>$project, 'tutor' =>$tutor, 'pathway' =>$pathway]);
+        }else{
+            return redirect('/login');
+        }
+
+
     }
 
     public function show($id)
@@ -38,6 +45,7 @@ class Previous_project extends Controller
 
     public function update(Request $request, $id)
     {
+
         $this->validate(request(),[
             'title' => 'required|max:70',
             'description' => 'required|max:200 ',
@@ -66,7 +74,7 @@ class Previous_project extends Controller
 
         $project->delete();
 
-        return view('previous_projects');
+        return redirect('/previous_projects');
     }
 
     }

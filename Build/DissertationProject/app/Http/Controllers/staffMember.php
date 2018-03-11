@@ -17,22 +17,35 @@ class staffMember extends Controller
         return view('staff.create', ['permission' => $permission]);
     }
 
+    public function view(){
+        return view('student.create');
+    }
+
     public function store(Request $request){
 
             $this->validate(request(),[
                 'name' => 'required',
                 'email' => 'required|email',
                 'password' => 'required|min:5',
-                'permission'=> 'required'
+//                'permission'=> 'required'
             ]);
 
-            $new_staff=  User::create([
+        if($request['permission'] == null) {
+            $new_staff = User::create([
                 'name' => $request['name'],
                 'email' => $request['email'],
                 'password' => bcrypt($request['password']),
-                'permission'=>$request['permission']
-            ]);
+                'permission' => 3,
 
+            ]);
+        }elseif($request['permission'] == '1' or '2'){
+            $new_staff = User::create([
+                'name' => $request['name'],
+                'email' => $request['email'],
+                'password' => bcrypt($request['password']),
+                'permission' => $request['permission']
+            ]);
+        }
             $new_staff->save();
             return redirect('/home');
         }

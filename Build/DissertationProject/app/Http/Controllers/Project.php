@@ -11,17 +11,22 @@ Use App\Pathways;
 use App\Mail\ProjectResponse;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
-
+use Illuminate\Support\Facades\Auth;
 
 
 class Project extends Controller
 {
     public function index(){
+
         $project = Projects::all();
         $pathway = Pathways::all();
         $tutor = User::all();
+        if(Auth::user()){
+            return view('projects.view', ['project' =>$project, 'tutor' =>$tutor, 'pathway' =>$pathway]);
+        }else{
+            return redirect('/login');
+        }
 
-        return view('projects.view', ['project' =>$project, 'tutor' =>$tutor, 'pathway' =>$pathway]);
     }
 
 
@@ -49,7 +54,7 @@ class Project extends Controller
 
         $this->validate(request(),[
             'title' => 'required|max:70',
-            'content' => 'required|max:200 ',
+            'content' => 'required|max:1000 ',
             'num_participant' => 'required|integer',
             'pathway_id'=> 'required',
             'image' => 'required',
@@ -62,7 +67,7 @@ class Project extends Controller
 
         $project->Projects()->attach($request->get('pathway_id'));
 
-        return redirect()->back();
+        return redirect('/project');
 
     }
     public function send(Request $request){
@@ -87,7 +92,7 @@ class Project extends Controller
         }
 
         $project->delete();
-        return view ('projects');
+        return redirect('/project');
 
 //        Storage::delete(Projects::find($id)->pluck('image'));
 
