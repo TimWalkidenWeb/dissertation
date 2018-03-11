@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLearningSectionTable extends Migration
+class CreateCwsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateLearningSectionTable extends Migration
      */
     public function up()
     {
-        Schema::create('learning_section', function (Blueprint $table) {
+        Schema::create('cws', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('learning_section');
-
-           // $table->primary('id');
+            $table->string('title');
         });
     }
 
@@ -28,6 +26,6 @@ class CreateLearningSectionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('learning_section');
+        Schema::dropIfExists('cws');
     }
 }

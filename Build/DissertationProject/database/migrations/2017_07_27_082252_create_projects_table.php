@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLearningMaterialTable extends Migration
+class CreateProjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateLearningMaterialTable extends Migration
      */
     public function up()
     {
-        Schema::create('learning_material', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Title');
             $table->string('content');
-            $table->integer('learning_section')->unsigned();
-            $table->integer('staff_id')->unsigned();
+            $table->integer('num_participant');
+            $table->integer('user_id')->unsigned();
+            $table->string('image');
             $table->timestamps();
 
            // $table->primary('id');
-            $table->foreign('staff_id')->references('id')->on('users');
-            $table->foreign('learning_section')->references('id')->on('learning_section');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

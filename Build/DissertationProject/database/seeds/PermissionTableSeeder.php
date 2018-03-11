@@ -19,5 +19,10 @@ class PermissionTableSeeder extends Seeder
             'Id' =>  2,
             'permission' => 'lecturer',
         ]);
+
+        DB::table('permissions')->insert([
+            'Id' =>  3,
+            'permission' => 'student',
+        ]);
     }
 }

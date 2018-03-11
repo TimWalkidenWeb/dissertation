@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('updated_at');
             $table->string('created_at');
             $table->integer('permission')->unsigned();
-            $table->string('remember_token');
+            $table->string('remember_token')->nullable();
 
             //$table->primary('id');
             $table->foreign('permission')->references('id')->on('permissions');

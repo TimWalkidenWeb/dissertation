@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class file extends Model
+class PathwaysPreProject extends Model
 {
     //
 }

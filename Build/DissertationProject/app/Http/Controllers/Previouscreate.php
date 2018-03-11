@@ -6,7 +6,7 @@ use App\Pathways_Previous_Projects;
 use App\User;
 use Illuminate\Http\Request;
 use App\Pathways;
-use App\Previous_projects;
+use App\PreProject;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 
@@ -39,7 +39,7 @@ class Previouscreate extends Controller
 
 
 
-        $new_project = Previous_projects::create([
+        $new_project = PreProject::create([
             'title' => $request->input('title'),
             'content' => $content,
             'user_id' => $request->input('user_id'),

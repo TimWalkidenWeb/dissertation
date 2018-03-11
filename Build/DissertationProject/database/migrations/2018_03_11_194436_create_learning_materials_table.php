@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePreviousProjectsTable extends Migration
+class CreateLearningMaterialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,17 @@ class CreatePreviousProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('previous_projects', function (Blueprint $table) {
+        Schema::create('learning_materials', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Title');
             $table->string('content');
-            $table->string('description');
-            $table->date('Date');
-            $table->integer('user_id')->unsigned();
-            $table->string('image');
+            $table->integer('learning_section_id')->unsigned();
+            $table->integer('staff_id')->unsigned();
             $table->timestamps();
 
            // $table->primary('id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('staff_id')->references('id')->on('users');
+            $table->foreign('learning_section_id')->references('id')->on('learning_sects');
         });
     }
 
@@ -35,6 +34,6 @@ class CreatePreviousProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('previous_projects');
+        Schema::dropIfExists('projects');
     }
 }

@@ -6,12 +6,12 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Pathways;
 use App\Previous_projects;
-Use App\Previous_projects_pathways;
+Use App\PreProject;
 use Illuminate\Support\Facades\Auth;
 class Previous_project extends Controller
 {
     public function index(){
-        $project = Previous_projects::all();
+        $project = PreProject::all();
         $pathway = Pathways::all();
         $tutor = User::all();
 
@@ -26,7 +26,7 @@ class Previous_project extends Controller
 
     public function show($id)
     {
-        $project = Previous_projects::findOrFail($id);
+        $project = PreProject::findOrFail($id);
 
         return view('previous_project.show', ['project' => $project]);
     }
@@ -34,7 +34,7 @@ class Previous_project extends Controller
     public function edit($id)
     {
         $pathway = Pathways::all();
-        $project = Previous_projects::findOrFail($id);
+        $project = PreProject::findOrFail($id);
         $project->Projects;
 
 
@@ -54,7 +54,7 @@ class Previous_project extends Controller
             'pathway_id'=> 'required',
             'image' => 'required'
         ]);
-        $project = Previous_projects::findOrFail($id);
+        $project = PreProject::findOrFail($id);
         $project->Projects;
 
         $project->update($request->all());
@@ -66,7 +66,7 @@ class Previous_project extends Controller
 
     public function destroy($id)
     {
-        $project = Previous_projects::find($id);
+        $project = PreProject::find($id);
         $file_path = public_path().'/'.$project->image;
         if(file_exists($file_path)){
             unlink($file_path);

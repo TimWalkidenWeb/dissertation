@@ -50,10 +50,19 @@ Route::get('previous_projects/{id}/edit', 'Previous_project@edit');
 Route::patch('previous_projects/{id}', 'Previous_project@update');
 Route::delete('previous_projects/{id}, Previous_project@destroy');
 
+//learning material
 
-Route::get('/learning_material', function () {
-    return view('new_learningMaterial');
-});
+Route::resource('learning_material', 'LearningSection');
+Route::get('learning_material/{id}/edit', 'LearningSection@edit');
+Route::patch('learning_material/{id}', 'LearningSection@update');
+Route::delete('learning_material/{id}, LearningSection@destroy');
+Route::get('learning_material/create', 'LearningSection@create');
+Route::post('learning.upload.post',['as'=>'learning.upload.post','uses'=>'LearningSection@store']);
+
+Route::post('learningMat.upload.post',['as'=>'learningMat.upload.post','uses'=>'Learning_materials@store']);
+
+
+
 
 Route::get('/log_out', function () {
     Auth::logout();

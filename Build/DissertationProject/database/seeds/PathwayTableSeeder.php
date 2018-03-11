@@ -11,11 +11,11 @@ class PathwayTableSeeder extends Seeder
      */
     public function run()
     {
-//        DB::table('pathway')->insert([
-//           'Id' =>  1,
-//           'pathway' => 'Bsc Computer Science',
-//        ]
-//        );
+        DB::table('pathways')->insert([
+           'Id' =>  1,
+           'pathway' => 'Bsc Computer Science',
+        ]
+        );
 
         DB::table('pathways')->insert([
                 'Id' =>  2,

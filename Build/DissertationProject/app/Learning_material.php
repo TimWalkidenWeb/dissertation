@@ -15,7 +15,7 @@ class Learning_material extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'title', 'content', 'staff_id', 'learning_section',
+        'Title', 'content', 'staff_id', 'learning_section_id',
     ];
 
     /**
@@ -28,9 +28,9 @@ class Learning_material extends Authenticatable
     /**
      * @return array
      */
-    public function Project_owner()
+    public function Lecture()
     {
-        return $this->hasOne('App\staff');
+        return $this->hasOne('App\User');
     }
 
     public function Projects()

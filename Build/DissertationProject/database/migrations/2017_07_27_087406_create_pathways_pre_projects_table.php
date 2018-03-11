@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePathwaysPreviousProjectsTable extends Migration
+class CreatePathwaysPreProjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreatePathwaysPreviousProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pathways_previous_projects', function (Blueprint $table) {
-            $table->integer('previous_projects_id')->unsigned()->onDelete('cascade');
+        Schema::create('pathways_pre_project', function (Blueprint $table) {
             $table->integer('pathways_id')->unsigned();
+            $table->integer('pre_project_id')->unsigned()->onDelete('cascade');
 
 
-            $table->foreign('previous_projects_id')->references('id')->on('previous_projects');
             $table->foreign('pathways_id')->references('id')->on('pathways');
+            $table->foreign('pre_project_id')->references('id')->on('pre_projects');
 
-            $table->primary(['previous_projects_id', 'pathways_id']);
+
+            $table->primary(['pre_project_id', 'pathways_id']);
         });
     }
 
@@ -32,6 +33,6 @@ class CreatePathwaysPreviousProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pathways_previous_project');
+        Schema::dropIfExists('pathways_pre_projects');
     }
 }

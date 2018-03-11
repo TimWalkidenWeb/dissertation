@@ -42,6 +42,11 @@ class User extends Authenticatable
 
     public function Previousowner()
     {
-        return $this->hasMany('App\Previous_projects');
+        return $this->hasMany('App\PreProject');
+    }
+
+    public function material()
+    {
+        return $this->hasMany('App\Learning_material');
     }
 }
