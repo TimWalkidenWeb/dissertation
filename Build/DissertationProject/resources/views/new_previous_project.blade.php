@@ -39,7 +39,7 @@
     </div>
 
     <div>
-        <div class="form_text">Add a display content</div>
+        <div class="form_text">Add a project content</div>
         {!! Form::file('image_content', array('class' => 'form-control')) !!}
     </div>
 
@@ -52,7 +52,7 @@
     </div>
     <div class="form-group">
 
-        <button type="submit" class="submit_btn">Submit project</button>
+        <button type="submit" class="submit_btn">Submit previous project</button>
     </div>
     {!! Form::close() !!}
 </div>

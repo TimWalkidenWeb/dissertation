@@ -9,7 +9,7 @@
         <div class="row">
             {!! Form::model($project, ['method' => 'PATCH', 'url' => ['previous_projects',$project->id], $project->id]) !!}
             <div class="row form_text"> Title of project</div>
-            {!! Form::text('Title', $project->Title, array('class'=>'small-input')) !!}
+            {!! Form::text('title', $project->Title, array('class'=>'small-input')) !!}
 
             <div class="row form_text">Description of the project</div>
             {!! Form::textarea('content', $project->description, array('class'=>'text_area')) !!}
@@ -33,13 +33,14 @@
             <div>
                 {!!  Form::token()!!}
             </div>
+            <div class='form-group large-6 col-6'>
+                {!! Form::submit('Update previous project', ['class' =>'submit_btn']) !!}
+                {!! Form::close()!!}
+            </div>
 
         </div>
         <div class="row">
-            <div class='form-group large-6 col-6'>
-                {!! Form::submit('updated', ['class' =>'submit_btn']) !!}
-                {!! Form::close()!!}
-            </div>
+
             <div class='form-group large-6 col-6'>
                 {!! Form::open(['method' => 'DELETE' ,'route' => ['previous_projects.destroy', $project->id]]) !!}
                 {!! Form::submit('Delete', ['class' => 'submit_btn']) !!}
@@ -48,5 +49,6 @@
         </div>
 
     </div>
+    @include('layouts.validation')
 @endsection
 

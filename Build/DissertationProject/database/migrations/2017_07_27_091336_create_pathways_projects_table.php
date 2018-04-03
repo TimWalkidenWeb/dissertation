@@ -15,7 +15,7 @@ class CreatePathwaysProjectsTable extends Migration
     {
         Schema::create('pathways_projects', function (Blueprint $table) {
             $table->integer('projects_id')->unsigned()->onDelete('cascade');
-            $table->integer('pathways_id')->unsigned();
+            $table->integer('pathways_id')->unsigned()->onDelete('cascade');
 
             $table->foreign('projects_id')->references('id')->on('projects');
             $table->foreign('pathways_id')->references('id')->on('pathways');

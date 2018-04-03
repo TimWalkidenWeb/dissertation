@@ -68,7 +68,7 @@
                                                 <a href="previous_projects/{{$projects->id}}" class="col-4 small-4 link">View</a>
 
                                             @elseif ( Auth()->user()->permission == '1')
-                                                <a href="previous_projects/{{$projects->id}}/edit" class="col-12 small-12 link">edit</a>
+                                                <a href="previous_projects/{{$projects->id}}/edit" class="col-12 small-12 link">Edit</a>
                                                 <a href="previous_projects/{{$projects->id}}" class="col-4 small-4 link">View</a>
 
                                             @elseif( Auth()->user()->id == $projects->user_id)

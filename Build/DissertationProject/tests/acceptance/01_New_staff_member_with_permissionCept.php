@@ -3,28 +3,28 @@ $I = new AcceptanceTester($scenario);
 $I->wantTo('make sure that staff member with permission 2 can add new staff');
 $I->amOnPage('/login');
 //with permission 2
-$I->fillField('email', 'testpermission2@go.edgehill.ac.uk');
-$I->fillField('password', 'rebtim281');
+$I->fillField('email', 'timothy.walkiden@go.edgehill.ac.uk');
+$I->fillField('password', 'password');
 $I->click('Login');
-$I->canSee('Register new staff member');
-$I->click('Register new staff member');
+$I->canSee('Add new staff');
+$I->click('Add new staff');
 $I->canSee('New staff member');
 
 $I->wantTo('Make sure that a field cannot be null');
 $I->fillField('name', '');
 $I->fillField('email', '');
 $I->fillField('password', '');
-$I->fillField('permission', '1');
-$I->click('submit new project');
+$I->selectOption('permission', '3');
+$I->click('Submit new staff member');
 
-$I->canSee('The name field is required. 
-            The email field is required.
-            The password field is required.');
-
+$I->canSee('The name field is required.');
+$I->canSee('The email field is required.');
+$I->canSee('The password field is required.');
+//
 $I->wantTo('Make sure validation works on password');
 $I->fillField('password','1234');
-$I->click('submit new project');
-$I->canSee('The password must be at least 5 characters');
+$I->click('Submit new staff member');
+$I->canSee('The password must be at least 5 characters.');
 
 //Add validation for email
 
@@ -32,8 +32,10 @@ $I->wantTo('submit a new correct staff member');
 $I->fillField('name', 'Validation');
 $I->fillField('email', 'validation@go.edgehill.ac.uk');
 $I->fillField('password', '12345');
-$I->fillField('permission', '1');
-//$I->click('submit new project');
-//$I->canSee('Welcome to edge hill final year project');
+$I->selectOption('permission', '3');
+
+$I->click('Submit new staff member');
+$I->canSee('Welcome to edge hill final year project support website');
+
 
 

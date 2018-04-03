@@ -33,7 +33,7 @@ Route::post('upload','new_project@store');
 Route::resource('project','Project');
 Route::get('project/{id}', 'Project@show');
 Route::get('projects/{id}/edit', 'Project@edit');
-Route::patch('update/{id}', 'Project@update');
+Route::patch('projects/{id}', 'Project@update');
 //Route::patch('projectsPathway/{id}', 'Project@updatePathway');
 Route::delete('projects/{id}', 'Project@destroy');
 

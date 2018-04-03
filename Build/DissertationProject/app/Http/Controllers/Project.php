@@ -42,6 +42,7 @@ class Project extends Controller
 
     public function edit($id)
     {
+
        $pathway = Pathways::all();
 
 
@@ -52,12 +53,13 @@ class Project extends Controller
     public function update(Request $request, $id)
     {
 
+
         $this->validate(request(),[
             'title' => 'required|max:70',
             'content' => 'required|max:1000 ',
             'num_participant' => 'required|integer',
             'pathway_id'=> 'required',
-            'image' => 'required',
+//            'image' => 'required',
         ]);
         $project = Projects::findOrFail($id);
         $project->Projects;
@@ -90,6 +92,10 @@ class Project extends Controller
         if(file_exists($file_path)){
             unlink($file_path);
         }
+
+//        $project->pathways_projects->find($id);
+
+        $project->Projects()->detach();
 
         $project->delete();
         return redirect('/project');

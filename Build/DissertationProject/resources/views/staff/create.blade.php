@@ -32,21 +32,19 @@
         <div>
             <div class="form_text">Add permissions</div>
             <ul>
+
                 @foreach($permission as $permissions)
 
-                    <li class="form_list">
+
                         {!! Form::label('permission', $permissions->permission) !!}
                         {{Form::checkbox('permission', $permissions->id)}}
-                    </li>
+
                 @endforeach
+
             </ul>
 
         </div>
 
-        <div>
-            <div class="form_text">Add a display image</div>
-            {!! Form::file('image', array('class' => 'form-control')) !!}
-        </div>
 
 
         <div>
@@ -54,7 +52,7 @@
         </div>
         <div class="form-group">
 
-            <button type="submit" class="submit_btn">Submit project</button>
+            <button type="submit" class="submit_btn">Submit new staff member</button>
         </div>
         {!! Form::close() !!}
     </div>

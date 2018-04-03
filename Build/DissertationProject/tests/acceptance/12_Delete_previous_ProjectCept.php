@@ -3,16 +3,21 @@ $I = new AcceptanceTester($scenario);
 $I->wantTo('Delete a record');
 
 $I->amOnPage('/login');
-$I->fillField('email', 'testpermission2@go.edgehill.ac.uk');
-$I->fillField('password', 'rebtim281');
+$I->fillField('email', 'validation@go.edgehill.ac.uk');
+$I->fillField('password', '12345');
 $I->click('Login');
-$I->canSee('previous projects');
-$I->click('previous projects');
+$I->canSee('Project Examples');
+$I->click('Project Examples');
 
-$I->canSee('View project');
-$I->canSee('Validation');
-$I->canSee('Delete');
+$I->canSee('Project examples');
+$I->canSee('Test_upload');
+$I->amOnPage('/previous_projects');
+
+$I->click('edit');
+$I->canSee('Test_upload');
+
+
 $I->click('Delete');
 
 $I->wantTo("make sure the record is deleted");
-$I->cantSee("Validation");
+$I->cantSee("Test_upload");

@@ -35,10 +35,10 @@ class staffMember extends Controller
                 'name' => $request['name'],
                 'email' => $request['email'],
                 'password' => bcrypt($request['password']),
-                'permission' => 3,
+                'permission' => 2,
 
             ]);
-        }elseif($request['permission'] == '1' or '2'){
+        }elseif($request['permission'] == '1' or '3'){
             $new_staff = User::create([
                 'name' => $request['name'],
                 'email' => $request['email'],

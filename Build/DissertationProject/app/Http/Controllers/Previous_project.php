@@ -46,21 +46,13 @@ class Previous_project extends Controller
     public function update(Request $request, $id)
     {
 
-        $this->validate(request(),[
-            'title' => 'required|max:70',
-            'description' => 'required|max:200 ',
-            'date' => 'required|before:today',
-            'image_content' => 'required',
-            'pathway_id'=> 'required',
-            'image' => 'required'
-        ]);
         $project = PreProject::findOrFail($id);
         $project->Projects;
 
         $project->update($request->all());
-        $project->Projects()->attach($request->get('pathway_id'));
+        $project->Pathway()->attach($request->get('pathway_id'));
 
-        return redirect()->back();
+        return redirect('/previous_projects');
 
     }
 
@@ -71,7 +63,7 @@ class Previous_project extends Controller
         if(file_exists($file_path)){
             unlink($file_path);
         }
-
+        $project->Pathway()->detach();
         $project->delete();
 
         return redirect('/previous_projects');
