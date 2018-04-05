@@ -7,7 +7,7 @@
 
     <div class="form_mobile form_desktop" >
       <div class="row">
-        {!! Form::model($project, ['method' => 'PATCH', 'url' => 'previous_projects/'.$project->id]) !!}
+        {!! Form::model($project, ['method' => 'PATCH', 'url' => 'projects/'.$project->id]) !!}
 
         <div class="row form_text"> Title of project</div>
         {!! Form::text('title', $project->Title, array('class'=>'small-input')) !!}

@@ -22,4 +22,5 @@ $I->canSee('Test');
 $I->click('Delete');
 
 $I->wantTo("make sure the record is deleted");
+$I->canSee('Current Projects');
 $I->cantSee("test_upload");

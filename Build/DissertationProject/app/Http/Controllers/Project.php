@@ -93,17 +93,13 @@ class Project extends Controller
             unlink($file_path);
         }
 
-//        $project->pathways_projects->find($id);
+
 
         $project->Projects()->detach();
 
         $project->delete();
         return redirect('/project');
 
-//        Storage::delete(Projects::find($id)->pluck('image'));
-
-//        return $file;
-//
 
 
 

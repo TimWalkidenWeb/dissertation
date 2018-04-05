@@ -22,9 +22,9 @@ $I->wantTo('make sure that the form has the right details from the database');
 $I->canSee('Edit');
 $I->canSee('Test_upload');
 ////
-$I->canSeeInField('content', '10');
-$I->fillField('content', 'content changed');
-$I->selectOption('pathway_id[]', '2');
+$I->canSeeInField('description', '10');
+$I->fillField('description', 'content changed');
+$I->selectOption('pathway_id[]', '3');
 //
 $I->click('Update previous project');
 
@@ -39,5 +39,5 @@ $I->canSee('Project examples');
 $I->amOnPage('/previous_projects');
 $I->click('View');
 //
-//$I->canSee('Test');
-//$I->canSee('content changed');
+$I->canSee('Test');
+$I->canSee('content changed');

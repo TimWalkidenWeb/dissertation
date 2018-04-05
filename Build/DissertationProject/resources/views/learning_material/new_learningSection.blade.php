@@ -44,7 +44,7 @@
         </div>
         <div class="form-group">
 
-            <button type="submit" class="submit_btn">Submit project</button>
+            <button type="submit" class="submit_btn">Submit Learning section</button>
         </div>
         {!! Form::close() !!}
 </div>

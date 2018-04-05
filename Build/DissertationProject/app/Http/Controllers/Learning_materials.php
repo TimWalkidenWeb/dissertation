@@ -31,7 +31,19 @@ class Learning_materials extends Controller
 
         $new_learningMat->save();
 
-        return redirect('/learning_material/'.$Id);
+        return redirect('/learning_section/'.$Id);
+    }
+
+    public function destroy($id)
+    {
+
+        $learningMaterial = Learning_material::find($id);
+
+        $learningMaterial->delete();
+        return back();
+
+
+
     }
 
 }

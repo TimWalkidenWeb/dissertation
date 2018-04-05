@@ -12,7 +12,7 @@
             {!! Form::text('title', $project->Title, array('class'=>'small-input')) !!}
 
             <div class="row form_text">Description of the project</div>
-            {!! Form::textarea('content', $project->description, array('class'=>'text_area')) !!}
+            {!! Form::textarea('description', $project->description, array('class'=>'text_area')) !!}
 
             <div class="row form_text">Date  </div>
             {!! Form::date('date', $project->Date) !!}

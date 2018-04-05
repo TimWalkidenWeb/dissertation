@@ -2,7 +2,7 @@
 $I = new AcceptanceTester($scenario);
 $I->wantTo('make sure that staff member with permission 2 can add new staff');
 $I->amOnPage('/login');
-//with permission 2
+
 $I->fillField('email', 'timothy.walkiden@go.edgehill.ac.uk');
 $I->fillField('password', 'password');
 $I->click('Login');

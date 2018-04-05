@@ -9,12 +9,23 @@ use App\Pathways;
 use App\PreProject;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
+
 
 class Previouscreate extends Controller
 {
     public function index(){
-        $project = Pathways::all();
-        return view('new_previous_project', ['pathway' =>$project]);
+
+
+        if(Auth::guest()){
+            return view('home');
+        }
+        elseif(Auth::user()->permission(1 or 3)) {
+            $project = Pathways::all();
+            return view('new_previous_project', ['pathway' =>$project]);
+        }else{
+            return view('home');
+        }
     }
 
     public function store(Request $request)

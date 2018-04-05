@@ -9,12 +9,23 @@ use App\Permission;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class staffMember extends Controller
 {
     public function index(){
-        $permission = Permission::all();
-        return view('staff.create', ['permission' => $permission]);
+
+
+
+        if(Auth::guest()){
+            return view('home');
+        }
+        elseif(Auth::user()->permission(1 or 3)) {
+            $permission = Permission::all();
+            return view('staff.create', ['permission' => $permission]);
+        }else{
+            return view('home');
+        }
     }
 
     public function view(){

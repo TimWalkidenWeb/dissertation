@@ -1,4 +1,5 @@
-<?php
+<?php 
+$I = new AcceptanceTester($scenario);
 $I = new AcceptanceTester($scenario);
 $I->wantTo('Delete a record');
 
@@ -6,19 +7,18 @@ $I->amOnPage('/login');
 $I->fillField('email', 'timothy.walkiden@go.edgehill.ac.uk');
 $I->fillField('password', 'password');
 $I->click('Login');
-$I->canSee('Project Examples');
-$I->click('Project Examples');
 
-$I->canSee('Project examples');
-$I->canSee('Test_upload');
-$I->amOnPage('/previous_projects');
 
-$I->canSee('Edit');
+
+$I->canSee('Project support');
+$I->click('Project support');
 $I->click('Edit');
-$I->canSee('Test_upload');
 
+$I->wantTo('make sure that the correct learning section being deleted');
+$I->canSee('Edit');
+$I->canSee('test_upload');
 
 $I->click('Delete');
 
 $I->wantTo("make sure the record is deleted");
-$I->cantSee("Test_upload");
+$I->cantSee("test_upload");

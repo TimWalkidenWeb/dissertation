@@ -24,11 +24,17 @@
             </ul>
         </div>
         <div class="row col-12 small-12">
-        <h3 class="show_content" style="text-align: center">Lecturers Advice</h3>
+        <h3 class="show_content" style="text-align: center; margin-bottom: 5%">Lecturers Advice</h3>
             @foreach($learningMat as $advice )
                 @if($advice->learning_section_id == $learningsection->id)
                 <h4 class="show_content">{{$advice->Title}} by {{\App\User::findOrFail($advice->staff_id)->name}}</h4>
                 <p class="show_content">{{$advice->content}}</p>
+                <div class='form-group' >
+                        {{--{!! Form::open(['method' => 'DELETE' ,'route' => ['learningMat.destroy', ]]) !!}--}}
+                        {!! Form::open(['method' => 'DELETE' ,'route' => ['learning_materials.destroy', $advice->id]]) !!}
+                        {!! Form::submit('Delete', ['class' => 'submit_btn']) !!}
+                        {!! Form::close()!!}
+                </div>
               @endif
             @endforeach
 

@@ -15,27 +15,15 @@
         <input type="text" name="name" class="small-input">
 
 
-        <div class="row form_text">Enter staff member Edge Hill email</div>
+        <div class="row form_text">Enter Edge Hill email</div>
         <input type="text" name="email" class="small-input">
 
         <div class="row form_text">Enter password </div>
         <input type="password" name="password" class="small-input">
 
-        {{--<div class="form-group">--}}
-        {{--@foreach($permission as $permissions)--}}
-
-        {{--{!! Form::label('permission', $permissions->permission) !!}--}}
-        {{--{{Form::radio('permission', $permissions->id)}}--}}
-
-        {{--@endforeach--}}
-        {{--</div>--}}
         <div>
 
 
-        <div>
-            <div class="form_text">Add a display image</div>
-            {!! Form::file('image', array('class' => 'form-control')) !!}
-        </div>
 
 
         <div>
@@ -43,7 +31,7 @@
         </div>
         <div class="form-group">
 
-            <button type="submit" class="submit_btn">Submit project</button>
+            <button type="submit" class="submit_btn">Register</button>
         </div>
         {!! Form::close() !!}
     </div>

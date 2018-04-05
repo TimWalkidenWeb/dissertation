@@ -69,7 +69,7 @@ class LearningSection extends Controller
         $new_learningSec->learning()->attach($cws);
         $new_learningSec->save();
 
-        return redirect('/learning_material');
+        return redirect('/learning_section');
 
 
     }
@@ -77,11 +77,31 @@ class LearningSection extends Controller
 
     public function edit($id)
     {
+        $cw = Cws::all();
+
+
+        $learning_section = learningSect::findOrFail($id);
+        $learning_section->learning;
+        return view('learning_material.Edit')->with(compact('learning_section'))->with(['cw' => $cw]);
 
     }
     public function update(Request $request, $id)
     {
+        $this->validate(request(),[
+            'title' => 'required|max:70',
+            'content' => 'required|max:1000 ',
+            'cw_id'=> 'required',
+//            'image' => 'required',
+        ]);
+        $learning_section = learningSect::findOrFail($id);
+        $learning_section->learning;
 
+        $learning_section->update($request->all());
+
+
+        $learning_section->learning()->attach($request->get('cw_id'));
+
+        return redirect('/learning_section');
 
     }
     public function send(Request $request){
@@ -92,11 +112,17 @@ class LearningSection extends Controller
     public function destroy($id)
     {
 
+        $learning_section = learningSect::find($id);
+        $file_path = public_path().'/'.$learning_section->image;
+        if(file_exists($file_path)){
+            unlink($file_path);
+        }
 
-//        Storage::delete(Projects::find($id)->pluck('image'));
 
-//        return $file;
-//
+        $learning_section->learning()->detach();
+
+        $learning_section->delete();
+        return redirect('/learning_section');
 
 
 

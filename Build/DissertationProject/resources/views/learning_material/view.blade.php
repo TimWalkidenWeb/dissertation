@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <div class="row">
-    <h3 class="col-12 small-12 show page_title">Learning material </h3>
+    <h3 class="col-12 small-12 show page_title">Learning section</h3>
 
 </div>
 <div class="row">
@@ -63,16 +63,12 @@
                                     <div class="overlay border-radius">
                                         <div class="text">
                                             <div>{{$learning_section->title}}</div>
-                                            <a href="learning_material/{{$learning_section->id}}" class="link">View</a>
-                                            {{--@if(Auth::guest())--}}
-                                                {{--<a href="project/{{$learning_section->id}}" class="col-4 small-4 link">View</a>--}}
-                                            {{--@elseif ( Auth()->user()->permission == '1')--}}
-                                                {{--<a href="projects/{{$learning_section->id}}/edit" class="col-12 small-12 link">edit</a>--}}
-                                                {{--<a href="project/{{$projects->id}}" class="col-4 small-4 link">View</a>--}}
-                                            {{--@elseif( Auth()->user()->id == $projects->user_id)--}}
-                                                {{--<a href="projects/{{$projects->id}}/edit" class="link col-12 small-12 link">edit</a>--}}
-                                                {{--<a href="project/{{$projects->id}}" class="col-4 small-4 link">View</a>--}}
-                                            {{--@endif--}}
+                                            @if(Auth::guest())
+                                                <a href="learning_section/{{$learning_section->id}}" class="col-4 small-4 link">View</a>
+                                            @elseif ( Auth()->user()->permission == '1' or '3')
+                                                <a href="/learning_section/{{$learning_section->id}}/edit" class="col-12 small-12 link">Edit</a>
+                                                <a href="/learning_section/{{$learning_section->id}}" class="col-4 small-4 link">View</a>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

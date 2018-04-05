@@ -8,6 +8,8 @@ $I->click('Login');
 $I->canSee('New project');
 $I->click('New project');
 $I->canSee('Add a new project');
+
+
 $I->wantTo('Make sure that a field cannot be null when creating new project');
 $I->fillField('title', '');
 $I->fillField('content', '');

@@ -8,6 +8,7 @@ use App\Projects;
 Use App\Pathways;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class new_project extends Controller
 {
@@ -18,8 +19,16 @@ class new_project extends Controller
 //     */
     public function index()
     {
-        $project = Pathways::all();
-        return view('new_project', ['pathway' =>$project]);
+        if(Auth::guest()){
+            return view('home');
+        }
+        elseif(Auth::user()->permission(1 or 3)) {
+            $project = Pathways::all();
+            return view('new_project', ['pathway' =>$project]);
+        }else{
+            return view('home');
+        }
+
     }
 
 
