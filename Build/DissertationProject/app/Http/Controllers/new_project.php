@@ -38,7 +38,7 @@ class new_project extends Controller
             'content' => 'required|max:1000 ',
             'num_participant' => 'required|integer',
             'pathway_id'=> 'required',
-            'image' => 'required',
+            'image' => 'required|mimes:jpeg,png,jpg,JPEG,PNG,JPG',
         ]);
         $pathway = Input::get('pathway_id', []);
 
@@ -51,7 +51,8 @@ class new_project extends Controller
                 'content' => $request->input('content'),
                 'user_id' => $request->input('user_id'),
                 'num_participant' => $request->input('num_participant'),
-                'image' => $image
+                'image' => 'required|mimes:jpeg,png,jpg,JPEG,PNG,JPG'
+
             ]
 
         );

@@ -6,20 +6,20 @@
         <div class="col-10 small-12">
             <div class="row">
                 <h1 class="col-8 small-9">Edge Hill University Final Year Projects</h1>
-                @if(Auth::guest())
+                @if(Auth::guest() or Auth::user()->permission == 2)
                     <div class="col-1 small-hidden login"><a href="{{url('/login')}}">login</a></div>
                     <div class="col-2 small-hidden login"><a href="/new_student">Register</a></div>
                 @elseif(Auth::user()->permission == 1)
                     <div class="col-2 small-hidden login"><a href="{{url('/log_out')}}">Logout</a></div>
                     <div class="col-2 small-hidden login"><a href="/new_staff">Add new staff</a></div>
-                @elseif(Auth::user()->permission == 2)
+                @elseif(Auth::user()->permission == 3)
                     <div class="col-1 small-hidden login"><a href="{{url('/log_out')}}">Logout</a></div>
                 @endif
                 <div class="navbar col-hidden small-3">
                     <div class="dropdown">
                         <button class="dropbtn">Menu 	&#9660;</button>
                             <div class="dropdown-content menu">
-                                @if(Auth::guest())
+                                @if(Auth::guest() or Auth::user()->permission == 2)
                                     <a href="{{url('/login')}}">login</a>
                                     <a href="{{'/learning_material'}}">Project support</a>
                                     <a href="{{url('/previous_projects')}}">Project Examples</a>

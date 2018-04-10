@@ -9,17 +9,15 @@ use App\learningSect;
 use App\Cws;
 use App\Learning_material;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class LearningSection extends Controller
 {
-    //
+
     public function index(){
         $cw = Cws::all();
         $learning_section = learningSect::all();
-       return view('learning_material.view', ['learning_sections' =>$learning_section, 'cws' =>$cw]);
-
-
-
+     return view('learning_material.view', ['learning_sections' =>$learning_section, 'cws' =>$cw]);
     }
 
     public function show($id)
@@ -34,8 +32,17 @@ class LearningSection extends Controller
     }
 
     public function create(){
-        $learning_section = Cws::all();
-        return view('learning_material.new_learningSection', ['cws' =>$learning_section]);
+
+        if(Auth::guest()){
+            return view('home');
+        }
+        elseif(Auth::user()->permission(1 or 3)) {
+            $learning_section = Cws::all();
+            return view('learning_material.new_learningSection', ['cws' =>$learning_section]);
+        }else{
+          return view('home');
+        }
+
     }
 
 
@@ -47,7 +54,8 @@ class LearningSection extends Controller
             'title' => 'required|max:70',
             'content' => 'required|max:1000 ',
             'cw_id'=> 'required',
-            'image' => 'required',
+            'image' => 'required|mimes:jpeg,png,jpg,JPEG,PNG,JPG'
+
         ]);
         $cws = Input::get('cw_id', []);
 
@@ -104,10 +112,6 @@ class LearningSection extends Controller
         return redirect('/learning_section');
 
     }
-    public function send(Request $request){
-
-    }
-
 
     public function destroy($id)
     {

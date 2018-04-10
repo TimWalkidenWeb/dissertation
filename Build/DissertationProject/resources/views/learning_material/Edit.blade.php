@@ -16,6 +16,7 @@
 
 
             <div class="form_text">Pathway linked to project</div>
+            <ul>
             @foreach($cw as $cws)
 
                 <li class="form_list">
@@ -24,7 +25,7 @@
                 </li>
 
             @endforeach
-
+            </ul>
             {!! Form::hidden('image',$learning_section->image) !!}
 
 

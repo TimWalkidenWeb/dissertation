@@ -2,18 +2,16 @@
 @section('content')
     <div class="row">
         <h3 class="col-12 small-12 show page_title">{{$learningsection->title}}</h3>
-
     </div>
-
     <div class="row form_mobile form_desktop" >
         <div class="row">
             <h3 class="show_content">Support content</h3>
             <div class="col-6 small-12">
-
                 <p class="show_content">{{$learningsection->content}}</p>
             </div>
             <div class="col-6 small-hidden">
-                <img  src="{{ asset($learningsection->image)}}" alt="Avatar" class="small-hidden image_shadow border-radius" style="width: 100%"></div>
+                <img  src="{{ asset($learningsection->image)}}" alt="Display image for {{$learningsection->title}}" class="small-hidden image_shadow border-radius" style="width: 100%">
+            </div>
         </div>
         <div class="row col-12 small-12">
             <h4 class="show_content">Relevant pathways:</h4>
@@ -74,7 +72,4 @@
         {!! Form::close() !!}
     </div>
     @endif
-
-
-
 @endsection

@@ -32,13 +32,13 @@ class Previouscreate extends Controller
     {
         $this->validate(request(),[
             'title' => 'required|max:70',
-            'description' => 'required|max:200 ',
+            'description' => 'required|max:300 ',
             'date' => 'required|before:today',
-            'image_content' => 'required',
+            'image_content' => 'required|mimes:pdf',
             'pathway_id'=> 'required',
-            'image' => 'required'
+            'image' => 'required|mimes:jpeg,png,jpg,JPEG,PNG,JPG'
         ]);
-        $pathway = Input::get('pathway_id', []);
+
 
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
         request()->image->move(public_path('storage/images'), $imageName);
@@ -48,7 +48,7 @@ class Previouscreate extends Controller
         request()->image_content->move(public_path('storage/documents'), $contentName);
         $content = 'storage/documents/'.$contentName;
 
-
+        $pathway = Input::get('pathway_id', []);
 
         $new_project = PreProject::create([
             'title' => $request->input('title'),

@@ -45,11 +45,17 @@ class Previous_project extends Controller
 
     public function update(Request $request, $id)
     {
-
+        $this->validate(request(),[
+            'title' => 'required|max:70',
+            'description' => 'required|max:300 ',
+            'date' => 'required|before:today',
+            'pathway_id'=> 'required',
+          ]);
         $project = PreProject::findOrFail($id);
         $project->Projects;
 
         $project->update($request->all());
+        $project->Projects()->detach();
         $project->Pathway()->attach($request->get('pathway_id'));
 
         return redirect('/previous_projects');

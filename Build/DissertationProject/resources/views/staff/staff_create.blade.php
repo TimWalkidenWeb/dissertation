@@ -9,9 +9,7 @@
 
     <div class="row form_mobile form_desktop" >
         {!! Form::open(['action'=>['staffMember@store']]) !!}
-        <div class="row form_text">
-
-            Enter Full name </div>
+        <div class="row form_text">Enter Full name </div>
         <input type="text" name="name" class="small-input">
 
 
@@ -27,8 +25,10 @@
                 @foreach($permission as $permissions)
 
 
-                        {!! Form::label('permission', $permissions->permission) !!}
-                        {{Form::checkbox('permission', $permissions->id)}}
+                     <li>
+                         {!! Form::label('permission', $permissions->permission) !!}
+                         {{Form::checkbox('permission', $permissions->id)}}
+                     </li>
 
                 @endforeach
 

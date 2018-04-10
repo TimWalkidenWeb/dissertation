@@ -19,15 +19,16 @@
         {!! Form::text('num_participant', $project->num_participant, array('class'=>'small-input')) !!}
 
         <div class="form_text">Pathway linked to project</div>
-        @foreach($pathway as $projects)
+        <ul>
+            @foreach($pathway as $projects)
 
-        <li class="form_list">
-            {!! Form::label('pathway_id', $projects->pathway) !!}
-            {!! Form::checkbox('pathway_id[]', $projects->id )!!}
-        </li>
+                <li class="form_list">
+                    {!! Form::label('pathway_id', $projects->pathway) !!}
+                    {!! Form::checkbox('pathway_id[]', $projects->id )!!}
+                </li>
 
-        @endforeach
-
+            @endforeach
+        </ul>
              {!! Form::hidden('image',$project->image) !!}
              {!! Form::hidden('user_id',Auth()->User()->id) !!}
 

@@ -39,7 +39,7 @@
                             @foreach($project as $projects)
                                 <div class="col-4 small-10 ">
                                     <div class="container border-radius">
-                                        <img src="{{ asset($projects->image)}}" alt="Avatar" class="image">
+                                        <img src="{{ asset($projects->image)}}" alt="display image for {{ asset($projects->Title)}} " class="image">
                                         <div class="overlay border-radius">
                                             <div class="text">
                                                <div class="row">

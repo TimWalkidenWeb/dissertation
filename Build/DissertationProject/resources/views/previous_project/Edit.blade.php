@@ -18,6 +18,7 @@
             {!! Form::date('date', $project->Date) !!}
 
             <div class="form_text">Pathway linked to project</div>
+            <ul>
             @foreach($pathway as $projects)
 
                 <li class="form_list">
@@ -26,7 +27,7 @@
                 </li>
 
             @endforeach
-
+            </ul>
             {!! Form::hidden('image',$project->image) !!}
             {!! Form::hidden('user_id',Auth()->User()->id) !!}
 

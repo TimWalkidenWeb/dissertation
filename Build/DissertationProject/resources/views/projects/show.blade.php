@@ -15,7 +15,7 @@
             <p class="show_content">{{$project->content}}</p>
         </div>
         <div class="col-6 small-hidden">
-            <img  src="{{ asset($project->image)}}" alt="Avatar" class="small-hidden image_shadow border-radius" style="width: 100%"></div>
+            <img  src="{{ asset($project->image)}}" alt="display image for {{ asset($project->Title)}}" class="small-hidden image_shadow border-radius" style="width: 100%"></div>
     </div>
     <div class="row col-12 small-12">
         <h4 class="show_content">Number of place on the project available: {{$project->num_participant}}</h4>
@@ -32,23 +32,7 @@
 
 
 
-{!! Form::open(array('route' => 'project.response','files'=>true, 'enctype' => "multipart/form-data")) !!}
-
-<div class="form-group">
-    {!! Form::hidden('lecture',$project->user_id) !!}
-    {!! Form::hidden('project',$project->id) !!}
-    <button type="submit" class="submit_btn">Submit project</button>
-</div>
-{!! Form::close() !!}
 
 
-
-
-<button onclick="goBack()">Return to projects</button>
-<script>
-function goBack() {
-window.history.back();
-}
-</script>
 
 @endsection
