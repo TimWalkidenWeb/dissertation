@@ -6,12 +6,10 @@
         <h3 class="col-12 small-12 show page_title">New student</h3>
     </div>
 
-
+    {!! Form::open(['action'=>['staffMember@store']]) !!}
     <div class="row form_mobile form_desktop" >
-        {!! Form::open(['action'=>['staffMember@store']]) !!}
-        <div class="row form_text">
 
-            Enter Full name </div>
+        <div class="row form_text">Enter Full name </div>
         <input type="text" name="name" class="small-input">
 
 
@@ -22,20 +20,15 @@
         <input type="password" name="password" class="small-input">
 
         <div>
+                {!!  Form::token()!!}
+            </div>
+            <div class="form-group">
 
+                <button type="submit" class="submit_btn">Register yourself</button>
+            </div>
 
-
-
-        <div>
-            {!!  Form::token()!!}
-        </div>
-        <div class="form-group">
-
-            <button type="submit" class="submit_btn">Register</button>
-        </div>
-        {!! Form::close() !!}
     </div>
+    {!! Form::close() !!}
 
-
-   @include('layouts.validation')
+    @include('layouts.validation')
 @endsection

@@ -1,4 +1,4 @@
-<?php 
+<?php //
 $I = new AcceptanceTester($scenario);
 $I->wantTo('Delete a record');
 $I->wantTo('make sure they can see learning section');
@@ -15,3 +15,5 @@ $I->wantTo('to delete the record');
 $I->click('Delete');
 $I->wantTo("make sure the record is deleted");
 $I->cantSee("test upload of material");
+
+

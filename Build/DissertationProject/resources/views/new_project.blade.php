@@ -7,16 +7,11 @@
 
     <div class="row form_mobile form_desktop" >
 {!! Form::open(array('route' => 'image.upload.post','files'=>true, 'enctype' => "multipart/form-data")) !!}
-    <div class="row form_text">
-
-            Title of project    </div>
+    <div class="row form_text">Title of project    </div>
         <input type="text" name="title" class="small-input">
 
 
-        <div class="row form_text">Description of the project
-
-
-        </div>
+        <div class="row form_text">Description of the project</div>
         <textarea rows="25" cols="40" class="text_area" name="content"> </textarea>
 
 

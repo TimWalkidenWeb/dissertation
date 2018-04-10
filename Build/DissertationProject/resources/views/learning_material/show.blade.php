@@ -27,32 +27,32 @@
         <h3 class="show_content" style="text-align: center; margin-bottom: 5%">Lecturers Advice</h3>
             @foreach($learningMat as $advice )
                 @if($advice->learning_section_id == $learningsection->id)
-                <h4 class="show_content">{{$advice->Title}} by {{\App\User::findOrFail($advice->staff_id)->name}}</h4>
-                <p class="show_content">{{$advice->content}}</p>
-                <div class='form-group' >
-                        {{--{!! Form::open(['method' => 'DELETE' ,'route' => ['learningMat.destroy', ]]) !!}--}}
-                        {!! Form::open(['method' => 'DELETE' ,'route' => ['learning_materials.destroy', $advice->id]]) !!}
-                        {!! Form::submit('Delete', ['class' => 'submit_btn']) !!}
-                        {!! Form::close()!!}
-                </div>
-              @endif
+            @if(Auth::guest() or Auth()->user()->permission == '2')
+                        <h4 class="show_content">{{$advice->Title}} by {{\App\User::findOrFail($advice->staff_id)->name}}</h4>
+                        <p class="show_content">{{$advice->content}}</p>
+            @elseif (Auth()->user()->permission == '1' or '3')
+                        <h4 class="show_content">{{$advice->Title}} by {{\App\User::findOrFail($advice->staff_id)->name}}</h4>
+                        <p class="show_content">{{$advice->content}}</p>
+                        <div class='form-group' >
+                            {{--{!! Form::open(['method' => 'DELETE' ,'route' => ['learningMat.destroy', ]]) !!}--}}
+                            {!! Form::open(['method' => 'DELETE' ,'route' => ['learning_materials.destroy', $advice->id]]) !!}
+                            {!! Form::submit('Delete', ['class' => 'submit_btn']) !!}
+                            {!! Form::close()!!}
+                            <a href="/learning_materials/{{$advice->id}}/edit" class="submit_btn">Edit</a>
+                        </div>
+                    @endif
+                    @endif
             @endforeach
-
-            {{--@foreach($user->material as $advice )--}}
-                {{--@if($advice->learning_sections_id == $learningsection->id)--}}
-                    {{--<h4 class="show_content">{{$advice->Title}} by {{$advice->name}}</h4>--}}
-                    {{--<p class="show_content">{{$advice->content}}</p>--}}
-                {{--@endif--}}
-            {{--@endforeach--}}
-
         </div>
 
        </div>
-
+    @if(Auth::guest() or Auth()->user()->permission == '2')
+    @elseif (Auth()->user()->permission !== '1' or '3')
     <div class="row form_mobile form_desktop" >
         <div class="row col-12 small-12 ">
             <h3 class="show_content">Add your own advice</h3>
         </div>
+        @include('layouts.validation')
         {!! Form::open(array('route' => 'learningMat.upload.post','files'=>true, 'enctype' => "multipart/form-data")) !!}
         <div class="row form_text">Advice title </div>
         <input type="text" name="Title" class="small-input">
@@ -73,8 +73,8 @@
         </div>
         {!! Form::close() !!}
     </div>
+    @endif
 
 
-    @include('layouts.validation')
 
 @endsection

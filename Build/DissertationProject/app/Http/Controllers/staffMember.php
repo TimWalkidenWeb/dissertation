@@ -20,44 +20,45 @@ class staffMember extends Controller
         if(Auth::guest()){
             return view('home');
         }
-        elseif(Auth::user()->permission(1 or 3)) {
+        elseif(Auth::user()->permission(1)) {
             $permission = Permission::all();
-            return view('staff.create', ['permission' => $permission]);
+            return view('staff.staff_create', ['permission' => $permission]);
         }else{
             return view('home');
         }
     }
 
     public function view(){
-        return view('student.create');
+        return view('student.create_student');
     }
 
     public function store(Request $request){
 
             $this->validate(request(),[
                 'name' => 'required',
-                'email' => 'required|email',
+                'email' => 'required|string|email|regex:/(.*)@edgehill\.ac\.uk/|max:255|unique:users',
                 'password' => 'required|min:5',
-//                'permission'=> 'required'
             ]);
 
         if($request['permission'] == null) {
-            $new_staff = User::create([
+            $new_student = User::create([
                 'name' => $request['name'],
                 'email' => $request['email'],
                 'password' => bcrypt($request['password']),
                 'permission' => 2,
 
             ]);
-        }elseif($request['permission'] == '1' or '3'){
+            $new_student->save();
+        }elseif($request['permission'] == '1' or '3' or '2'){
             $new_staff = User::create([
                 'name' => $request['name'],
                 'email' => $request['email'],
                 'password' => bcrypt($request['password']),
                 'permission' => $request['permission']
             ]);
-        }
             $new_staff->save();
+        }
+
             return redirect('/home');
         }
 

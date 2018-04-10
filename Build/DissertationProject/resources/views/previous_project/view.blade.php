@@ -20,19 +20,6 @@
 
             </div>
         </div>
-        <div class="dropdown small-6">
-            <button class="dropbtn show_content">Tutor
-                <i class="arrow down"></i>
-            </button>
-            <div class="dropdown-content">
-                <div id="myBtnContainer">
-                    <li  onclick="filterSelection('all')"> Show all</li>
-                    @foreach($tutor as $tutors)
-                        <li  onclick="filterSelection({{$tutors->id}})"> {{$tutors->name}}</li>
-                    @endforeach
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="row">
@@ -44,19 +31,11 @@
                     <button class="btn" onclick="filterSelection({{$pathways->id}})"> {{$pathways->pathway}}</button>
                 @endforeach
             </div>
-            <h3>Tutor</h3>
-            <div id="myBtnContainer">
-                <button class="btn" onclick="filterSelection('all')"> Show all</button>
-                @foreach($tutor as $tutors)
-                    <button class="btn" onclick="filterSelection({{$tutors->id}})"> {{$tutors->name}}</button>
-                @endforeach
-            </div>
         </div>
 
         <div class="col-8 small-12">
             <div class="row">
-                @foreach($tutor as $tutors)
-                    @foreach($tutors->Previousowner as $projects)
+                    @foreach($project as $projects)
                              <div class="col-4 small-10 ">
                                 <div class="container border-radius">
                                     <img src="{{ asset($projects->image)}}" alt="image1" class="image">
@@ -64,7 +43,7 @@
                                         <div class="text">
                                             <div>{{$projects->Title}}</div>
                                             {{--<a href="previous_projects/{{$projects->id}}" class="link">View</a>--}}
-                                            @if(Auth::guest())
+                                            @if(Auth()->user()->permission == '2')
                                                 <a href="previous_projects/{{$projects->id}}" class="col-4 small-4 link">View</a>
 
                                             @elseif ( Auth()->user()->permission == '1')
@@ -82,7 +61,6 @@
                                 </div>
                             </div>
                         @endforeach
-                    @endforeach
                 </div>
         </div>
     </div>

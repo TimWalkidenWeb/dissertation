@@ -20,15 +20,6 @@
 
         <div class="row form_text">Enter password </div>
         <input type="password" name="password" class="small-input">
-
-        {{--<div class="form-group">--}}
-        {{--@foreach($permission as $permissions)--}}
-
-        {{--{!! Form::label('permission', $permissions->permission) !!}--}}
-        {{--{{Form::radio('permission', $permissions->id)}}--}}
-
-        {{--@endforeach--}}
-        {{--</div>--}}
         <div>
             <div class="form_text">Add permissions</div>
             <ul>

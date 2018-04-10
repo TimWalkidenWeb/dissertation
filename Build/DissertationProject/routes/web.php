@@ -67,6 +67,8 @@ Route::post('learningMat.upload.post',['as'=>'learningMat.upload.post','uses'=>'
 
 Route::resource('learning_materials', 'Learning_materials');
 Route::delete('learning_materials/{id}', 'Learning_materials@destroy');
+Route::get('learning_materials/{id}/edit', 'learning_materials@edit');
+Route::patch('learning_materials/{id}', 'learning_materials@update');
 
 
 
@@ -104,6 +106,3 @@ Route::post('previous.upload.post',['as'=>'previous.upload.post','uses'=>'Previo
 
 Route::post('project.response', ['as' => 'project.response', 'uses'=> 'Project@send']);
 
-Route::get('/demo', function () {
-    return new App\Mail\UserWelcome();
-});

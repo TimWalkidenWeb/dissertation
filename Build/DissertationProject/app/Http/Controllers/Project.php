@@ -66,7 +66,7 @@ class Project extends Controller
 
         $project->update($request->all());
 
-
+        $project->Projects()->detach();
         $project->Projects()->attach($request->get('pathway_id'));
 
         return redirect('/project');
