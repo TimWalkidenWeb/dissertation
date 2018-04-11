@@ -52,7 +52,7 @@ class LearningSection extends Controller
 
         $this->validate(request(),[
             'title' => 'required|max:70',
-            'content' => 'required|max:1000 ',
+            'content' => 'required',
             'cw_id'=> 'required',
             'image' => 'required|mimes:jpeg,png,jpg,JPEG,PNG,JPG'
 

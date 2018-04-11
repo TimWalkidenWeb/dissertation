@@ -16,11 +16,11 @@ class CreatePreProjectsTable extends Migration
         Schema::create('pre_projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Title');
-            $table->string('content');
-            $table->string('description');
+            $table->longText('content');
+            $table->longText('description');
             $table->date('Date');
             $table->integer('user_id')->unsigned();
-            $table->string('image');
+            $table->longText('image');
             $table->timestamps();
 
             // $table->primary('id');

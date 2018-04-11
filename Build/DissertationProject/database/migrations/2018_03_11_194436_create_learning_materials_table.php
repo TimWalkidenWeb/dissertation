@@ -16,7 +16,7 @@ class CreateLearningMaterialsTable extends Migration
         Schema::create('learning_materials', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Title');
-            $table->string('content');
+            $table->longText('content');
             $table->integer('learning_section_id')->unsigned();
             $table->integer('staff_id')->unsigned();
             $table->timestamps();

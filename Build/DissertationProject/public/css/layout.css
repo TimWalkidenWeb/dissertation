@@ -69,6 +69,7 @@ nav {
     background-color: #82398C;
     color: white;
     padding-left: -2em;
+    border-bottom-width: 1px;
     border-bottom-style: groove;
     border-bottom-color: black;
 }
@@ -117,7 +118,7 @@ nav {
     h3{
         font-size: 18px;
         padding-bottom: 7px;
-        border-bottom-width: 2px;
+        border-bottom-width: 1px;
         border-bottom-style: groove;
         border-color: black;
     }
@@ -139,22 +140,27 @@ nav {
     }
 
     .small-input{
-        padding-right: 25%;
-        padding-bottom: 3%;
-        margin-left: 3%;
         margin-bottom: 4%;
         background-color: lightgray;
+        width: 100%;
+        height: 2em;
     }
     .text_area{
-        margin-left: 5%;
-        margin-top: 1%;
         background-color: lightgray;
+        width: 100%;
+        height: 25em;
+        border-width: 2px;
+        border-style: inset;
+        border-color: initial;
+        border-image: initial;
+        margin-bottom: 4%;
         }
 
 }
 .form_text{
     font-size: 15pt;
     padding-bottom: 6%;
+    padding-top: 6%;
 }
 
 .form_list{
@@ -199,7 +205,7 @@ nav {
     h3{
         font-size: 18px;
         padding-bottom: 3%;
-        border-bottom-width: 2px;
+        border-bottom-width: 1px;
         border-bottom-style: groove;
         border-color: black;
     }
@@ -219,11 +225,9 @@ nav {
 
 
     .small-input{
-        margin-left: 4%;
-        /*padding-left: 21%;*/
-        /*padding-bottom: 36%;*/
+
         background-color: lightgray;
-        width:75%;
+        width:100%;
         height: 2em;
         border-width: 2px;
         border-style: inset;
@@ -235,6 +239,7 @@ nav {
     .form_text_2{
         font-size: 15pt;
         margin-top: 1% ;
+        padding-top: 6%;
     }
 
     .content-input{
@@ -245,11 +250,8 @@ nav {
     }
 
     .text_area{
-        margin-left: 4%;
-        /*padding-left: 21%;*/
-        /*padding-bottom: 36%;*/
         background-color: lightgray;
-        width:75%;
+        width: 100%;
         height: 25em;
         border-width: 2px;
         border-style: inset;
@@ -336,7 +338,7 @@ button{
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color:lightgray ;
+    background-color:white ;
 }
 
 .container:hover .overlay {
@@ -377,7 +379,7 @@ button{
     overflow: hidden;
     font-size: 15px;
     /*padding-bottom: 7px;*/
-    border-bottom-width: 2px;
+    border-bottom-width: 1px;
     border-bottom-style: groove;
     border-color: black;
     margin-top: -12%;

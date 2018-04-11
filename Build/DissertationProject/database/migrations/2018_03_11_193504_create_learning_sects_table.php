@@ -16,7 +16,7 @@ class CreateLearningSectsTable extends Migration
         Schema::create('learning_sects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('content');
+            $table->longText('content');
             $table->string('image');
             $table->timestamps();
         });

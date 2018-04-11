@@ -23,7 +23,7 @@
             </ul>
         </div>
         <div class="row col-12 small-12">
-            <h4 class="show_content"><a href="{{asset($project->content)}}" style = "color: black">View previous project</a></h4>
+            <h4 class="show_content"><a href="{{asset($project->content)}}" style = "color: black" target="_blank">View previous project</a></h4>
         </div>
 
     </div>

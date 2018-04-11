@@ -32,7 +32,7 @@ class Previouscreate extends Controller
     {
         $this->validate(request(),[
             'title' => 'required|max:70',
-            'description' => 'required|max:300 ',
+            'description' => 'required ',
             'date' => 'required|before:today',
             'image_content' => 'required|mimes:pdf',
             'pathway_id'=> 'required',

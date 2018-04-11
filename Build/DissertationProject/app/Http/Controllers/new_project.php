@@ -44,14 +44,14 @@ class new_project extends Controller
 
 
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('storage'), $imageName);
-        $image = 'storage/'.$imageName;
+        request()->image->move(public_path('storage/images'), $imageName);
+        $image = 'storage/images/'.$imageName;
         $new_project= Projects::create([
                 'title' => $request->input('title'),
                 'content' => $request->input('content'),
                 'user_id' => $request->input('user_id'),
                 'num_participant' => $request->input('num_participant'),
-                'image' => 'required|mimes:jpeg,png,jpg,JPEG,PNG,JPG'
+                'image' => $image
 
             ]
 
