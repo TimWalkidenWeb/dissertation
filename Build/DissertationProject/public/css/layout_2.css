@@ -1,0 +1,243 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    height: 100px;
+    float: left;
+}
+h2{
+    float: left;
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-left: 10px;
+}
+nav{
+    height:100px;
+    background-color: #d0afee;
+}
+.login{
+    float: right;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: lighter;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+.banner{
+    height: 340px;
+    background-color: #d0afee;
+    text-align: center;
+    padding-top: 6%;
+    padding-right: 6%;
+    /* padding-bottom: 6%; */
+    padding-left: 6%;
+}
+.banner_inside_view{
+    height: 340px;
+    background-color: #d0afee;
+    text-align: center;
+    padding-top: 6%;
+    padding-right: 6%;
+    /* padding-bottom: 6%; */
+    padding-left: 6%;
+}
+.banner_inside_show{
+    height: 200px;
+    background-color: #d0afee;
+    text-align: center;
+    padding-top: 6%;
+    padding-right: 6%;
+    /* padding-bottom: 6%; */
+    padding-left: 6%;
+}
+h1{
+    margin-top: 0;
+    text-align: center;
+    color: black;
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+}
+h3{
+    margin-top: 0;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
+}
+button{
+    font-size: x-large;
+    padding: 10px;
+    background: #33ef11;
+    border-color: #33ef11;
+    color: white;
+}
+.sections{
+    padding-top: 6%;
+    height: 400px;
+    margin-right: 6%;
+    margin-left: 6%
+}
+.section{
+
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+.start{
+    /*margin-left: 20%;*/
+}
+.display{
+    height: 150px;
+}
+.display_heading{
+    width: 100%;
+    float: left;
+    margin-top: 5%;
+}
+.inner_section{
+    width: 100%;
+}
+
+
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+
+}
+
+@media only screen and (min-width: 768px){
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .col-hidden{
+        display:none;
+    }}
+@media only screen and (max-width: 767px) {
+    .small-hidden{
+        display:none;
+    }
+    .small-1 {width: 8.33%;}
+    .small-2 {width: 16.66%;}
+    .small-3 {width: 25%;}
+    .small-4 {width: 33.33%;}
+    .small-5 {width: 41.66%;}
+    .small-6 {width: 50%;}
+    .small-7 {width: 58.33%;}
+    .small-8 {width: 66.66%;}
+    .small-9 {width: 75%;}
+    .small-10 {width: 83.33%;}
+    .small-11 {width: 91.66%;}
+    .small-12 {width: 100%;}}
+
+.show{
+    font-size: 24px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.container{
+    background-color: white;
+    margin-top: 2%;
+    position: relative;
+
+    height: 250px;
+    padding: 3%;
+    margin-left: 7%;
+    margin-bottom: 22%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.image_view{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: white;
+}
+
+.text{
+    color: black;
+    font-size: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.link{
+    color: black;
+    margin-right: 3%;
+    margin-top: 5%;
+}
+
+.image_show_container{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 4%;
+    text-align: center;
+
+
+}
+.image_show{
+    width: 50%;
+}
+.content_show{
+    width: 50%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 4%;
+    margin-bottom: 5%;
+
+}
+
+.list{
+    font-size: 12px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.float{
+    float: left;
+}
