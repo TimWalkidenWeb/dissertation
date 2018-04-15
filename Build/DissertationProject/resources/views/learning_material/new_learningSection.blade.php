@@ -1,26 +1,27 @@
 @extends('layouts.master')
 @section('content')
-    <div class="row">
-        <h3 class="col-12 small-12 show page_title">Add a new learning section</h3>
+
+    <div class="banner_inside_create">
+        <h1>Add a new learning section</h1>
     </div>
 
 
     <div class="row form_mobile form_desktop" >
 {!! Form::open(array('route' => 'learning.upload.post','files'=>true, 'enctype' => "multipart/form-data")) !!}
-    <div class="row form_text">
+    <h2 class="row form_text">
 
-            Title of learning section  </div>
+            Title of learning section  </h2>
         <input type="text" name="title" class="small-input">
 
 
-        <div class="row form_text">Learning section content
+        <h2 class="row form_text">Learning section content
 
 
-        </div>
+        </h2>
         <textarea rows="25" cols="40" class="text_area" name="content"> </textarea>
 
        <div>
-        <div class="form_text">Coursework the learning section relevant to</div>
+        <h2 class="form_text">Coursework the learning section relevant to</h2>
         <ul>
             @foreach($cws as $cw)
 
@@ -34,7 +35,7 @@
     </div>
 
         <div>
-            <div class="form_text">Add a display image</div>
+            <h2 class="form_text">Add a display image</h2>
                    {!! Form::file('image', array('class' => 'form-control')) !!}
             </div>
 
@@ -42,7 +43,7 @@
         <div>
             {!!  Form::token()!!}
         </div>
-        <div class="form-group">
+        <div class="form-group padding">
 
             <button type="submit" class="submit_btn">Submit Learning section</button>
         </div>

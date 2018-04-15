@@ -1,24 +1,24 @@
 @extends('layouts.master')
 @section('content')
-    <div class="row">
-        <h3 class="col-12 small-12 show page_title">Add a new project</h3>
+    <div class="banner_inside_create">
+        <h1>Add a new topic </h1>
     </div>
 
 
     <div class="row form_mobile form_desktop" >
 {!! Form::open(array('route' => 'image.upload.post','files'=>true, 'enctype' => "multipart/form-data")) !!}
-    <div class="row form_text">Title of project    </div>
+    <h2 class="row form_text">Title of project</h2>
         <input type="text" name="title" class="small-input">
 
 
-        <div class="row form_text">Description of the project</div>
+        <h2 class="row form_text">Description of the project</h2>
         <textarea rows="25" cols="40" class="text_area" name="content"> </textarea>
 
 
-        <div class="row form_text">Number of participants  </div>
+        <h2 class="row form_text">Number of participants  </h2>
         <input type="text" name="num_participant" class="small-input">
     <div>
-        <div class="form_text">Pathway linked to project</div>
+        <h2 class="form_text">Pathway linked to project</h2>
         <ul>
             @foreach($pathway as $pathways)
 
@@ -32,8 +32,8 @@
     </div>
 
         <div>
-            <div class="form_text">Add a display image</div>
-                   {!! Form::file('image', array('class' => 'form-control')) !!}
+            <h2 class="form_text">Add a display image</h2>
+                   {!! Form::file('image', array('class' => 'submit_btn')) !!}
             </div>
 
         <div>
@@ -43,9 +43,8 @@
         <div>
             {!!  Form::token()!!}
         </div>
-        <div class="form-group">
-
-            <button type="submit" class="submit_btn">Submit project</button>
+        <div class="form-group padding">
+            <button type="submit" class="submit_btn ">Submit project</button>
         </div>
         {!! Form::close() !!}
 </div>

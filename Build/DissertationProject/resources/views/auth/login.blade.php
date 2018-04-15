@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="row">
-        <h3 class="col-12 small-12 show page_title">Login</h3>
+    <div class="banner_inside_create">
+        <h1>Login</h1>
     </div>
 
      <form class="form-horizontal" method="POST" action="{{ route('login') }}">

@@ -2,9 +2,31 @@
 @section('content')
 
 <div class="banner_inside_view">
-    <h1>Want some inspiration view are previous work below </h1>
+    <h1>Examples of previous work </h1>
     <h3>Want to filter by pathway use links below</h3>
-    <button class=find"> <a href="{{url('/project')}}">View Topics</a></button>
+    <div class="dropdown small-12 col-hidden">
+        <button class="dropbtn ">Filter by pathway	&#9660;</button>
+        <i class="arrow down"></i>
+        <div class="dropdown-content module_filt">
+            <div id="myBtnContainer">
+                <li class="fil_list" style="margin-top: 3%" onclick="filterSelection_pathway('all')"> Show all</li>
+                @foreach($pathway as $pathways)
+                    <li class="fil_list" onclick="filterSelection_pathway({{$pathways->id}})"> {{$pathways->pathway}}</li>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 filter small-hidden">
+            <div id="myBtnContainer">
+                <div class="extra_link_style " style="width: 100%; font-size: 22px" onclick="filterSelection('all')"> Show all</div>
+                @foreach($pathway as $pathways)
+                    <div class="extra_link_style margin col-2" onclick="filterSelection({{$pathways->id}})"> {{$pathways->pathway}}</div>
+                @endforeach
+            </div>
+        </div>
+    </div>
 </div>
 <div class="row">
     {{--<div class="filt col-hidden small-12">--}}
@@ -38,7 +60,7 @@
         <div class="col-8 small-12">
             <div class="row">
                     @foreach($project as $projects)
-                             <div class="col-4 small-10 ">
+                             <div class="col-4 small-12 ">
                                 <div class="container border-radius">
                                     <img src="{{ asset($projects->image)}}" alt="display image for {{ asset($projects->Title)}}" class="image_view">
                                     <div class="overlay border-radius">

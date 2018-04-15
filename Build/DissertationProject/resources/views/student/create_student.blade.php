@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <div class="row">
-        <h3 class="col-12 small-12 show page_title">New student</h3>
+    <div class="banner_inside_create">
+        <h1>New student</h1>
     </div>
 
     {!! Form::open(['action'=>['staffMember@store']]) !!}

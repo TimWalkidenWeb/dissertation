@@ -3,37 +3,32 @@
 <div class="banner_inside_view">
     <h1>What do you need help on ? </h1>
     <h3>Want to filter by coursework use links below</h3>
-    <button class=find"> <a href="{{url('/project')}}">View Topics</a></button>
+    <div class="dropdown small-12 col-hidden">
+        <button class="dropbtn ">Filter by pathway	&#9660;</button>
+        <i class="arrow down"></i>
+        <div class="dropdown-content module_filt">
+            <div id="myBtnContainer">
+                <li class="fil_list" style="margin-top: 3%" onclick="filterSelection_pathway('all')"> Show all</li>
+                @foreach($cws as $cw)
+                    <li class="fil_list" onclick="filterSelection_pathway({{$cw->id}})"> {{$cw->title}}</li>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 filter small-hidden">
+            <div id="myBtnContainer">
+                <div class="extra_link_style " style="width: 100%; font-size: 22px" onclick="filterSelection('all')"> Show all</div>
+                @foreach($cws as $cw)
+                    <div class="extra_link_style col-3" onclick="filterSelection({{$cw->id}})"> {{$cw->title}}</div>
+                @endforeach
+            </div>
+        </div>
+    </div>
 </div>
 <div class="row">
-    {{--<div class="filt col-hidden small-12">--}}
-        {{--<div class="dropdown small-6">--}}
-            {{--<button class="dropbtn show_content">Module--}}
-                {{--<i class="arrow down"></i>--}}
-            {{--</button>--}}
-            {{--<div class="dropdown-content">--}}
-                {{--<div id="myBtnContainer">--}}
-                    {{--<li onclick="filterSelection('all')"> Show all</li>--}}
-                    {{--@foreach($cws as $cw)--}}
-                        {{--<li  onclick="filterSelection({{$cw->id}})"> {{$cw->title}}</li>--}}
-                    {{--@endforeach--}}
-                {{--</div>--}}
 
-            {{--</div>--}}
-        {{--</div>--}}
-         {{--</div>--}}
-
-    {{--<div class="row">--}}
-        {{--<div class="col-3 filter small-hidden">--}}
-            {{--<h3>Type of CW</h3>--}}
-            {{--<div id="myBtnContainer">--}}
-                {{--<button class="btn" onclick="filterSelection('all')"> Show all</button>--}}
-                {{--@foreach($cws as $cw)--}}
-                    {{--<button class="btn" onclick="filterSelection({{$cw->id}})"> {{$cw->title}}</button>--}}
-                {{--@endforeach--}}
-            {{--</div>--}}
-
-        {{--</div>--}}
 
         <div class="col-8 small-12">
             <div class="row">

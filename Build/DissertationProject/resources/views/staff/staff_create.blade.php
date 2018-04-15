@@ -2,10 +2,9 @@
 
 @section('content')
 
-    <div class="row">
-        <h3 class="col-12 small-12 show page_title">New staff member</h3>
+    <div class="banner_inside_create">
+        <h1>New staff member</h1>
     </div>
-
 
     <div class="row form_mobile form_desktop" >
         {!! Form::open(['action'=>['staffMember@store']]) !!}

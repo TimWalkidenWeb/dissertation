@@ -1,23 +1,23 @@
 @extends('layouts.master')
 @section('content')
 
-    <div class="row">
-        <h3 class="col-12 small-12 show page_title">Edit- {{$project->Title}}</h3>
+    <div class="banner_inside_create">
+        <h1>Edit- {{$project->Title}}</h1>
     </div>
 
     <div class="form_mobile form_desktop" >
         <div class="row">
             {!! Form::model($project, ['method' => 'PATCH', 'url' => ['previous_projects',$project->id], $project->id]) !!}
-            <div class="row form_text"> Title of project</div>
+            <h2 class="row form_text"> Title of project</h2>
             {!! Form::text('title', $project->Title, array('class'=>'small-input')) !!}
 
-            <div class="row form_text">Description of the project</div>
+            <h2 class="row form_text">Description of the project</h2>
             {!! Form::textarea('description', $project->description, array('class'=>'text_area')) !!}
 
-            <div class="row form_text">Date  </div>
+            <h2 class="row form_text">Date  </h2>
             {!! Form::date('date', $project->Date) !!}
 
-            <div class="form_text">Pathway linked to project</div>
+            <h2 class="form_text">Pathway linked to project</h2>
             <ul>
             @foreach($pathway as $projects)
 
@@ -35,7 +35,7 @@
                 {!!  Form::token()!!}
             </div>
             <div class='form-group large-6 col-6'>
-                {!! Form::submit('Update previous project', ['class' =>'submit_btn']) !!}
+                <button type="submit" class="submit_btn ">Submit updates</button>
                 {!! Form::close()!!}
             </div>
 
@@ -44,7 +44,7 @@
 
             <div class='form-group large-6 col-6'>
                 {!! Form::open(['method' => 'DELETE' ,'route' => ['previous_projects.destroy', $project->id]]) !!}
-                {!! Form::submit('Delete', ['class' => 'submit_btn']) !!}
+                <button type="submit" class="submit_btn ">Delete project</button>
                 {!! Form::close()!!}
             </div>
         </div>

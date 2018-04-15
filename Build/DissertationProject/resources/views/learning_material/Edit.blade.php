@@ -1,21 +1,22 @@
 @extends('layouts.master')
 @section('content')
-
-    <div class="row">
-        <h3 class="col-12 small-12 show page_title">Edit- {{$learning_section->title}}</h3>
+    <div class="banner_inside_create">
+        <h1>Edit- {{$learning_section->title}}</h1>
     </div>
+
+
 
     <div class="form_mobile form_desktop" >
         <div class="row">
             {!! Form::model($learning_section, ['method' => 'PATCH', 'url' => ['learning_section',$learning_section->id], $learning_section->id]) !!}
-            <div class="row form_text"> Title of project</div>
+            <h1 class="row form_text"> Title of project</h1>
             {!! Form::text('title', $learning_section->title, array('class'=>'small-input')) !!}
 
-            <div class="row form_text">Description of the project</div>
+            <h1 class="row form_text">Description of the project</h1>
             {!! Form::textarea('content', $learning_section->content, array('class'=>'text_area')) !!}
 
 
-            <div class="form_text">Pathway linked to project</div>
+            <h1 class="form_text">Pathway linked to project</h1>
             <ul>
             @foreach($cw as $cws)
 
@@ -30,12 +31,12 @@
 
 
             <div>
-                {!!  Form::token()!!}
+                {!!  Form::token()!!}<button type="submit" class="submit_btn ">Submit update</button>
 
             </div>
 
             <div class='form-group large-6 col-6'>
-                {!! Form::submit('Update learning section', ['class' =>'submit_btn']) !!}
+                <button type="submit" class="submit_btn ">Submit update</button>
                 {!! Form::close()!!}
             </div>
 
@@ -44,7 +45,7 @@
 
             <div class='form-group large-6 col-6'>
                 {!! Form::open(['method' => 'DELETE' ,'route' => ['learning_section.destroy', $learning_section->id]]) !!}
-                {!! Form::submit('Delete', ['class' => 'submit_btn']) !!}
+                <button type="submit" class="submit_btn ">Delete learning section</button>
                 {!! Form::close()!!}
             </div>
         </div>

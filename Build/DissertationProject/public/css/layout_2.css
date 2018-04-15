@@ -2,30 +2,106 @@ body{
     margin: 0;
     padding: 0;
 }
-.logo{
-    height: 100px;
-    float: left;
+
+@media only screen and (min-width: 768px){
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .col-hidden{
+        display:none;
+    }
+    .section{
+
+        float: left;
+        width: 33%;
+        text-align: center;
+    }
+    .form_desktop{
+        margin-right: 25%;
+        margin-left: 25%;
+        padding: 6%;
+        background-color: white;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    .form_text{
+        width:100%;
+    }
+
+    .small-input{
+        margin-bottom: 4%;
+        background-color: lightgray;
+        width: 100%;
+        height: 2em;
+    }
+    .text_area{
+        background-color: lightgray;
+        width: 100%;
+        height: 25em;
+        border-width: 2px;
+        border-style: inset;
+        border-color: initial;
+        border-image: initial;
+        margin-bottom: 4%;
+    }
+
+    .link{
+        float: right;
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 20px;
+        font-weight: lighter;
+        text-decoration: none;
+    }
+
+    .logo{
+        height: 170px;
+        float: left;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    h2{
+        float: left;
+        font-size: 20px;
+        font-family: 'Playfair Display', serif;
+    height: 340px;       font-weight: 700;
+        margin-left: 10px;
+    }
+    .banner_inside_view {
+        height: 340px;
+    }
+
+    .container{
+        background-color: white;
+        margin-top: 2%;
+        position: relative;
+
+        height: 250px;
+        padding: 3%;
+        margin-left: 7%;
+        margin-bottom: 22%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    }
 }
-h2{
-    float: left;
-    font-size: 20px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    margin-left: 10px;
-}
+
+
 nav{
-    height:100px;
+    height:180px;
     background-color: #d0afee;
 }
-.login{
-    float: right;
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 20px;
-    font-weight: lighter;
-    text-decoration: none;
-}
+
+
+
+
 a{
     text-decoration: none;
     color: black;
@@ -42,10 +118,10 @@ a{
     padding-left: 6%;
 }
 .banner_inside_view{
-    height: 340px;
+
     background-color: #d0afee;
     text-align: center;
-    padding-top: 6%;
+
     padding-right: 6%;
     /* padding-bottom: 6%; */
     padding-left: 6%;
@@ -86,12 +162,7 @@ button{
     margin-right: 6%;
     margin-left: 6%
 }
-.section{
 
-    float: left;
-    width: 33%;
-    text-align: center;
-}
 .start{
     /*margin-left: 20%;*/
 }
@@ -106,6 +177,7 @@ button{
 .inner_section{
     width: 100%;
 }
+
 
 
 
@@ -125,22 +197,11 @@ button{
 
 }
 
-@media only screen and (min-width: 768px){
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
-    .col-hidden{
-        display:none;
-    }}
+
+.form_list{
+    font-size: 12pt;
+    padding-bottom: 5%;
+}
 @media only screen and (max-width: 767px) {
     .small-hidden{
         display:none;
@@ -156,7 +217,124 @@ button{
     .small-9 {width: 75%;}
     .small-10 {width: 83.33%;}
     .small-11 {width: 91.66%;}
-    .small-12 {width: 100%;}}
+    .small-12 {width: 100%;}
+
+    .section{
+        width: 100%;
+        text-align: center;
+    }
+    .module_filt{
+        margin-right: 9%;
+    }
+    .banner_inside_view{
+        height: 437px;
+
+    }
+    .fil_list{
+        padding-bottom: 5%;
+    }
+    .form_mobile{
+        margin-right: 10%;
+        margin-left: 10%;
+        padding: 6%;
+        background-color: white;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    .text_area{
+        background-color: lightgray;
+        width: 100%;
+        height: 25em;
+        border-width: 2px;
+        border-style: inset;
+        border-color: initial;
+        border-image: initial;
+        margin-bottom: 4%;
+    }
+    .small-input{
+
+        background-color: lightgray;
+        width:100%;
+        height: 2em;
+        border-width: 2px;
+        border-style: inset;
+        border-color: initial;
+        border-image: initial;
+        margin-bottom: 4%;
+
+    }
+    .logo{
+        height:150px;
+        float: left;
+    }
+
+    .dropdown {
+        float: left;
+        overflow: hidden;
+        padding-left: 14pt;
+    }
+    .dropdown .dropbtn {
+        text-align: center;
+        border: none;
+        outline: none;
+        padding-top: 20%;
+        background-color: inherit;
+        padding-bottom: 3%;
+        font-size: 20px;
+        font-weight: lighter;
+        color: black;
+    }
+
+    .navbar a:hover, .dropdown:hover .dropbtn {
+        /*background-color: lightgray;*/
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+
+        /*margin-left: -28%;*/
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+        z-index: 1;
+
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .container{
+        background-color: white;
+        margin-top: 2%;
+        position: relative;
+
+        height: 250px;
+        padding: 3%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 22%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    }
+
+}
 
 .show{
     font-size: 24px;
@@ -164,17 +342,7 @@ button{
     padding-right: 10%;
 }
 
-.container{
-    background-color: white;
-    margin-top: 2%;
-    position: relative;
 
-    height: 250px;
-    padding: 3%;
-    margin-left: 7%;
-    margin-bottom: 22%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
 
 .image_view{
     display: block;
@@ -204,10 +372,18 @@ button{
     transform: translate(-50%, -50%);
 }
 
-.link{
+.extra_link_style{
     color: black;
-    margin-right: 3%;
-    margin-top: 5%;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    float: right;
+    margin-top: 30px;
+
+    /* margin-right: 10px; */
+    font-size: 16px;
+    font-weight: lighter;
+    text-decoration: none;
+    float: left;
 }
 
 .image_show_container{
@@ -230,6 +406,9 @@ button{
     margin-bottom: 5%;
 
 }
+.submit_btn{
+
+}
 
 .list{
     font-size: 12px;
@@ -240,4 +419,14 @@ button{
 
 .float{
     float: left;
+}
+
+.margin{
+    margin-left: 10px;
+}
+
+.image_heading{
+    font-size: 14px;
+    font-weight: 700;
+    padding-bottom: 7%;
 }

@@ -9,16 +9,16 @@
       <div class="row">
         {!! Form::model($project, ['method' => 'PATCH', 'url' => 'projects/'.$project->id]) !!}
 
-        <div class="row form_text"> Title of project</div>
+        <h2 class="row form_text"> Title of project</h2>
         {!! Form::text('title', $project->Title, array('class'=>'small-input')) !!}
 
-        <div class="row form_text">Description of the project</div>
+        <h2 class="row form_text">Description of the project</h2>
         {!! Form::textarea('content', $project->content, array('class'=>'text_area')) !!}
 
-        <div class="row form_text">Number of participants  </div>
+        <h2 class="row form_text">Number of participants  </h2>
         {!! Form::text('num_participant', $project->num_participant, array('class'=>'small-input')) !!}
 
-        <div class="form_text">Pathway linked to project</div>
+        <h2 class="form_text">Pathway linked to project</h2>
         <ul>
             @foreach($pathway as $projects)
 
@@ -36,7 +36,7 @@
             {!!  Form::token()!!}
         </div>
           <div class='form-group large-6 col-6'>
-              {!! Form::submit('Update project', ['class' =>'submit_btn']) !!}
+              <button type="submit" class="submit_btn ">Submit update</button>
           </div>
           {!! Form::close()!!}
 
@@ -46,7 +46,7 @@
 
            <div class='form-group large-6 col-6'>
                {!! Form::open(['method' => 'DELETE' ,'route' => ['project.destroy', $project->id]]) !!}
-               {!! Form::submit('Delete', ['class' => 'submit_btn']) !!}
+               <button type="submit" class="submit_btn ">Delete project</button>
                {!! Form::close()!!}
            </div>
        </div>

@@ -1,26 +1,26 @@
 @extends('layouts.master')
 @section('content')
 
-<div class="row">
-    <h3 class="col-12 small-12 show page_title">New previous project</h3>
+<div class="banner_inside_create">
+    <h1>New previous project</h1>
 </div>
 
 <div class="row form_mobile form_desktop" >
     {!! Form::open(array('route' => 'previous.upload.post','files'=>true, 'enctype' => "multipart/form-data")) !!}
-    <div class="row form_text">
+    <h2 class="row form_text">
 
-        Title of project    </div>
+        Title of project    </h2>
     <input type="text" name="title" class="small-input">
 
 
-    <div class="row form_text">Description of the project</div>
+    <h2 class="row form_text">Description of the project</h2>
     <textarea class="text_area" name="description" > </textarea>
 
 
-    <div class="row form_text">Date </div>
+    <h2 class="row form_text">Date </h2>
     <input type="date" name="date" class="small-input">
     <div>
-        <div class="form_text">Pathway linked to project</div>
+        <h2 class="form_text">Pathway linked to project</h2>
         <ul>
             @foreach($pathway as $pathways)
 
@@ -34,12 +34,12 @@
     </div>
 
     <div>
-        <div class="form_text">Add a display image</div>
+        <h2 class="form_text">Add a display image</h2>
         {!! Form::file('image', array('class' => 'form-control')) !!}
     </div>
 
     <div>
-        <div class="form_text">Add a project content</div>
+        <h2 class="form_text">Add a project content</h2>
         {!! Form::file('image_content', array('class' => 'form-control')) !!}
     </div>
 
@@ -50,7 +50,7 @@
     <div>
         {!!  Form::token()!!}
     </div>
-    <div class="form-group">
+    <div class="form-group padding">
 
         <button type="submit" class="submit_btn">Submit previous project</button>
     </div>
