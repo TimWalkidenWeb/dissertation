@@ -2,7 +2,7 @@
 $I = new AcceptanceTester($scenario);
 $I->wantTo('make sure user can see link to create previous project');
 $I->amOnPage('/login');
-$I->fillField('email', 'validation@go.edgehill.ac.uk');
+$I->fillField('email', 'MarkHall@edgehill.ac.uk');
 $I->fillField('password', '12345');
 $I->click('Login');
 $I->canSee('Project Examples');
@@ -27,7 +27,7 @@ $I->attachFile('image', '1520257828.png');
 $I->attachFile('image_content', 'download.pdf');
 $I->selectOption('pathway_id[]', '2');
 $I->click('Submit previous project');
-$I->canSee('Project examples');
+$I->canSee('Examples of previous work');
 $I->canSee('Test_upload');
 $I->click('View');
 $I->canSee('Test_upload');

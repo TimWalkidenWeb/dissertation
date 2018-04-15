@@ -8,7 +8,7 @@ $I->click('Login');
 $I->wantTo("see another tutors project and edit the project");
 $I->canSee('Project Examples');
 $I->click('Project Examples');
-$I->canSee('Project examples');
+$I->canSee('Examples of previous work');
 $I->canSee('Test_upload');
 $I->canSee('Edit');
 $I->click('Edit');

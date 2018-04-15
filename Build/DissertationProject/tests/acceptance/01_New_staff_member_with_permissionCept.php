@@ -22,12 +22,12 @@ $I->fillField('password','1234');
 $I->click('Submit new staff member');
 $I->canSee('The password must be at least 5 characters.');
 $I->wantTo('submit a new correct staff member');
-$I->fillField('name', 'Validation');
-$I->fillField('email', 'validation@go.edgehill.ac.uk');
+$I->fillField('name', 'Mark Hall');
+$I->fillField('email', 'MarkHall@edgehill.ac.uk');
 $I->fillField('password', '12345');
 $I->selectOption('permission', '3');
 $I->click('Submit new staff member');
-$I->canSee('Welcome to edge hill final year project support website');
+$I->canSee('Need a Project Topic ?');
 
 
 

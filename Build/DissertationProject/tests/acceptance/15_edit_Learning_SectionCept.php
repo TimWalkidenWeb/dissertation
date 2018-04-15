@@ -2,7 +2,7 @@
 $I = new AcceptanceTester($scenario);
 $I->wantTo('make sure a user can access the edit page');
 $I->amOnPage('/login');
-$I->fillField('email', 'validation@go.edgehill.ac.uk');
+$I->fillField('email', 'MarkHall@edgehill.ac.uk');
 $I->fillField('password', '12345');
 $I->click('Login');
 $I->canSee('Project support');

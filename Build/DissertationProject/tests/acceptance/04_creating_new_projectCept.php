@@ -2,12 +2,12 @@
 $I = new AcceptanceTester($scenario);
 $I->wantTo('make sure a user can see link to new project');
 $I->amOnPage('/login');
-$I->fillField('email', 'validation@go.edgehill.ac.uk');
+$I->fillField('email', 'MarkHall@edgehill.ac.uk');
 $I->fillField('password', '12345');
 $I->click('Login');
 $I->canSee('New project');
 $I->click('New project');
-$I->canSee('Add a new project');
+$I->canSee('Add a new topic');
 $I->wantTo('Make sure that a field cannot be null when creating new project');
 $I->fillField('title', '');
 $I->fillField('content', '');
@@ -30,7 +30,7 @@ $I->fillField('num_participant', '10');
 $I->selectOption('pathway_id[]', '5');
 $I->attachFile('image', '1520257828.png');
 $I->click('Submit project');
-$I->canSee('Current Projects');
+$I->canSee('Available topics being offered');
 $I->click('View');
 $I->canSee('Test');
 

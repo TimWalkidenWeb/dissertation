@@ -8,7 +8,7 @@ $I->click('Login');
 $I->wantTo("see another tutors project and edit the project");
 $I->canSee('Current Projects');
 $I->click('Current Projects');
-$I->canSee('Current Projects');
+$I->canSee('Available topics being offered');
 $I->canSee('test_upload');
 $I->canSee('edit');
 $I->click('edit');

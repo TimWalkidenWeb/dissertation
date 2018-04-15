@@ -2,7 +2,7 @@
 $I = new AcceptanceTester($scenario);
 $I->wantTo('make sure students can not add, edit or delete advice');
 $I->amOnPage('/login');
-$I->fillField('email', 'student@go.edgehill.ac.uk');
+$I->fillField('email', 'rob@edgehill.ac.uk');
 $I->fillField('password', '12345');
 $I->click('Login');
 $I->canSee('Project support');
