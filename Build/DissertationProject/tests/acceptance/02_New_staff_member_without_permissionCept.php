@@ -5,5 +5,5 @@ $I->amOnPage('/login');
 //with permission 1
 $I->fillField('email', 'MarkHall@edgehill.ac.uk');
 $I->fillField('password', '12345');
-$I->click('Login');
+$I->click('Login to the system');
 $I->cantSee('Add new staff');

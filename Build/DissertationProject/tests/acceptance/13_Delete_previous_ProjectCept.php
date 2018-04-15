@@ -1,10 +1,10 @@
 <?php
 //$I = new AcceptanceTester($scenario);
 //$I->wantTo('Delete a record');
-//$I->amOnPage('/login');
-//$I->fillField('email', 'timothy.walkiden@go.edgehill.ac.uk');
+//$I->amOnPage('login');
+//$I->fillField('email', 'timothy.walkiden@edgehill.ac.uk');
 //$I->fillField('password', 'password');
-//$I->click('Login');
+//$I->click('Login to the system');
 //$I->canSee('Project Examples');
 //$I->click('Project Examples');
 //$I->canSee('Examples of previous work');

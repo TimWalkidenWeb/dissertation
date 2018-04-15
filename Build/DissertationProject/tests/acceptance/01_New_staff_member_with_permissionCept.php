@@ -2,11 +2,10 @@
 $I = new AcceptanceTester($scenario);
 $I->wantTo('make sure that staff member with permission 2 can add new staff');
 $I->amOnPage('/login');
-$I->fillField('email', 'timothy.walkiden@go.edgehill.ac.uk');
+$I->fillField('email', 'timothy.walkiden@edgehill.ac.uk');
 $I->fillField('password', 'password');
-$I->click('Login');
-$I->canSee('Add new staff');
-$I->click('Add new staff');
+$I->click('Login to the system');
+$I->click('Register staff');
 $I->canSee('New staff member');
 $I->wantTo('Make sure that a field cannot be null');
 $I->fillField('name', '');

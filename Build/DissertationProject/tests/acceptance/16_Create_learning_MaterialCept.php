@@ -4,7 +4,7 @@ $I->wantTo('make sure a user can access the learning section page');
 $I->amOnPage('/login');
 $I->fillField('email', 'MarkHall@edgehill.ac.uk');
 $I->fillField('password', '12345');
-$I->click('Login');
+$I->click('Login to the system');
 $I->canSee('Project support');
 $I->click('Project support');
 $I->wantTo('make sure a user is on the correct view page');

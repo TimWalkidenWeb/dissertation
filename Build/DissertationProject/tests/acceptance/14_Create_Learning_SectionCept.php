@@ -4,7 +4,7 @@ $I->wantTo('make sure a user can see link to new learning section');
 $I->amOnPage('/login');
 $I->fillField('email', 'MarkHall@edgehill.ac.uk');
 $I->fillField('password', '12345');
-$I->click('Login');
+$I->click('Login to the system');
 $I->canSee('Create learning section');
 $I->click('Create learning section');
 $I->wantTo('make sure a user on the correct page');

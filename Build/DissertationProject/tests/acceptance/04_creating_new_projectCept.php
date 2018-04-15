@@ -4,7 +4,7 @@ $I->wantTo('make sure a user can see link to new project');
 $I->amOnPage('/login');
 $I->fillField('email', 'MarkHall@edgehill.ac.uk');
 $I->fillField('password', '12345');
-$I->click('Login');
+$I->click('Login to the system');
 $I->canSee('New project');
 $I->click('New project');
 $I->canSee('Add a new topic');

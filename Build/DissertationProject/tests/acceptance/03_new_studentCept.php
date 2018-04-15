@@ -25,5 +25,5 @@ $I->cantSee('The password field is required.');
 $I->amOnPage('/login');
 $I->fillField('email', 'student@go.edgehill.ac.uk');
 $I->fillField('password', '12345');
-$I->click('Login');
+$I->click('Login to the system');
 

@@ -4,7 +4,7 @@ $I->wantTo('make sure user can see link to create previous project');
 $I->amOnPage('/login');
 $I->fillField('email', 'MarkHall@edgehill.ac.uk');
 $I->fillField('password', '12345');
-$I->click('Login');
+$I->click('Login to the system');
 $I->canSee('Project Examples');
 $I->click('Add a previous project');
 $I->canSee('New previous project');

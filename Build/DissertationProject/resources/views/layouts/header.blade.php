@@ -86,7 +86,7 @@
            @if(Auth::guest())
                <div class="link"><a href="{{url('/login')}}">Login</a></div>
                <div class="link"> <a href="/new_student">Register</a></div>
-               <div class="link"> <a href="{{'/learning_material'}}">Support</a></div>
+               <div class="link"> <a href="{{'/learning_section'}}">Support</a></div>
                <div class="link"> <a href="{{url('/previous_projects')}}">Examples</a></div>
                <div class="link"> <a href="{{url('/project')}}">Topics</a></div>
            @elseif(Auth::user()->permission == 1)
@@ -116,7 +116,7 @@
            @elseif(Auth::user()->permission == 2)
                <div class="link"> <a href="{{url('/log_out')}}">Logout</a></div>
                <div class="link"> <a href="/new_student">Register</a></div>
-               <div class="link"> <a href="{{'/learning_material'}}">Support</a></div>
+               <div class="link"> <a href="{{'/learning_section'}}">Support</a></div>
                <div class="link"> <a href="{{url('/previous_projects')}}">Examples</a></div>
                <div class="link"> <a href="{{url('/project')}}">Topics</a></div>
 
@@ -129,13 +129,13 @@
             @if(Auth::guest())
             <a href="{{url('/login')}}">login</a>
             <a href="/new_student">Register</a>
-            <a href="{{'/learning_material'}}">Support</a>
+            <a href="{{'/learning_section'}}">Support</a>
             <a href="{{url('/previous_projects')}}">Examples</a>
             <a href="{{url('/project')}}">Topics</a>
 
             @elseif(Auth::user()->permission == 1)
             <a href="{{url('/log_out')}}">Logout</a>
-            <a href="/new_staff">Add new staff</a>
+            <a href="/new_staff">Register staff</a>
 
             <a href="{{'/learning_section'}}">Project support</a>
             <a href="learning_section/create">Create learning section</a>
@@ -148,7 +148,7 @@
 
 
             @elseif(Auth::user()->permission == 2)
-            <a href="{{'/learning_material'}}">Project support</a>
+            <a href="{{'/learning_section'}}">Project support</a>
             <a href="{{url('/previous_projects')}}">Project Examples</a>
             <a href="{{url('/project')}}">Current Projects</a>
 

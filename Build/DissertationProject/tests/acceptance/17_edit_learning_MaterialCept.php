@@ -5,7 +5,7 @@ $I->wantTo('make sure a user can access the edit page');
 $I->amOnPage('/login');
 $I->fillField('email', 'MarkHall@edgehill.ac.uk');
 $I->fillField('password', '12345');
-$I->click('Login');
+$I->click('Login to the system');
 $I->canSee('Project support');
 $I->click('Project support');
 $I->click('View');
