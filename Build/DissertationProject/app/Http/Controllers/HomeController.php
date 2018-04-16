@@ -4,7 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
+/**
+ * Controller used to produce the view for the home page
+ */
 class HomeController extends Controller
+
 {
     /**
      * Create a new controller instance.
@@ -17,12 +22,11 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
+     * Public function used to link the route of the home page to the view
      */
     public function index()
     {
+//        return view used to send back the correct blade file to be shown
         return view('home');
     }
 }

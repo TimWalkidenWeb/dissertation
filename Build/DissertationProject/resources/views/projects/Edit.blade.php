@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
 
-    <div class="row">
-        <h3 class="col-12 small-12 show page_title">Edit- {{$project->Title}}</h3>
+    <div class="banner_inside_create">
+        <h1>Edit- {{$project->Title}}</h1>
     </div>
 
     <div class="form_mobile form_desktop" >

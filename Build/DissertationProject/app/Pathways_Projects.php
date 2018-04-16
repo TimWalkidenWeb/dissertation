@@ -4,34 +4,33 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+/**
+ *Relationships and fillable for pathways_projects
+ */
 class Pathways_Projects extends Authenticatable
 {
+
     use Notifiable;
+
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
+     * the following section of code is used to outline which columns in the table can be filled in by the user
      */
+
     protected $fillable = [
         'projects_id', 'pathways_id'
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-
-
-    /**Projects.php
-     * @return array
+     * pubic function to create a has one relationship to the projects table
      */
     public function Project_owner()
     {
         return $this->hasOne('App\Project');
     }
 
+    /**
+     * pubic function to create a has one relationship to the pathway table
+     */
     public function Projects()
     {
         return $this->hasOne('App\Pathway');

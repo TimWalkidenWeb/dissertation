@@ -3,13 +3,18 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/**
+ * The following code is used to create the pathways pre projects  table
+ */
 class CreatePathwaysPreProjectsTable extends Migration
 {
     /**
-     * Run the migrations.
-     *
-     * @return void
+     * pubic function is used to create the columns within the table,
+     * the first row names the table
+     * the second row creates the column called pathway_id with the data type of integer
+     * the third row create the column called pre_projects_id with the data type of integer
+     * the next two lines create the foregin keys by selecting the column and linking it to the a column in another table
+     * the last line sets the column to primary keys
      */
     public function up()
     {

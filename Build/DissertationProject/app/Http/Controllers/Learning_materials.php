@@ -8,6 +8,14 @@ use App\Learning_material;
 
 class Learning_materials extends Controller
 {
+    /**
+     *The store function is used to store the learning material within the learning section
+     * the function starts by carrying out validation checks
+     * then the id of the learning section is requested to be used when return function created
+     * then all the other data is requested and assigned to one of the coloumns
+     * before the record is saved
+     * final a redirect is created using the requested learning section to take the user back to the learning section page
+     */
     public function store(Request $request)
     {
 
@@ -34,6 +42,12 @@ class Learning_materials extends Controller
         return redirect('/learning_section/'.$Id);
     }
 
+    /**
+     * The following function is used to create the edit form
+     * first function the function finds the id within the learning material table
+     * all the data collected is then compacted into a variable name to be used within the view and the correct view file
+     * is assigned to the return function
+     */
     public function edit($id)
     {
 
@@ -44,6 +58,14 @@ class Learning_materials extends Controller
         return view('learning_material.advice_edit')->with(compact('learning_mat'));
 
     }
+
+    /**
+     * Update is used to upload the changes to the edited learning material
+     * the first section of the function is the validation
+     * then the learning material is found within the table
+     * learning material is then updated by requesting the date within the form and saving it to the database
+     * final a return is created to take the user back to the learning section
+     */
 
     public function update(Request $request, $id)
     {
@@ -69,6 +91,13 @@ class Learning_materials extends Controller
         return redirect('/learning_section/'.$Id_learningsect);
 
     }
+
+
+    /**
+     * the destroy function is used to delete a record within the table
+     * first the record is found within the table
+     * the learning section is then deleted and the user is redirected to the learning section page
+     */
 
     public function destroy($id)
     {

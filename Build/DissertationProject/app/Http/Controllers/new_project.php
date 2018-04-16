@@ -10,13 +10,20 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
+
+/**
+ *Controller used to create a new project
+ */
 class new_project extends Controller
 {
-//    /**
-//     * Display a listing of the resource.
-//     *
-//     * @return \Illuminate\Http\Response
-//     */
+    /**
+     *The following function is used to create the view for the form to create a new project
+     * First it starts by checking the type of user by first checking if it is a guest and then transferring them
+     *to home page, if they are lecturer or programme leader they gain access to the form
+     * Before they gain access the controller will collect the pathways table and pass the return function to create project
+     * form blade file
+     * else is used to make sure that any other users in are sent to the home page
+     **/
     public function index()
     {
         if(Auth::guest()){
@@ -30,6 +37,18 @@ class new_project extends Controller
         }
 
     }
+
+    /**
+     *The store function is used to store what has been created
+     * the store function starts by carrying out validation
+     * the pathways are then collected from the form
+     * then the name of the image is created by requesting time of upload and requesting the extension
+     * the image is then requested again and transferred to storage with the name created
+     * a new variable is then created to create the path to the image to be placed into the database
+     * final all the data is requested from the form and is connected to one of the columns in the table before it
+     * is saved
+     * Once the data has been saved the data  for pivot table is then saved and the return view is passed back to the user
+     */
 
     public function store(Request $request){
 

@@ -13,7 +13,7 @@
         <h2 style="width: 100%">Relevant pathways:</h2>
         <div class="float">
             <ul>
-                @foreach($project->Pathway as $pathways)
+                @foreach($project->Projects as $pathways)
                     <li class="show_content">{{$pathways->pathway}}</li>
                 @endforeach
             </ul>

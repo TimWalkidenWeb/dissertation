@@ -1,7 +1,8 @@
 @extends('layouts.master')
 @section('content')
-    <div class="row">
-        <h3 class="col-12 small-12 show page_title">{{$learningsection->title}}</h3>
+    <div class="banner_inside_show">
+        <h1>{{$learningsection->title}} </h1>
+
     </div>
     <div class="row form_mobile form_desktop" >
         <div class="row">

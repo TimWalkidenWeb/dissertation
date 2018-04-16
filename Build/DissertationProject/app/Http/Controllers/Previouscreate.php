@@ -12,8 +12,19 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
 
+/**
+ *Controller used to create a new project
+ */
 class Previouscreate extends Controller
 {
+    /**
+     *The following function is used to create the view for the form to create a new previous project
+     * First it starts by checking the type of user by first checking if it is a guest and then transferring them
+     *to home page, if they are lecturer or programme leader they gain access to the form
+     * Before they gain access the controller will collect the pathway table and pass the return function to create previous project page
+     * form blade file
+     * else is used to make sure that any other users are sent to the home page
+     */
     public function index(){
 
 
@@ -27,8 +38,19 @@ class Previouscreate extends Controller
             return view('home');
         }
     }
-
+    /**
+     *The store function is used to store what has been created
+     * the store function starts by carrying out validation
+     * the pathway are then collected from the form
+     * then the name of the image is created by requesting time of upload and requesting the extension
+     * the image is then requested again and transferred to storage with the name created
+     *a new variable is then created to create the path to the image to be placed into the database
+     * final all the data is requested from the form and is connected to one of the columns in the table before it
+     * is saved
+     * Once save the data for pivot table is save and the return view is passed back to the user
+     */
     public function store(Request $request)
+
     {
         $this->validate(request(),[
             'title' => 'required|max:70',
@@ -59,7 +81,7 @@ class Previouscreate extends Controller
             'image' => $image,
             ]);
         $new_project->save();
-        $new_project->Pathway()->attach($pathway);
+        $new_project->Projects()->attach($pathway);
         return redirect('/previous_projects');
 
     }

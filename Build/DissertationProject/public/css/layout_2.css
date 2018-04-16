@@ -1,8 +1,10 @@
+
+/*Styling for the body of the website*/
 body{
     margin: 0;
     padding: 0;
 }
-
+/*Styling for Desktop*/
 @media only screen and (min-width: 768px){
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
@@ -16,15 +18,16 @@ body{
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
+    /*Hides elements within the mobile display*/
     .col-hidden{
         display:none;
     }
     .section{
-
         float: left;
         width: 33%;
         text-align: center;
     }
+    /*Desktop form overall layout*/
     .form_desktop{
         margin-right: 25%;
         margin-left: 25%;
@@ -32,16 +35,18 @@ body{
         background-color: white;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     }
+    /*Form text for desktop*/
     .form_text{
         width:100%;
     }
-
+    /*small input field for desktop*/
     .small-input{
         margin-bottom: 4%;
         background-color: lightgray;
         width: 100%;
         height: 2em;
     }
+    /*large input field for desktop*/
     .text_area{
         background-color: lightgray;
         width: 100%;
@@ -52,7 +57,7 @@ body{
         border-image: initial;
         margin-bottom: 4%;
     }
-
+    /*desktop link styling*/
     .link{
         float: right;
         margin-top: 30px;
@@ -62,29 +67,30 @@ body{
         font-weight: lighter;
         text-decoration: none;
     }
-
+    /*Logo styling for desktop*/
     .logo{
         height: 170px;
         float: left;
         margin-left: 1%;
         margin-right: 1%;
     }
+    /*h2 styling for desktop*/
     h2{
         float: left;
         font-size: 20px;
         font-family: 'Playfair Display', serif;
-    height: 340px;       font-weight: 700;
+        font-weight: 700;
         margin-left: 10px;
     }
+    /*Banner height within the list pages*/
     .banner_inside_view {
         height: 340px;
     }
-
+    /*Image container for desktop*/
     .container{
         background-color: white;
         margin-top: 2%;
         position: relative;
-
         height: 250px;
         padding: 3%;
         margin-left: 7%;
@@ -93,21 +99,20 @@ body{
     }
 }
 
-
+/*Nav styling for both desktop and mobile*/
 nav{
     height:180px;
     background-color: #d0afee;
 }
 
-
-
-
+/*A link styling to remove standard styling*/
 a{
     text-decoration: none;
     color: black;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
 }
+/*banner for the homepage*/
 .banner{
     height: 340px;
     background-color: #d0afee;
@@ -117,6 +122,7 @@ a{
     /* padding-bottom: 6%; */
     padding-left: 6%;
 }
+/*banner for the list pages*/
 .banner_inside_view{
 
     background-color: #d0afee;
@@ -126,6 +132,17 @@ a{
     /* padding-bottom: 6%; */
     padding-left: 6%;
 }
+/*banner for the form pages*/
+.banner_inside_create{
+    height: 150px;
+    background-color: #d0afee;
+    text-align: center;
+    padding-top: 6%;
+    padding-right: 6%;
+    /* padding-bottom: 6%; */
+    padding-left: 6%;
+}
+/*Banner for the show pages*/
 .banner_inside_show{
     height: 200px;
     background-color: #d0afee;
@@ -135,6 +152,7 @@ a{
     /* padding-bottom: 6%; */
     padding-left: 6%;
 }
+/*h1 styling mobile and desktop*/
 h1{
     margin-top: 0;
     text-align: center;
@@ -142,6 +160,7 @@ h1{
     font-size: 50px;
     font-family: 'Playfair Display', serif;
 }
+/*h3 styling mobile and desktop*/
 h3{
     margin-top: 0;
     text-align: center;
@@ -149,6 +168,7 @@ h3{
     font-size: 30px;
     font-family: 'Playfair Display', serif;
 }
+/*button syling for mobile and desktop*/
 button{
     font-size: x-large;
     padding: 10px;
@@ -156,6 +176,7 @@ button{
     border-color: #33ef11;
     color: white;
 }
+/*section for mobile and desktop*/
 .sections{
     padding-top: 6%;
     height: 400px;
@@ -163,30 +184,25 @@ button{
     margin-left: 6%
 }
 
-.start{
-    /*margin-left: 20%;*/
-}
+/*display section on the homepage*/
 .display{
     height: 150px;
 }
+/*display heading mobile and desktop*/
 .display_heading{
     width: 100%;
     float: left;
     margin-top: 5%;
 }
+/*inner section on mobile and desktop*/
 .inner_section{
     width: 100%;
 }
-
-
-
-
+/*used for the hover over image*/
 .container:hover .overlay {
     opacity: 1;
 }
-
-
-
+/*creates rows*/
 .row::after {
     content: "";
     clear: both;
@@ -194,14 +210,13 @@ button{
 }
 [class*="col-"] {
     float: left;
-
 }
-
-
+/*styling for list within forms*/
 .form_list{
     font-size: 12pt;
     padding-bottom: 5%;
 }
+/*styling for mobile*/
 @media only screen and (max-width: 767px) {
     .small-hidden{
         display:none;
@@ -218,21 +233,25 @@ button{
     .small-10 {width: 83.33%;}
     .small-11 {width: 91.66%;}
     .small-12 {width: 100%;}
-
+    /*mobile section formate*/
     .section{
         width: 100%;
         text-align: center;
     }
+    /*mobile filter button container*/
     .module_filt{
         margin-right: 9%;
     }
+    /*styling for banner inside the list pages for mobile*/
     .banner_inside_view{
         height: 437px;
 
     }
+    /*mobile styling for list of filter options*/
     .fil_list{
         padding-bottom: 5%;
     }
+    /*mobile form layout*/
     .form_mobile{
         margin-right: 10%;
         margin-left: 10%;
@@ -240,6 +259,8 @@ button{
         background-color: white;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     }
+
+    /*mobile large input field styling*/
     .text_area{
         background-color: lightgray;
         width: 100%;
@@ -250,6 +271,7 @@ button{
         border-image: initial;
         margin-bottom: 4%;
     }
+    /*mobile small input field styling*/
     .small-input{
 
         background-color: lightgray;
@@ -260,18 +282,19 @@ button{
         border-color: initial;
         border-image: initial;
         margin-bottom: 4%;
-
     }
+    /*logo style in mobile*/
     .logo{
         height:150px;
         float: left;
     }
-
+    /*dropdown content container*/
     .dropdown {
         float: left;
         overflow: hidden;
         padding-left: 14pt;
     }
+    /*styling for both dropdown containers*/
     .dropdown .dropbtn {
         text-align: center;
         border: none;
@@ -283,7 +306,6 @@ button{
         font-weight: lighter;
         color: black;
     }
-
     .navbar a:hover, .dropdown:hover .dropbtn {
         /*background-color: lightgray;*/
     }
@@ -321,6 +343,7 @@ button{
         display: block;
     }
 
+    /*Container of the projects within the view pages*/
     .container{
         background-color: white;
         margin-top: 2%;
@@ -341,15 +364,13 @@ button{
     padding-left: 10%;
     padding-right: 10%;
 }
-
-
-
+/*display for image view within the view*/
 .image_view{
     display: block;
     width: 100%;
     height: 100%;
 }
-
+/*Overlay of the images within the view*/
 .overlay{
     position: absolute;
     top: 0;
@@ -362,7 +383,7 @@ button{
     transition: .5s ease;
     background-color: white;
 }
-
+/*text within overlay*/
 .text{
     color: black;
     font-size: 70%;
@@ -371,7 +392,7 @@ button{
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
+/*styling for links within the hover of images*/
 .extra_link_style{
     color: black;
     font-family: 'Playfair Display', serif;
@@ -385,19 +406,19 @@ button{
     text-decoration: none;
     float: left;
 }
-
+/*styling for image container on the show page*/
 .image_show_container{
     width: 40%;
     float: left;
     margin-left: 5%;
     margin-top: 4%;
     text-align: center;
-
-
 }
+/*styling for the actual image within the show page*/
 .image_show{
     width: 50%;
 }
+/*container for show text*/
 .content_show{
     width: 50%;
     float: left;
@@ -406,25 +427,26 @@ button{
     margin-bottom: 5%;
 
 }
+/*Styling for submit button*/
 .submit_btn{
 
 }
-
+/*styling for lists*/
 .list{
     font-size: 12px;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     margin-left: 10px;
 }
-
+/*styling to float element to the left*/
 .float{
     float: left;
 }
-
+/*styling for margin*/
 .margin{
     margin-left: 10px;
 }
-
+/*styling for image heading*/
 .image_heading{
     font-size: 14px;
     font-weight: 700;

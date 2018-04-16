@@ -9,14 +9,14 @@
     <div class="form_mobile form_desktop" >
         <div class="row">
             {!! Form::model($learning_section, ['method' => 'PATCH', 'url' => ['learning_section',$learning_section->id], $learning_section->id]) !!}
-            <h1 class="row form_text"> Title of project</h1>
+            <h2 class="row form_text"> Title of project</h2>
             {!! Form::text('title', $learning_section->title, array('class'=>'small-input')) !!}
 
-            <h1 class="row form_text">Description of the project</h1>
+            <h2 class="row form_text">Description of the project</h2>
             {!! Form::textarea('content', $learning_section->content, array('class'=>'text_area')) !!}
 
 
-            <h1 class="form_text">Pathway linked to project</h1>
+            <h2 class="form_text">CW linked to learning section</h2>
             <ul>
             @foreach($cw as $cws)
 
@@ -29,11 +29,6 @@
             </ul>
             {!! Form::hidden('image',$learning_section->image) !!}
 
-
-            <div>
-                {!!  Form::token()!!}<button type="submit" class="submit_btn ">Submit update</button>
-
-            </div>
 
             <div class='form-group large-6 col-6'>
                 <button type="submit" class="submit_btn ">Submit update</button>
