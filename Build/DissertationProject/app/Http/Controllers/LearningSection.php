@@ -12,7 +12,6 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 
 
-
 /**
  * Controller used for the learning section which includes view, show, create, store, edit, update, delete
  */
@@ -25,10 +24,11 @@ class LearningSection extends Controller
      * the next step is to create the return function to return the learning material view page and set each of the tables
      * to a variable to be called within the view
      */
-    public function index(){
+    public function index()
+    {
         $cw = Cws::all();
         $learning_section = learningSect::all();
-     return view('learning_material.view', ['learning_sections' =>$learning_section, 'cws' =>$cw]);
+        return view('learning_material.view', ['learning_sections' => $learning_section, 'cws' => $cw]);
     }
 
     /**
@@ -45,7 +45,7 @@ class LearningSection extends Controller
         $staff = User::all();
         $learningmaterial = Learning_material::all();
 
-        return view('learning_material.show')->with(['learningsection' => $learningsection, 'learningMat'=> $learningmaterial, 'user' => $staff]);
+        return view('learning_material.show')->with(['learningsection' => $learningsection, 'learningMat' => $learningmaterial, 'user' => $staff]);
 
     }
 
@@ -58,16 +58,16 @@ class LearningSection extends Controller
      * else is used to make sure that any other users are sent to the home page
      */
 
-    public function create(){
+    public function create()
+    {
 
-        if(Auth::guest()){
+        if (Auth::guest()) {
             return view('home');
-        }
-        elseif(Auth::user()->permission(1 or 3)) {
+        } elseif (Auth::user()->permission(1 or 3)) {
             $learning_section = Cws::all();
-            return view('learning_material.new_learningSection', ['cws' =>$learning_section]);
-        }else{
-          return view('home');
+            return view('learning_material.new_learningSection', ['cws' => $learning_section]);
+        } else {
+            return view('home');
         }
 
     }
@@ -85,23 +85,23 @@ class LearningSection extends Controller
      * Once save the data for pivot table is save and the return view is passed back to the user
      */
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
-        $this->validate(request(),[
+        $this->validate(request(), [
             'title' => 'required|max:70',
             'content' => 'required',
-            'cw_id'=> 'required',
+            'cw_id' => 'required',
             'image' => 'required|mimes:jpeg,png,jpg,JPEG,PNG,JPG'
 
         ]);
         $cws = Input::get('cw_id', []);
 
 
-
-        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+        $imageName = time() . '.' . request()->image->getClientOriginalExtension();
         request()->image->move(public_path('storage'), $imageName);
-        $image = 'storage/'.$imageName;
-        $new_learningSec= learningSect::create([
+        $image = 'storage/' . $imageName;
+        $new_learningSec = learningSect::create([
                 'title' => $request->input('title'),
                 'content' => $request->input('content'),
                 'image' => $image
@@ -149,10 +149,10 @@ class LearningSection extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate(request(),[
+        $this->validate(request(), [
             'title' => 'required|max:70',
             'content' => 'required|max:1000 ',
-            'cw_id'=> 'required',
+            'cw_id' => 'required',
 //            'image' => 'required',
         ]);
         $learning_section = learningSect::findOrFail($id);
@@ -179,8 +179,8 @@ class LearningSection extends Controller
     {
 
         $learning_section = learningSect::find($id);
-        $file_path = public_path().'/'.$learning_section->image;
-        if(file_exists($file_path)){
+        $file_path = public_path() . '/' . $learning_section->image;
+        if (file_exists($file_path)) {
             unlink($file_path);
         }
 
@@ -191,9 +191,7 @@ class LearningSection extends Controller
         return redirect('/learning_section');
 
 
-
     }
-
 
 
 }

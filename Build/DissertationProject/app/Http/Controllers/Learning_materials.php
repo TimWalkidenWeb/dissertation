@@ -39,7 +39,7 @@ class Learning_materials extends Controller
 
         $new_learningMat->save();
 
-        return redirect('/learning_section/'.$Id);
+        return redirect('/learning_section/' . $Id);
     }
 
     /**
@@ -50,7 +50,6 @@ class Learning_materials extends Controller
      */
     public function edit($id)
     {
-
 
 
         $learning_mat = Learning_material::findOrFail($id);
@@ -83,12 +82,11 @@ class Learning_materials extends Controller
                 'content' => $request->input('content'),
                 'staff_id' => $request->input('staff_id'),
                 'learning_section_id' => $request->input('learning_section_id')
-                ]
+            ]
         );
 
 
-
-        return redirect('/learning_section/'.$Id_learningsect);
+        return redirect('/learning_section/' . $Id_learningsect);
 
     }
 
@@ -106,7 +104,6 @@ class Learning_materials extends Controller
 
         $learningMaterial->delete();
         return back();
-
 
 
     }

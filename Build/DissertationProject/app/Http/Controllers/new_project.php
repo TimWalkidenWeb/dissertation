@@ -26,13 +26,12 @@ class new_project extends Controller
      **/
     public function index()
     {
-        if(Auth::guest()){
+        if (Auth::guest()) {
             return view('home');
-        }
-        elseif(Auth::user()->permission(1 or 3)) {
+        } elseif (Auth::user()->permission(1 or 3)) {
             $project = Pathways::all();
-            return view('new_project', ['pathway' =>$project]);
-        }else{
+            return view('new_project', ['pathway' => $project]);
+        } else {
             return view('home');
         }
 
@@ -50,22 +49,23 @@ class new_project extends Controller
      * Once the data has been saved the data  for pivot table is then saved and the return view is passed back to the user
      */
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
-        $this->validate(request(),[
+        $this->validate(request(), [
             'title' => 'required|max:70',
             'content' => 'required|max:1000 ',
             'num_participant' => 'required|integer',
-            'pathway_id'=> 'required',
+            'pathway_id' => 'required',
             'image' => 'required|mimes:jpeg,png,jpg,JPEG,PNG,JPG',
         ]);
         $pathway = Input::get('pathway_id', []);
 
 
-        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+        $imageName = time() . '.' . request()->image->getClientOriginalExtension();
         request()->image->move(public_path('storage/images'), $imageName);
-        $image = 'storage/images/'.$imageName;
-        $new_project= Projects::create([
+        $image = 'storage/images/' . $imageName;
+        $new_project = Projects::create([
                 'title' => $request->input('title'),
                 'content' => $request->input('content'),
                 'user_id' => $request->input('user_id'),

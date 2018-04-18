@@ -5,9 +5,9 @@
     </div>
 
 
-    <div class="row form_mobile form_desktop" >
-{!! Form::open(array('route' => 'image.upload.post','files'=>true, 'enctype' => "multipart/form-data")) !!}
-    <h2 class="row form_text">Title of project</h2>
+    <div class="row form_mobile form_desktop">
+        {!! Form::open(array('route' => 'image.upload.post','files'=>true, 'enctype' => "multipart/form-data")) !!}
+        <h2 class="row form_text">Title of project</h2>
         <input type="text" name="title" class="small-input">
 
 
@@ -15,26 +15,26 @@
         <textarea rows="25" cols="40" class="text_area" name="content"> </textarea>
 
 
-        <h2 class="row form_text">Number of participants  </h2>
+        <h2 class="row form_text">Number of participants </h2>
         <input type="text" name="num_participant" class="small-input">
-    <div>
-        <h2 class="form_text">Pathway linked to project</h2>
-        <ul>
-            @foreach($pathway as $pathways)
+        <div>
+            <h2 class="form_text">Pathway linked to project</h2>
+            <ul>
+                @foreach($pathway as $pathways)
 
-               <li class="form_list">
-                   {!! Form::label('pathway_id', $pathways->pathway) !!}
-                   {{Form::checkbox('pathway_id[]', $pathways->id)}}
-               </li>
-            @endforeach
-        </ul>
+                    <li class="form_list">
+                        {!! Form::label('pathway_id', $pathways->pathway) !!}
+                        {{Form::checkbox('pathway_id[]', $pathways->id)}}
+                    </li>
+                @endforeach
+            </ul>
 
-    </div>
+        </div>
 
         <div>
             <h2 class="form_text">Add a display image</h2>
-                   {!! Form::file('image', array('class' => 'submit_btn')) !!}
-            </div>
+            {!! Form::file('image', array('class' => 'submit_btn')) !!}
+        </div>
 
         <div>
 
@@ -47,7 +47,7 @@
             <button type="submit" class="submit_btn ">Submit project</button>
         </div>
         {!! Form::close() !!}
-</div>
+    </div>
 
 
     @include('layouts.validation')

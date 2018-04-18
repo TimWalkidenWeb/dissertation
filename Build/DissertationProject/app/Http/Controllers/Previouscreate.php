@@ -25,19 +25,20 @@ class Previouscreate extends Controller
      * form blade file
      * else is used to make sure that any other users are sent to the home page
      */
-    public function index(){
+    public function index()
+    {
 
 
-        if(Auth::guest()){
+        if (Auth::guest()) {
             return view('home');
-        }
-        elseif(Auth::user()->permission(1 or 3)) {
+        } elseif (Auth::user()->permission(1 or 3)) {
             $project = Pathways::all();
-            return view('new_previous_project', ['pathway' =>$project]);
-        }else{
+            return view('new_previous_project', ['pathway' => $project]);
+        } else {
             return view('home');
         }
     }
+
     /**
      *The store function is used to store what has been created
      * the store function starts by carrying out validation
@@ -52,23 +53,23 @@ class Previouscreate extends Controller
     public function store(Request $request)
 
     {
-        $this->validate(request(),[
+        $this->validate(request(), [
             'title' => 'required|max:70',
             'description' => 'required ',
             'date' => 'required|before:today',
             'image_content' => 'required|mimes:pdf',
-            'pathway_id'=> 'required',
+            'pathway_id' => 'required',
             'image' => 'required|mimes:jpeg,png,jpg,JPEG,PNG,JPG'
         ]);
 
 
-        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+        $imageName = time() . '.' . request()->image->getClientOriginalExtension();
         request()->image->move(public_path('storage/images'), $imageName);
-        $image = 'storage/images/'.$imageName;
+        $image = 'storage/images/' . $imageName;
 
-        $contentName = time().'.'.request()->image_content->getClientOriginalExtension();
+        $contentName = time() . '.' . request()->image_content->getClientOriginalExtension();
         request()->image_content->move(public_path('storage/documents'), $contentName);
-        $content = 'storage/documents/'.$contentName;
+        $content = 'storage/documents/' . $contentName;
 
         $pathway = Input::get('pathway_id', []);
 
@@ -79,11 +80,11 @@ class Previouscreate extends Controller
             'description' => $request->input('description'),
             'date' => $request->input('date'),
             'image' => $image,
-            ]);
+        ]);
         $new_project->save();
         $new_project->Projects()->attach($pathway);
         return redirect('/previous_projects');
 
     }
 
-    }
+}

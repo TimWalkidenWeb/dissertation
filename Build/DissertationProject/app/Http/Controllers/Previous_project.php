@@ -8,28 +8,30 @@ use App\Pathways;
 use App\Previous_projects;
 Use App\PreProject;
 use Illuminate\Support\Facades\Auth;
+
 /**
  * Controller used for the project section which includes view, show,edit, update, delete
  */
 class Previous_project extends Controller
 {
     /**
-    *Public function index is used to create the view for the list of project, this done by
- * first collecting all the records in the previous projects table
- * then collecting all the records in the pathway table
- * then collecting all the records in the user table
- * the next step is to create the return function to return the previous projects view page and data set each of the tables
- * to a variable to be called within the view this is only available to authorised users
- * if the user not authorised they are asked to login
- */
-    public function index(){
+     *Public function index is used to create the view for the list of project, this done by
+     * first collecting all the records in the previous projects table
+     * then collecting all the records in the pathway table
+     * then collecting all the records in the user table
+     * the next step is to create the return function to return the previous projects view page and data set each of the tables
+     * to a variable to be called within the view this is only available to authorised users
+     * if the user not authorised they are asked to login
+     */
+    public function index()
+    {
         $project = PreProject::all();
         $pathway = Pathways::all();
         $tutor = User::all();
 
-        if(Auth::user()){
-            return view('previous_project.view', ['project' =>$project, 'tutor' =>$tutor, 'pathway' =>$pathway]);
-        }else{
+        if (Auth::user()) {
+            return view('previous_project.view', ['project' => $project, 'tutor' => $tutor, 'pathway' => $pathway]);
+        } else {
             return redirect('/login');
         }
 
@@ -79,12 +81,12 @@ class Previous_project extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate(request(),[
+        $this->validate(request(), [
             'title' => 'required|max:70',
             'description' => 'required|max:300 ',
             'date' => 'required|before:today',
-            'pathway_id'=> 'required',
-          ]);
+            'pathway_id' => 'required',
+        ]);
         $project = PreProject::findOrFail($id);
         $project->Projects;
 
@@ -95,6 +97,7 @@ class Previous_project extends Controller
         return redirect('/previous_projects');
 
     }
+
     /**
      * the destroy function is used to delete a record within the table
      * first the record is found within the previous project table
@@ -105,8 +108,8 @@ class Previous_project extends Controller
     public function destroy($id)
     {
         $project = PreProject::find($id);
-        $file_path = public_path().'/'.$project->image;
-        if(file_exists($file_path)){
+        $file_path = public_path() . '/' . $project->image;
+        if (file_exists($file_path)) {
             unlink($file_path);
         }
         $project->Projects()->detach();
@@ -115,4 +118,4 @@ class Previous_project extends Controller
         return redirect('/previous_projects');
     }
 
-    }
+}

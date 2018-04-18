@@ -6,16 +6,16 @@
         <h1>New staff member</h1>
     </div>
 
-    <div class="row form_mobile form_desktop" >
+    <div class="row form_mobile form_desktop">
         {!! Form::open(['action'=>['staffMember@store']]) !!}
-        <div class="row form_text">Enter Full name </div>
+        <div class="row form_text">Enter Full name</div>
         <input type="text" name="name" class="small-input">
 
 
         <div class="row form_text">Enter staff member Edge Hill email</div>
         <input type="text" name="email" class="small-input">
 
-        <div class="row form_text">Enter password </div>
+        <div class="row form_text">Enter password</div>
         <input type="password" name="password" class="small-input">
         <div>
             <div class="form_text">Add permissions</div>
@@ -24,17 +24,16 @@
                 @foreach($permission as $permissions)
 
 
-                     <li>
-                         {!! Form::label('permission', $permissions->permission) !!}
-                         {{Form::checkbox('permission', $permissions->id)}}
-                     </li>
+                    <li>
+                        {!! Form::label('permission', $permissions->permission) !!}
+                        {{Form::checkbox('permission', $permissions->id)}}
+                    </li>
 
                 @endforeach
 
             </ul>
 
         </div>
-
 
 
         <div>
@@ -48,5 +47,5 @@
     </div>
 
 
-   @include('layouts.validation')
+    @include('layouts.validation')
 @endsection

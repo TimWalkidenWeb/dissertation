@@ -28,14 +28,15 @@ class Project extends Controller
      * to a variable to be called within the view this is only available to authorised users
      * if the user not authorised they are asked to login
      */
-    public function index(){
+    public function index()
+    {
 
         $project = Projects::all();
         $pathway = Pathways::all();
         $tutor = User::all();
-        if(Auth::user()){
-            return view('projects.view', ['project' =>$project, 'tutor' =>$tutor, 'pathway' =>$pathway]);
-        }else{
+        if (Auth::user()) {
+            return view('projects.view', ['project' => $project, 'tutor' => $tutor, 'pathway' => $pathway]);
+        } else {
             return redirect('/login');
         }
 
@@ -47,7 +48,7 @@ class Project extends Controller
      * project table
      * all the data is then returned with the correct blade file.
      */
-        public function show($id)
+    public function show($id)
     {
         $project = Projects::findOrFail($id);
         $project->Projects;
@@ -67,13 +68,14 @@ class Project extends Controller
     public function edit($id)
     {
 
-       $pathway = Pathways::all();
+        $pathway = Pathways::all();
 
 
         $project = Projects::findOrFail($id);
         $project->Projects;
-         return view('projects.Edit')->with(compact('project'))->with(['pathway' => $pathway]);
+        return view('projects.Edit')->with(compact('project'))->with(['pathway' => $pathway]);
     }
+
     /**
      * Update is used to upload the changes to the edited project
      * the first section of the function is the validation
@@ -87,11 +89,11 @@ class Project extends Controller
     {
 
 
-        $this->validate(request(),[
+        $this->validate(request(), [
             'title' => 'required|max:70',
             'content' => 'required|max:1000 ',
             'num_participant' => 'required|integer',
-            'pathway_id'=> 'required',
+            'pathway_id' => 'required',
 //            'image' => 'required',
         ]);
         $project = Projects::findOrFail($id);
@@ -117,11 +119,10 @@ class Project extends Controller
     public function destroy($id)
     {
         $project = Projects::find($id);
-        $file_path = public_path().'/'.$project->image;
-        if(file_exists($file_path)){
+        $file_path = public_path() . '/' . $project->image;
+        if (file_exists($file_path)) {
             unlink($file_path);
         }
-
 
 
         $project->Projects()->detach();
@@ -130,10 +131,7 @@ class Project extends Controller
         return redirect('/project');
 
 
-
-
     }
 
 
-
-    }
+}

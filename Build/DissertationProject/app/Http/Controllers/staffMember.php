@@ -23,14 +23,14 @@ class staffMember extends Controller
      * by first requestion the permission table and then sending the data and the correct view to the user
      * the final else is to make sure any other users are sent to the home page
      */
-    public function index(){
-        if(Auth::guest()){
+    public function index()
+    {
+        if (Auth::guest()) {
             return view('home');
-        }
-        elseif(Auth::user()->permission(1)) {
+        } elseif (Auth::user()->permission(1)) {
             $permission = Permission::all();
             return view('staff.staff_create', ['permission' => $permission]);
-        }else{
+        } else {
             return view('home');
         }
     }
@@ -39,7 +39,8 @@ class staffMember extends Controller
      * the view function is used to load the register form
      */
 
-    public function view(){
+    public function view()
+    {
         return view('student.create_student');
     }
 
@@ -53,15 +54,16 @@ class staffMember extends Controller
      * leading on to the user being sent to the home page
      */
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
-            $this->validate(request(),[
-                'name' => 'required',
-                'email' => 'required|string|email|regex:/(.*)@edgehill\.ac\.uk/|max:255|unique:users',
-                'password' => 'required|min:5',
-            ]);
+        $this->validate(request(), [
+            'name' => 'required',
+            'email' => 'required|string|email|regex:/(.*)@edgehill\.ac\.uk/|max:255|unique:users',
+            'password' => 'required|min:5',
+        ]);
 
-        if($request['permission'] == null) {
+        if ($request['permission'] == null) {
             $new_student = User::create([
                 'name' => $request['name'],
                 'email' => $request['email'],
@@ -70,7 +72,7 @@ class staffMember extends Controller
 
             ]);
             $new_student->save();
-        }elseif($request['permission'] == '1' or '3' or '2'){
+        } elseif ($request['permission'] == '1' or '3' or '2') {
             $new_staff = User::create([
                 'name' => $request['name'],
                 'email' => $request['email'],
@@ -80,9 +82,8 @@ class staffMember extends Controller
             $new_staff->save();
         }
 
-            return redirect('/home');
-        }
-
+        return redirect('/home');
+    }
 
 
 }
