@@ -35,7 +35,7 @@ class Project extends Controller
         $pathway = Pathways::all();
         $tutor = User::all();
         if (Auth::user()) {
-            return view('projects.view', ['project' => $project, 'tutor' => $tutor, 'pathway' => $pathway]);
+            return view('projects.view', ['project' => $project, 'tutors' => $tutor, 'pathway' => $pathway]);
         } else {
             return redirect('/login');
         }

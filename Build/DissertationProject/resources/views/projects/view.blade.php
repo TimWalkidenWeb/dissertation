@@ -5,28 +5,24 @@
     {{--view banner styling--}}
     <div class="banner_inside_view">
         <h1>Available topics being offered </h1>
-        <h3 class="small-hidden">Want to filter by pathway use links below</h3>
+        <h3 class="small-hidden">Want to filter by lecturer use links below</h3>
         {{--drop down filiter for mobile devices--}}
         <div class="dropdown small-12 col-hidden">
             {{--drop down button--}}
-            <button class="dropbtn ">Filter by pathway &#9660;</button>
+            <button class="dropbtn ">Filter by lecturer &#9660;</button>
             <i class="arrow down"></i>
             {{--dropdown content hidden until button clicked on--}}
             <div class="dropdown-content module_filt">
                 {{--dropdown content within the container--}}
                 <div id="myBtnContainer">
                     {{--first li used to add a show all button--}}
-                    <li class="fil_list" style="margin-top: 3%" onclick="filterSelection_pathway('all')"> Show all</li>
+                    <li class="fil_list" style="margin-top: 3%" onclick="filterTutor('all')"> Show all</li>
                     {{--for each to pull in each of the pathway and give it a li--}}
-                    <div class="dropdown small-12 col-hidden">
-            <button class="dropbtn ">Filter by pathway &#9660;</button>
-            <i class="arrow down"></i>
-            <div class="dropdown-content module_filt">
-                <div id="myBtnContainer">
-                    <li class="fil_list" style="margin-top: 3%" onclick="filterSelection_pathway('all')"> Show all</li>
-                    @foreach($pathway as $pathways)
-                        <li class="fil_list"
-                            onclick="filterSelection_pathway({{$pathways->id}})"> {{$pathways->pathway}}</li>
+                    @foreach($tutors as $tutor)
+                        @if($tutor->permission == '1' || $tutor->permission == '3')
+                        <a class="fil_list"
+                            onclick="filterTutor({{$tutor->id}})"> {{$tutor->name}}</a>
+                        @endif
                     @endforeach
                 </div>
             </div>
@@ -37,27 +33,28 @@
             <div class="col-12 filter small-hidden">
                 <div id="myBtnContainer">
                     {{--display all button--}}
-                    <div class="extra_link_style  " style="width: 100%; font-size: 22px"
-                         onclick="filterSelection('all')"> Show all
+                    <div class="extra_link_style col-3"
+                         onclick="filterTutor('all')"> Show all
                     </div>
                     {{--foreach to pull in each of the pathway and assign them the same width and styling--}}
-                @foreach($pathway as $pathways)
-                        <div class="extra_link_style margin col-2"
-                             onclick="filterSelection({{$pathways->id}})"> {{$pathways->pathway}}</div>
+                    @foreach($tutors as $tutor)
+                        @if($tutor->permission == '1' || $tutor->permission == '3')
+                        <a class="extra_link_style col-3" style="width:20%; font-size: 22px"
+                             onclick="filterTutor({{$tutor->id}})"> {{$tutor->name}}</a>
+                        @endif
                     @endforeach
                 </div>
             </div>
         </div>
-
     </div>
     {{--div row to create the view of each of the images and the content--}}
     <div class="col-12 small-12">
         <div class="row">
             @foreach($project as $projects)
                 {{--foreach to pull in each of the project one at a time--}}
-                <div class="col-4 small-12 " id="{{asset($projects->user_id)}}">
+                <div class="col-4 small-12 ">
                     {{--start of the containner by adding in a image which is displayed when the uses is not hovering over the page--}}
-                    <div class="container border-radius">
+                    <div class="container {{$projects->user_id}} border-radius " >
                         {{--image of the learning section collected from storage--}}
                         <img src="{{ asset($projects->image)}}" alt="display image for {{ asset($projects->Title)}} "
                              class="image_view">

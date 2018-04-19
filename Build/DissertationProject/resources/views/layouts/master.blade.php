@@ -7,6 +7,7 @@
         <title>Project Bazaar</title>
         {{--Link to the styling sheet--}}
         <link href="{{ asset('css/layout_2.css') }}" media="all" rel="stylesheet" type="text/css" />
+        <script src="{{ asset('js/filter_tutor.js') }}"></script>
     </head>
     <body onload="myFunction()">
     {{--Header to represent where the navigation bar goes when pulled in from another blade file--}}

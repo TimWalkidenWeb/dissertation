@@ -94,6 +94,7 @@ body{
         height: 250px;
         padding: 3%;
         margin-left: 7%;
+        display: none;
         margin-bottom: 22%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
     }
@@ -104,6 +105,10 @@ nav{
     height:180px;
     background-color: #d0afee;
 }
+.show {
+    display: block;
+}
+
 
 /*A link styling to remove standard styling*/
 a{
@@ -348,7 +353,7 @@ button{
         background-color: white;
         margin-top: 2%;
         position: relative;
-
+        display: none;
         height: 250px;
         padding: 3%;
         margin-left: 5%;
@@ -357,6 +362,10 @@ button{
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
     }
 
+}
+
+.show {
+    display: block;
 }
 
 .show{
@@ -396,13 +405,12 @@ button{
 .extra_link_style{
     color: black;
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    float: right;
-    margin-top: 30px;
 
-    /* margin-right: 10px; */
-    font-size: 16px;
+    margin-top: 30px;
+    font-size: 20px;
     font-weight: lighter;
+    /* margin-right: 10px; */
+
     text-decoration: none;
     float: left;
 }

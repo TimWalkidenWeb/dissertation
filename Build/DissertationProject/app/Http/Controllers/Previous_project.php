@@ -30,7 +30,7 @@ class Previous_project extends Controller
         $tutor = User::all();
 
         if (Auth::user()) {
-            return view('previous_project.view', ['project' => $project, 'tutor' => $tutor, 'pathway' => $pathway]);
+            return view('previous_project.view', ['project' => $project, 'tutors' => $tutor, 'pathway' => $pathway]);
         } else {
             return redirect('/login');
         }
