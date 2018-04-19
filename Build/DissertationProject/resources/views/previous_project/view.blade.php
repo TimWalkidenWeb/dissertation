@@ -59,7 +59,7 @@
                             <div class="overlay border-radius">
                                 {{--text is the div which is the syling for the layout of the content--}}
                                 <div class="text">
-                                    {{--styling for the title of the learning section--}}
+                                    {{--styling for the title of the previous project--}}
                                     <div>{{$projects->Title}}</div>
                                     {{--if statment to make sure student can only view the previous project--}}
                                     @if(Auth()->user()->permission == '2')

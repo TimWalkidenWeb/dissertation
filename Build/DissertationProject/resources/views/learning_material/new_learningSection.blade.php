@@ -21,7 +21,7 @@
             <textarea rows="25" cols="40" class="text_area" name="content"> </textarea>
             {{--open div to the list of courseworks--}}
             <div>
-                {{--title for the list of coursewors--}}
+                {{--title for the list of courseworks--}}
                 <h2 class="form_text">Coursework the learning section relevant to</h2>
                 <ul>
                     {{--foreach used to gather the table of coursework and separate them into individual courseworks--}}

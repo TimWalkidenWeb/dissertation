@@ -1,4 +1,6 @@
+{{--extend lauouts.master used to link the blade file to the layout file to place the content within the article--}}
 @extends('layouts.master')
+{{--extends content is a variable used to indicate the yeild within the layout to place the content--}}
 @section('content')
     {{--banner for the show with the tile being pulled in from the database--}}
     <div class="banner_inside_show">
