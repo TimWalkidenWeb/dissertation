@@ -5,6 +5,7 @@
     {{--banner for the top of the website--}}
     <div class="banner_inside_create">
         {{--Edit with the variable called from the controller and asking to get the title from specified row--}}
+        <h1>Edit- {{$project->Title}}</h1>
     </div>
 
     {{--Div used to create both the mobile and desktop form dispaly--}}

@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## Installation of Project Bazzar
+## Installation of Project Bazaar
 1. To download Project Bazzar from bit bucket run **git clone https://twalkiden@bitbucket.org/twalkiden/final-year-project.git**
 in bash
 2. Once the project download run **cd final-year-project/Build/DissertationProject** in bash
@@ -42,6 +42,8 @@ in bash
 5. Make sure php artisan serve is still running in bash
 6. In another bash navigate to the directory DissertationProject
 
+## Login in to the system
+1. Programme leader email is timothy.walkiden@edgehill.ac.uk and password is password
 
 ## Security Vulnerabilities
 

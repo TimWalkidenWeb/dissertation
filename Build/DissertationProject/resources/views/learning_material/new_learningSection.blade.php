@@ -45,7 +45,7 @@
             </div>
             {{--submit button for the form--}}
             <div class="form-group padding">
-                <button type="submit" class="submit_btn">Submit Learning section</button>
+                <button type="submit" class="submit_btn" style="margin-top: 5%">Submit Learning section</button>
             </div>
         {{--end of the form--}}
         {!! Form::close() !!}
