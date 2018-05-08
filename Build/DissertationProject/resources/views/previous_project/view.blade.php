@@ -53,7 +53,7 @@
             <div class="row">
                 {{--foreach to pull in each of the previous project one at a time--}}
                 @foreach($project as $projects)
-                    <div class="col-3 small-12 ">
+                    <div class="col-5 small-12 ">
                         {{--start of the containner by adding in a image which is displayed when the uses is not hovering over the page--}}
                         <div class="container {{$projects->user_id}} border-radius">
                             {{--image of the learning section collected from storage--}}

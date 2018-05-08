@@ -51,7 +51,8 @@
                         <div class='form-group' >
                           {{--delete button--}}
                           {!! Form::open(['method' => 'DELETE' ,'route' => ['learning_materials.destroy', $advice->id]]) !!}
-                               <button type="submit" class="submit_btn">Delete</button>
+                               <a type="submit" class="submit_btn">Delete</a>
+
                           {!! Form::close()!!}
                           {{--link to edit form for the adive section--}}
                           <a href="/learning_materials/{{$advice->id}}/edit" class="submit_btn">Edit</a>
