@@ -8,7 +8,7 @@
 </p>
 
 ## Installation of Project Bazaar
-1. To download Project Bazzar from bit bucket run **git clone https://twalkiden@bitbucket.org/twalkiden/final-year-project.git**
+1. To download Project Bazzar from bit bucket run **git clone https://github.com/TimWalkidenWeb/dissertation.git**
 in bash
 2. Once the project download run **cd final-year-project/Build/DissertationProject** in bash
 3. Once in the DissertationProject directory run **composer update**
