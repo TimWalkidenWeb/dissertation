@@ -6,9 +6,9 @@
     {{--banner for the top of the website--}}
     <div class="banner">
         {{--Heading of the home page--}}
-        <h1> Need a Project Topic ?</h1>
+        <h1> What is a final year project?</h1>
         {{--sub heading for the page--}}
-        <h3>We will find you one</h3>
+        <h3>Explore to find a project and discover more about what they are</h3>
         {{--link to possible topics--}}
         <button class=find"><a href="{{url('/project')}}">View Topics</a></button>
     </div>
@@ -21,7 +21,7 @@
                 {{--image for support section--}}
                 <img src="{{ asset('storage/images/support.png') }}" alt="image1" class="display">
                 {{--heading for the support section--}}
-                <h3 class="display_heading"><a href="{{'/learning_material'}}">Support on your project</a></h3>
+                <h3 class="display_heading"><a href="{{'/learning_section'}}">Support on your project</a></h3>
             </div>
             {{--column 2 for the topic suggestions--}}
             <div class="section">

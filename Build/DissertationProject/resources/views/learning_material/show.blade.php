@@ -25,7 +25,7 @@
         </div>
         {{--row created under the two coloumn to show the pathways related--}}
         <div class="row col-12 small-12">
-            <h4 class="show_content">Relevant pathways:</h4>
+            <h4 class="show_content">Relevant coursework:</h4>
             <ul>
                 {{--foreach to link the record to the pivot table to list all of the courseworks--}}
                 @foreach($learningsection->learning as $cws)

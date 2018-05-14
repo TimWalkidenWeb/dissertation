@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="{{ asset('storage/images/favicon.ico') }}" type="image/x-icon">
         <link rel="icon" href="{{ asset('storage/images/favicon.ico') }}" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Advent+Pro" rel="stylesheet">
         {{--Title of the website in the browser--}}
         <title>Project Bazaar</title>
         {{--Link to the styling sheet--}}
